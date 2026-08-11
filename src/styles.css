@@ -147,3 +147,61 @@
     color: var(--color-foreground);
   }
 }
+
+@theme inline {
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-navy-dark: var(--brand-navy-dark);
+  --color-brand-red: var(--brand-red);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-surface: var(--brand-surface);
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bebas Neue", "Poppins", sans-serif;
+  --font-heading: "Alegreya Sans SC", "Poppins", sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+    letter-spacing: 0.01em;
+  }
+}
+
+@utility section-title {
+  font-family: var(--font-heading);
+  color: var(--brand-navy);
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee-x 38s linear infinite;
+}
+
+@utility animate-marquee-y {
+  animation: marquee-y 26s linear infinite;
+}
+
+@keyframes marquee-y {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
