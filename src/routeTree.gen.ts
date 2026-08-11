@@ -16,6 +16,7 @@ import { Route as AicteRouteImport } from './routes/aicte'
 import { Route as AlumniRouteImport } from './routes/alumni'
 import { Route as AntiRaggingRouteImport } from './routes/anti-ragging'
 import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as EnquiryRouteImport } from './routes/enquiry'
 import { Route as FacilityRouteImport } from './routes/facility'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GrievanceRouteImport } from './routes/grievance'
@@ -85,6 +86,11 @@ const AntiRaggingRoute = AntiRaggingRouteImport.update({
 const CalendarRoute = CalendarRouteImport.update({
   id: '/calendar',
   path: '/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnquiryRoute = EnquiryRouteImport.update({
+  id: '/enquiry',
+  path: '/enquiry',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FacilityRoute = FacilityRouteImport.update({
@@ -278,6 +284,7 @@ export interface FileRoutesByFullPath {
   '/alumni': typeof AlumniRoute
   '/anti-ragging': typeof AntiRaggingRoute
   '/calendar': typeof CalendarRoute
+  '/enquiry': typeof EnquiryRoute
   '/facility': typeof FacilityRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
@@ -322,6 +329,7 @@ export interface FileRoutesByTo {
   '/alumni': typeof AlumniRoute
   '/anti-ragging': typeof AntiRaggingRoute
   '/calendar': typeof CalendarRoute
+  '/enquiry': typeof EnquiryRoute
   '/facility': typeof FacilityRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
@@ -367,6 +375,7 @@ export interface FileRoutesById {
   '/alumni': typeof AlumniRoute
   '/anti-ragging': typeof AntiRaggingRoute
   '/calendar': typeof CalendarRoute
+  '/enquiry': typeof EnquiryRoute
   '/facility': typeof FacilityRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
@@ -413,6 +422,7 @@ export interface FileRouteTypes {
     | '/alumni'
     | '/anti-ragging'
     | '/calendar'
+    | '/enquiry'
     | '/facility'
     | '/gallery'
     | '/grievance'
@@ -457,6 +467,7 @@ export interface FileRouteTypes {
     | '/alumni'
     | '/anti-ragging'
     | '/calendar'
+    | '/enquiry'
     | '/facility'
     | '/gallery'
     | '/grievance'
@@ -501,6 +512,7 @@ export interface FileRouteTypes {
     | '/alumni'
     | '/anti-ragging'
     | '/calendar'
+    | '/enquiry'
     | '/facility'
     | '/gallery'
     | '/grievance'
@@ -546,6 +558,7 @@ export interface RootRouteChildren {
   AlumniRoute: typeof AlumniRoute
   AntiRaggingRoute: typeof AntiRaggingRoute
   CalendarRoute: typeof CalendarRoute
+  EnquiryRoute: typeof EnquiryRoute
   FacilityRoute: typeof FacilityRoute
   GalleryRoute: typeof GalleryRoute
   GrievanceRoute: typeof GrievanceRoute
@@ -632,6 +645,13 @@ declare module '@tanstack/react-router' {
       path: '/calendar'
       fullPath: '/calendar'
       preLoaderRoute: typeof CalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enquiry': {
+      id: '/enquiry'
+      path: '/enquiry'
+      fullPath: '/enquiry'
+      preLoaderRoute: typeof EnquiryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/facility': {
@@ -890,6 +910,7 @@ const rootRouteChildren: RootRouteChildren = {
   AlumniRoute: AlumniRoute,
   AntiRaggingRoute: AntiRaggingRoute,
   CalendarRoute: CalendarRoute,
+  EnquiryRoute: EnquiryRoute,
   FacilityRoute: FacilityRoute,
   GalleryRoute: GalleryRoute,
   GrievanceRoute: GrievanceRoute,
