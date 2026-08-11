@@ -10,11 +10,13 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AchievementsRouteImport } from './routes/achievements'
 import { Route as AicteRouteImport } from './routes/aicte'
 import { Route as AlumniRouteImport } from './routes/alumni'
 import { Route as AntiRaggingRouteImport } from './routes/anti-ragging'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as EnquiryRouteImport } from './routes/enquiry'
 import { Route as FacilityRouteImport } from './routes/facility'
@@ -35,6 +37,7 @@ import { Route as TransportationRouteImport } from './routes/transportation'
 import { Route as VcMessageRouteImport } from './routes/vc-message'
 import { Route as VisionMissionRouteImport } from './routes/vision-mission'
 import { Route as WomenCellRouteImport } from './routes/women-cell'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as AcademicsMinorDegreeRouteImport } from './routes/academics.minor-degree'
 import { Route as AcademicsMscItRouteImport } from './routes/academics.msc-it'
 import { Route as AcademicsPgdcsRouteImport } from './routes/academics.pgdcs'
@@ -56,6 +59,10 @@ import { Route as AcademicsDiplomaMechanicalRouteImport } from './routes/academi
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -81,6 +88,11 @@ const AlumniRoute = AlumniRouteImport.update({
 const AntiRaggingRoute = AntiRaggingRouteImport.update({
   id: '/anti-ragging',
   path: '/anti-ragging',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CalendarRoute = CalendarRouteImport.update({
@@ -183,6 +195,11 @@ const WomenCellRoute = WomenCellRouteImport.update({
   path: '/women-cell',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AcademicsMinorDegreeRoute = AcademicsMinorDegreeRouteImport.update({
   id: '/academics/minor-degree',
   path: '/academics/minor-degree',
@@ -283,6 +300,7 @@ export interface FileRoutesByFullPath {
   '/aicte': typeof AicteRoute
   '/alumni': typeof AlumniRoute
   '/anti-ragging': typeof AntiRaggingRoute
+  '/auth': typeof AuthRoute
   '/calendar': typeof CalendarRoute
   '/enquiry': typeof EnquiryRoute
   '/facility': typeof FacilityRoute
@@ -303,6 +321,7 @@ export interface FileRoutesByFullPath {
   '/vc-message': typeof VcMessageRoute
   '/vision-mission': typeof VisionMissionRoute
   '/women-cell': typeof WomenCellRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/academics/minor-degree': typeof AcademicsMinorDegreeRoute
   '/academics/msc-it': typeof AcademicsMscItRoute
   '/academics/pgdcs': typeof AcademicsPgdcsRoute
@@ -328,6 +347,7 @@ export interface FileRoutesByTo {
   '/aicte': typeof AicteRoute
   '/alumni': typeof AlumniRoute
   '/anti-ragging': typeof AntiRaggingRoute
+  '/auth': typeof AuthRoute
   '/calendar': typeof CalendarRoute
   '/enquiry': typeof EnquiryRoute
   '/facility': typeof FacilityRoute
@@ -348,6 +368,7 @@ export interface FileRoutesByTo {
   '/vc-message': typeof VcMessageRoute
   '/vision-mission': typeof VisionMissionRoute
   '/women-cell': typeof WomenCellRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/academics/minor-degree': typeof AcademicsMinorDegreeRoute
   '/academics/msc-it': typeof AcademicsMscItRoute
   '/academics/pgdcs': typeof AcademicsPgdcsRoute
@@ -369,11 +390,13 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/achievements': typeof AchievementsRoute
   '/aicte': typeof AicteRoute
   '/alumni': typeof AlumniRoute
   '/anti-ragging': typeof AntiRaggingRoute
+  '/auth': typeof AuthRoute
   '/calendar': typeof CalendarRoute
   '/enquiry': typeof EnquiryRoute
   '/facility': typeof FacilityRoute
@@ -394,6 +417,7 @@ export interface FileRoutesById {
   '/vc-message': typeof VcMessageRoute
   '/vision-mission': typeof VisionMissionRoute
   '/women-cell': typeof WomenCellRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/academics/minor-degree': typeof AcademicsMinorDegreeRoute
   '/academics/msc-it': typeof AcademicsMscItRoute
   '/academics/pgdcs': typeof AcademicsPgdcsRoute
@@ -421,6 +445,7 @@ export interface FileRouteTypes {
     | '/aicte'
     | '/alumni'
     | '/anti-ragging'
+    | '/auth'
     | '/calendar'
     | '/enquiry'
     | '/facility'
@@ -441,6 +466,7 @@ export interface FileRouteTypes {
     | '/vc-message'
     | '/vision-mission'
     | '/women-cell'
+    | '/admin'
     | '/academics/minor-degree'
     | '/academics/msc-it'
     | '/academics/pgdcs'
@@ -466,6 +492,7 @@ export interface FileRouteTypes {
     | '/aicte'
     | '/alumni'
     | '/anti-ragging'
+    | '/auth'
     | '/calendar'
     | '/enquiry'
     | '/facility'
@@ -486,6 +513,7 @@ export interface FileRouteTypes {
     | '/vc-message'
     | '/vision-mission'
     | '/women-cell'
+    | '/admin'
     | '/academics/minor-degree'
     | '/academics/msc-it'
     | '/academics/pgdcs'
@@ -506,11 +534,13 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/about'
     | '/achievements'
     | '/aicte'
     | '/alumni'
     | '/anti-ragging'
+    | '/auth'
     | '/calendar'
     | '/enquiry'
     | '/facility'
@@ -531,6 +561,7 @@ export interface FileRouteTypes {
     | '/vc-message'
     | '/vision-mission'
     | '/women-cell'
+    | '/_authenticated/admin'
     | '/academics/minor-degree'
     | '/academics/msc-it'
     | '/academics/pgdcs'
@@ -552,11 +583,13 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   AchievementsRoute: typeof AchievementsRoute
   AicteRoute: typeof AicteRoute
   AlumniRoute: typeof AlumniRoute
   AntiRaggingRoute: typeof AntiRaggingRoute
+  AuthRoute: typeof AuthRoute
   CalendarRoute: typeof CalendarRoute
   EnquiryRoute: typeof EnquiryRoute
   FacilityRoute: typeof FacilityRoute
@@ -605,6 +638,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -638,6 +678,13 @@ declare module '@tanstack/react-router' {
       path: '/anti-ragging'
       fullPath: '/anti-ragging'
       preLoaderRoute: typeof AntiRaggingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calendar': {
@@ -780,6 +827,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WomenCellRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/academics/minor-degree': {
       id: '/academics/minor-degree'
       path: '/academics/minor-degree'
@@ -902,13 +956,26 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   AchievementsRoute: AchievementsRoute,
   AicteRoute: AicteRoute,
   AlumniRoute: AlumniRoute,
   AntiRaggingRoute: AntiRaggingRoute,
+  AuthRoute: AuthRoute,
   CalendarRoute: CalendarRoute,
   EnquiryRoute: EnquiryRoute,
   FacilityRoute: FacilityRoute,

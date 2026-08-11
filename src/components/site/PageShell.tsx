@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export function PageShell({ title, subtitle, children }: { title: string; subtitle?: string; children: ReactNode }) {
+export function PageShell({ title, subtitle, children }: { title: string; subtitle?: string | undefined; children?: ReactNode }) {
   return (
     <>
       <div className="border-b-4 border-brand-red bg-brand-navy py-8">
@@ -14,6 +14,6 @@ export function PageShell({ title, subtitle, children }: { title: string; subtit
   );
 }
 
-export function Prose({ children }: { children: ReactNode }) {
+export function Prose({ children }: { children?: ReactNode }) {
   return <div className="space-y-4 text-[15px] leading-relaxed text-foreground/90">{children}</div>;
 }

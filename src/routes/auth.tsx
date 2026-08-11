@@ -41,7 +41,7 @@ function AuthPage() {
     setBusy(true);
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setBusy(false);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     navigate({ to: "/admin", replace: true });
   }
 
@@ -54,7 +54,7 @@ function AuthPage() {
       options: { emailRedirectTo: window.location.origin + "/auth", data: { full_name: fullName } },
     });
     setBusy(false);
-    if (error) return toast.error(error.message);
+    if (error) { toast.error(error.message); return; }
     toast.success("Account created. Check your email to confirm, then ask an administrator to approve your access.");
   }
 

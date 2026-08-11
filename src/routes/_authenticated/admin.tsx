@@ -69,7 +69,7 @@ function Manager({ table }: { table: Table }) {
     const payload: Record<string, unknown> = { sort_order: (data?.length ?? 0) + 1, is_published: true };
     for (const f of fields) payload[f.key] = draft[f.key]?.trim() || null;
     const { error: err } = await supabase.from(table).insert(payload as never);
-    if (err) return toast.error(err.message);
+    if (err) { toast.error(err.message); return; }
     setDraft({});
     invalidate();
     toast.success("Added");
@@ -77,13 +77,13 @@ function Manager({ table }: { table: Table }) {
 
   async function patch(id: string, values: Record<string, unknown>) {
     const { error: err } = await supabase.from(table).update(values as never).eq("id", id);
-    if (err) return toast.error(err.message);
+    if (err) { toast.error(err.message); return; }
     invalidate();
   }
 
   async function remove(id: string) {
     const { error: err } = await supabase.from(table).delete().eq("id", id);
-    if (err) return toast.error(err.message);
+    if (err) { toast.error(err.message); return; }
     invalidate();
     toast.success("Deleted");
   }
@@ -176,7 +176,7 @@ function AdminPage() {
     void (async () => {
       const { data } = await supabase.auth.getUser();
       setEmail(data.user?.email ?? null);
-      if (!data.user) return setRole(null);
+      if (!data.user) { setRole(null); return; }
       const { data: roles } = await supabase.from("user_roles").select("role").eq("user_id", data.user.id);
       setRole(roles?.[0]?.role ?? null);
     })();
@@ -192,7 +192,7 @@ function AdminPage() {
   }
 
   return (
-    <PageShell title="Admin Panel" subtitle={email ? `Signed in as ${email}` : undefined}>
+    <PageShell title="Admin Panel" subtitle={email ? `Signed in as ${email}` : ""}>
       <div className="mb-6 flex justify-end">
         <Button variant="outline" onClick={() => void signOut()}>
           <LogOut className="mr-1 h-4 w-4" /> Sign out
