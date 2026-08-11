@@ -10,33 +10,623 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AchievementsRouteImport } from './routes/achievements'
+import { Route as AicteRouteImport } from './routes/aicte'
+import { Route as AlumniRouteImport } from './routes/alumni'
+import { Route as AntiRaggingRouteImport } from './routes/anti-ragging'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as EnquiryRouteImport } from './routes/enquiry'
+import { Route as FacilityRouteImport } from './routes/facility'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as GrievanceRouteImport } from './routes/grievance'
+import { Route as InstituteCommitteeRouteImport } from './routes/institute-committee'
+import { Route as MandatoryDisclosureRouteImport } from './routes/mandatory-disclosure'
+import { Route as MediaCoverageRouteImport } from './routes/media-coverage'
+import { Route as PlacementRouteImport } from './routes/placement'
+import { Route as PrincipalMessageRouteImport } from './routes/principal-message'
+import { Route as RegistrarMessageRouteImport } from './routes/registrar-message'
+import { Route as RegulationsRouteImport } from './routes/regulations'
+import { Route as SiemensRouteImport } from './routes/siemens'
+import { Route as SolarEnergyRouteImport } from './routes/solar-energy'
+import { Route as StudentsRouteImport } from './routes/students'
+import { Route as StudentsClubsRouteImport } from './routes/students-clubs'
+import { Route as TransportationRouteImport } from './routes/transportation'
+import { Route as VcMessageRouteImport } from './routes/vc-message'
+import { Route as VisionMissionRouteImport } from './routes/vision-mission'
+import { Route as WomenCellRouteImport } from './routes/women-cell'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as AcademicsMinorDegreeRouteImport } from './routes/academics.minor-degree'
+import { Route as AcademicsMscItRouteImport } from './routes/academics.msc-it'
+import { Route as AcademicsPgdcsRouteImport } from './routes/academics.pgdcs'
+import { Route as AdmissionsDegreeRouteImport } from './routes/admissions.degree'
+import { Route as AdmissionsDiplomaRouteImport } from './routes/admissions.diploma'
+import { Route as AdmissionsMscItRouteImport } from './routes/admissions.msc-it'
+import { Route as AdmissionsPgdcsRouteImport } from './routes/admissions.pgdcs'
+import { Route as AcademicsDegreeCivilRouteImport } from './routes/academics.degree.civil'
+import { Route as AcademicsDegreeComputerRouteImport } from './routes/academics.degree.computer'
+import { Route as AcademicsDegreeElectricalRouteImport } from './routes/academics.degree.electrical'
+import { Route as AcademicsDegreeHumanitiesRouteImport } from './routes/academics.degree.humanities'
+import { Route as AcademicsDegreeMechanicalRouteImport } from './routes/academics.degree.mechanical'
+import { Route as AcademicsDiplomaCivilRouteImport } from './routes/academics.diploma.civil'
+import { Route as AcademicsDiplomaComputerRouteImport } from './routes/academics.diploma.computer'
+import { Route as AcademicsDiplomaElectricalRouteImport } from './routes/academics.diploma.electrical'
+import { Route as AcademicsDiplomaHumanitiesRouteImport } from './routes/academics.diploma.humanities'
+import { Route as AcademicsDiplomaMechanicalRouteImport } from './routes/academics.diploma.mechanical'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AchievementsRoute = AchievementsRouteImport.update({
+  id: '/achievements',
+  path: '/achievements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AicteRoute = AicteRouteImport.update({
+  id: '/aicte',
+  path: '/aicte',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlumniRoute = AlumniRouteImport.update({
+  id: '/alumni',
+  path: '/alumni',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AntiRaggingRoute = AntiRaggingRouteImport.update({
+  id: '/anti-ragging',
+  path: '/anti-ragging',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalendarRoute = CalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnquiryRoute = EnquiryRouteImport.update({
+  id: '/enquiry',
+  path: '/enquiry',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FacilityRoute = FacilityRouteImport.update({
+  id: '/facility',
+  path: '/facility',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrievanceRoute = GrievanceRouteImport.update({
+  id: '/grievance',
+  path: '/grievance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstituteCommitteeRoute = InstituteCommitteeRouteImport.update({
+  id: '/institute-committee',
+  path: '/institute-committee',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MandatoryDisclosureRoute = MandatoryDisclosureRouteImport.update({
+  id: '/mandatory-disclosure',
+  path: '/mandatory-disclosure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MediaCoverageRoute = MediaCoverageRouteImport.update({
+  id: '/media-coverage',
+  path: '/media-coverage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlacementRoute = PlacementRouteImport.update({
+  id: '/placement',
+  path: '/placement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrincipalMessageRoute = PrincipalMessageRouteImport.update({
+  id: '/principal-message',
+  path: '/principal-message',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegistrarMessageRoute = RegistrarMessageRouteImport.update({
+  id: '/registrar-message',
+  path: '/registrar-message',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegulationsRoute = RegulationsRouteImport.update({
+  id: '/regulations',
+  path: '/regulations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiemensRoute = SiemensRouteImport.update({
+  id: '/siemens',
+  path: '/siemens',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolarEnergyRoute = SolarEnergyRouteImport.update({
+  id: '/solar-energy',
+  path: '/solar-energy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudentsRoute = StudentsRouteImport.update({
+  id: '/students',
+  path: '/students',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudentsClubsRoute = StudentsClubsRouteImport.update({
+  id: '/students-clubs',
+  path: '/students-clubs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransportationRoute = TransportationRouteImport.update({
+  id: '/transportation',
+  path: '/transportation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VcMessageRoute = VcMessageRouteImport.update({
+  id: '/vc-message',
+  path: '/vc-message',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisionMissionRoute = VisionMissionRouteImport.update({
+  id: '/vision-mission',
+  path: '/vision-mission',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WomenCellRoute = WomenCellRouteImport.update({
+  id: '/women-cell',
+  path: '/women-cell',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AcademicsMinorDegreeRoute = AcademicsMinorDegreeRouteImport.update({
+  id: '/academics/minor-degree',
+  path: '/academics/minor-degree',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsMscItRoute = AcademicsMscItRouteImport.update({
+  id: '/academics/msc-it',
+  path: '/academics/msc-it',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsPgdcsRoute = AcademicsPgdcsRouteImport.update({
+  id: '/academics/pgdcs',
+  path: '/academics/pgdcs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsDegreeRoute = AdmissionsDegreeRouteImport.update({
+  id: '/admissions/degree',
+  path: '/admissions/degree',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsDiplomaRoute = AdmissionsDiplomaRouteImport.update({
+  id: '/admissions/diploma',
+  path: '/admissions/diploma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsMscItRoute = AdmissionsMscItRouteImport.update({
+  id: '/admissions/msc-it',
+  path: '/admissions/msc-it',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdmissionsPgdcsRoute = AdmissionsPgdcsRouteImport.update({
+  id: '/admissions/pgdcs',
+  path: '/admissions/pgdcs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsDegreeCivilRoute = AcademicsDegreeCivilRouteImport.update({
+  id: '/academics/degree/civil',
+  path: '/academics/degree/civil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsDegreeComputerRoute = AcademicsDegreeComputerRouteImport.update({
+  id: '/academics/degree/computer',
+  path: '/academics/degree/computer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsDegreeElectricalRoute =
+  AcademicsDegreeElectricalRouteImport.update({
+    id: '/academics/degree/electrical',
+    path: '/academics/degree/electrical',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AcademicsDegreeHumanitiesRoute =
+  AcademicsDegreeHumanitiesRouteImport.update({
+    id: '/academics/degree/humanities',
+    path: '/academics/degree/humanities',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AcademicsDegreeMechanicalRoute =
+  AcademicsDegreeMechanicalRouteImport.update({
+    id: '/academics/degree/mechanical',
+    path: '/academics/degree/mechanical',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AcademicsDiplomaCivilRoute = AcademicsDiplomaCivilRouteImport.update({
+  id: '/academics/diploma/civil',
+  path: '/academics/diploma/civil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AcademicsDiplomaComputerRoute =
+  AcademicsDiplomaComputerRouteImport.update({
+    id: '/academics/diploma/computer',
+    path: '/academics/diploma/computer',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AcademicsDiplomaElectricalRoute =
+  AcademicsDiplomaElectricalRouteImport.update({
+    id: '/academics/diploma/electrical',
+    path: '/academics/diploma/electrical',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AcademicsDiplomaHumanitiesRoute =
+  AcademicsDiplomaHumanitiesRouteImport.update({
+    id: '/academics/diploma/humanities',
+    path: '/academics/diploma/humanities',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AcademicsDiplomaMechanicalRoute =
+  AcademicsDiplomaMechanicalRouteImport.update({
+    id: '/academics/diploma/mechanical',
+    path: '/academics/diploma/mechanical',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/achievements': typeof AchievementsRoute
+  '/aicte': typeof AicteRoute
+  '/alumni': typeof AlumniRoute
+  '/anti-ragging': typeof AntiRaggingRoute
+  '/auth': typeof AuthRoute
+  '/calendar': typeof CalendarRoute
+  '/enquiry': typeof EnquiryRoute
+  '/facility': typeof FacilityRoute
+  '/gallery': typeof GalleryRoute
+  '/grievance': typeof GrievanceRoute
+  '/institute-committee': typeof InstituteCommitteeRoute
+  '/mandatory-disclosure': typeof MandatoryDisclosureRoute
+  '/media-coverage': typeof MediaCoverageRoute
+  '/placement': typeof PlacementRoute
+  '/principal-message': typeof PrincipalMessageRoute
+  '/registrar-message': typeof RegistrarMessageRoute
+  '/regulations': typeof RegulationsRoute
+  '/siemens': typeof SiemensRoute
+  '/solar-energy': typeof SolarEnergyRoute
+  '/students': typeof StudentsRoute
+  '/students-clubs': typeof StudentsClubsRoute
+  '/transportation': typeof TransportationRoute
+  '/vc-message': typeof VcMessageRoute
+  '/vision-mission': typeof VisionMissionRoute
+  '/women-cell': typeof WomenCellRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/academics/minor-degree': typeof AcademicsMinorDegreeRoute
+  '/academics/msc-it': typeof AcademicsMscItRoute
+  '/academics/pgdcs': typeof AcademicsPgdcsRoute
+  '/admissions/degree': typeof AdmissionsDegreeRoute
+  '/admissions/diploma': typeof AdmissionsDiplomaRoute
+  '/admissions/msc-it': typeof AdmissionsMscItRoute
+  '/admissions/pgdcs': typeof AdmissionsPgdcsRoute
+  '/academics/degree/civil': typeof AcademicsDegreeCivilRoute
+  '/academics/degree/computer': typeof AcademicsDegreeComputerRoute
+  '/academics/degree/electrical': typeof AcademicsDegreeElectricalRoute
+  '/academics/degree/humanities': typeof AcademicsDegreeHumanitiesRoute
+  '/academics/degree/mechanical': typeof AcademicsDegreeMechanicalRoute
+  '/academics/diploma/civil': typeof AcademicsDiplomaCivilRoute
+  '/academics/diploma/computer': typeof AcademicsDiplomaComputerRoute
+  '/academics/diploma/electrical': typeof AcademicsDiplomaElectricalRoute
+  '/academics/diploma/humanities': typeof AcademicsDiplomaHumanitiesRoute
+  '/academics/diploma/mechanical': typeof AcademicsDiplomaMechanicalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/achievements': typeof AchievementsRoute
+  '/aicte': typeof AicteRoute
+  '/alumni': typeof AlumniRoute
+  '/anti-ragging': typeof AntiRaggingRoute
+  '/auth': typeof AuthRoute
+  '/calendar': typeof CalendarRoute
+  '/enquiry': typeof EnquiryRoute
+  '/facility': typeof FacilityRoute
+  '/gallery': typeof GalleryRoute
+  '/grievance': typeof GrievanceRoute
+  '/institute-committee': typeof InstituteCommitteeRoute
+  '/mandatory-disclosure': typeof MandatoryDisclosureRoute
+  '/media-coverage': typeof MediaCoverageRoute
+  '/placement': typeof PlacementRoute
+  '/principal-message': typeof PrincipalMessageRoute
+  '/registrar-message': typeof RegistrarMessageRoute
+  '/regulations': typeof RegulationsRoute
+  '/siemens': typeof SiemensRoute
+  '/solar-energy': typeof SolarEnergyRoute
+  '/students': typeof StudentsRoute
+  '/students-clubs': typeof StudentsClubsRoute
+  '/transportation': typeof TransportationRoute
+  '/vc-message': typeof VcMessageRoute
+  '/vision-mission': typeof VisionMissionRoute
+  '/women-cell': typeof WomenCellRoute
+  '/admin': typeof AuthenticatedAdminRoute
+  '/academics/minor-degree': typeof AcademicsMinorDegreeRoute
+  '/academics/msc-it': typeof AcademicsMscItRoute
+  '/academics/pgdcs': typeof AcademicsPgdcsRoute
+  '/admissions/degree': typeof AdmissionsDegreeRoute
+  '/admissions/diploma': typeof AdmissionsDiplomaRoute
+  '/admissions/msc-it': typeof AdmissionsMscItRoute
+  '/admissions/pgdcs': typeof AdmissionsPgdcsRoute
+  '/academics/degree/civil': typeof AcademicsDegreeCivilRoute
+  '/academics/degree/computer': typeof AcademicsDegreeComputerRoute
+  '/academics/degree/electrical': typeof AcademicsDegreeElectricalRoute
+  '/academics/degree/humanities': typeof AcademicsDegreeHumanitiesRoute
+  '/academics/degree/mechanical': typeof AcademicsDegreeMechanicalRoute
+  '/academics/diploma/civil': typeof AcademicsDiplomaCivilRoute
+  '/academics/diploma/computer': typeof AcademicsDiplomaComputerRoute
+  '/academics/diploma/electrical': typeof AcademicsDiplomaElectricalRoute
+  '/academics/diploma/humanities': typeof AcademicsDiplomaHumanitiesRoute
+  '/academics/diploma/mechanical': typeof AcademicsDiplomaMechanicalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/about': typeof AboutRoute
+  '/achievements': typeof AchievementsRoute
+  '/aicte': typeof AicteRoute
+  '/alumni': typeof AlumniRoute
+  '/anti-ragging': typeof AntiRaggingRoute
+  '/auth': typeof AuthRoute
+  '/calendar': typeof CalendarRoute
+  '/enquiry': typeof EnquiryRoute
+  '/facility': typeof FacilityRoute
+  '/gallery': typeof GalleryRoute
+  '/grievance': typeof GrievanceRoute
+  '/institute-committee': typeof InstituteCommitteeRoute
+  '/mandatory-disclosure': typeof MandatoryDisclosureRoute
+  '/media-coverage': typeof MediaCoverageRoute
+  '/placement': typeof PlacementRoute
+  '/principal-message': typeof PrincipalMessageRoute
+  '/registrar-message': typeof RegistrarMessageRoute
+  '/regulations': typeof RegulationsRoute
+  '/siemens': typeof SiemensRoute
+  '/solar-energy': typeof SolarEnergyRoute
+  '/students': typeof StudentsRoute
+  '/students-clubs': typeof StudentsClubsRoute
+  '/transportation': typeof TransportationRoute
+  '/vc-message': typeof VcMessageRoute
+  '/vision-mission': typeof VisionMissionRoute
+  '/women-cell': typeof WomenCellRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/academics/minor-degree': typeof AcademicsMinorDegreeRoute
+  '/academics/msc-it': typeof AcademicsMscItRoute
+  '/academics/pgdcs': typeof AcademicsPgdcsRoute
+  '/admissions/degree': typeof AdmissionsDegreeRoute
+  '/admissions/diploma': typeof AdmissionsDiplomaRoute
+  '/admissions/msc-it': typeof AdmissionsMscItRoute
+  '/admissions/pgdcs': typeof AdmissionsPgdcsRoute
+  '/academics/degree/civil': typeof AcademicsDegreeCivilRoute
+  '/academics/degree/computer': typeof AcademicsDegreeComputerRoute
+  '/academics/degree/electrical': typeof AcademicsDegreeElectricalRoute
+  '/academics/degree/humanities': typeof AcademicsDegreeHumanitiesRoute
+  '/academics/degree/mechanical': typeof AcademicsDegreeMechanicalRoute
+  '/academics/diploma/civil': typeof AcademicsDiplomaCivilRoute
+  '/academics/diploma/computer': typeof AcademicsDiplomaComputerRoute
+  '/academics/diploma/electrical': typeof AcademicsDiplomaElectricalRoute
+  '/academics/diploma/humanities': typeof AcademicsDiplomaHumanitiesRoute
+  '/academics/diploma/mechanical': typeof AcademicsDiplomaMechanicalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/achievements'
+    | '/aicte'
+    | '/alumni'
+    | '/anti-ragging'
+    | '/auth'
+    | '/calendar'
+    | '/enquiry'
+    | '/facility'
+    | '/gallery'
+    | '/grievance'
+    | '/institute-committee'
+    | '/mandatory-disclosure'
+    | '/media-coverage'
+    | '/placement'
+    | '/principal-message'
+    | '/registrar-message'
+    | '/regulations'
+    | '/siemens'
+    | '/solar-energy'
+    | '/students'
+    | '/students-clubs'
+    | '/transportation'
+    | '/vc-message'
+    | '/vision-mission'
+    | '/women-cell'
+    | '/admin'
+    | '/academics/minor-degree'
+    | '/academics/msc-it'
+    | '/academics/pgdcs'
+    | '/admissions/degree'
+    | '/admissions/diploma'
+    | '/admissions/msc-it'
+    | '/admissions/pgdcs'
+    | '/academics/degree/civil'
+    | '/academics/degree/computer'
+    | '/academics/degree/electrical'
+    | '/academics/degree/humanities'
+    | '/academics/degree/mechanical'
+    | '/academics/diploma/civil'
+    | '/academics/diploma/computer'
+    | '/academics/diploma/electrical'
+    | '/academics/diploma/humanities'
+    | '/academics/diploma/mechanical'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/achievements'
+    | '/aicte'
+    | '/alumni'
+    | '/anti-ragging'
+    | '/auth'
+    | '/calendar'
+    | '/enquiry'
+    | '/facility'
+    | '/gallery'
+    | '/grievance'
+    | '/institute-committee'
+    | '/mandatory-disclosure'
+    | '/media-coverage'
+    | '/placement'
+    | '/principal-message'
+    | '/registrar-message'
+    | '/regulations'
+    | '/siemens'
+    | '/solar-energy'
+    | '/students'
+    | '/students-clubs'
+    | '/transportation'
+    | '/vc-message'
+    | '/vision-mission'
+    | '/women-cell'
+    | '/admin'
+    | '/academics/minor-degree'
+    | '/academics/msc-it'
+    | '/academics/pgdcs'
+    | '/admissions/degree'
+    | '/admissions/diploma'
+    | '/admissions/msc-it'
+    | '/admissions/pgdcs'
+    | '/academics/degree/civil'
+    | '/academics/degree/computer'
+    | '/academics/degree/electrical'
+    | '/academics/degree/humanities'
+    | '/academics/degree/mechanical'
+    | '/academics/diploma/civil'
+    | '/academics/diploma/computer'
+    | '/academics/diploma/electrical'
+    | '/academics/diploma/humanities'
+    | '/academics/diploma/mechanical'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/about'
+    | '/achievements'
+    | '/aicte'
+    | '/alumni'
+    | '/anti-ragging'
+    | '/auth'
+    | '/calendar'
+    | '/enquiry'
+    | '/facility'
+    | '/gallery'
+    | '/grievance'
+    | '/institute-committee'
+    | '/mandatory-disclosure'
+    | '/media-coverage'
+    | '/placement'
+    | '/principal-message'
+    | '/registrar-message'
+    | '/regulations'
+    | '/siemens'
+    | '/solar-energy'
+    | '/students'
+    | '/students-clubs'
+    | '/transportation'
+    | '/vc-message'
+    | '/vision-mission'
+    | '/women-cell'
+    | '/_authenticated/admin'
+    | '/academics/minor-degree'
+    | '/academics/msc-it'
+    | '/academics/pgdcs'
+    | '/admissions/degree'
+    | '/admissions/diploma'
+    | '/admissions/msc-it'
+    | '/admissions/pgdcs'
+    | '/academics/degree/civil'
+    | '/academics/degree/computer'
+    | '/academics/degree/electrical'
+    | '/academics/degree/humanities'
+    | '/academics/degree/mechanical'
+    | '/academics/diploma/civil'
+    | '/academics/diploma/computer'
+    | '/academics/diploma/electrical'
+    | '/academics/diploma/humanities'
+    | '/academics/diploma/mechanical'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AboutRoute: typeof AboutRoute
+  AchievementsRoute: typeof AchievementsRoute
+  AicteRoute: typeof AicteRoute
+  AlumniRoute: typeof AlumniRoute
+  AntiRaggingRoute: typeof AntiRaggingRoute
+  AuthRoute: typeof AuthRoute
+  CalendarRoute: typeof CalendarRoute
+  EnquiryRoute: typeof EnquiryRoute
+  FacilityRoute: typeof FacilityRoute
+  GalleryRoute: typeof GalleryRoute
+  GrievanceRoute: typeof GrievanceRoute
+  InstituteCommitteeRoute: typeof InstituteCommitteeRoute
+  MandatoryDisclosureRoute: typeof MandatoryDisclosureRoute
+  MediaCoverageRoute: typeof MediaCoverageRoute
+  PlacementRoute: typeof PlacementRoute
+  PrincipalMessageRoute: typeof PrincipalMessageRoute
+  RegistrarMessageRoute: typeof RegistrarMessageRoute
+  RegulationsRoute: typeof RegulationsRoute
+  SiemensRoute: typeof SiemensRoute
+  SolarEnergyRoute: typeof SolarEnergyRoute
+  StudentsRoute: typeof StudentsRoute
+  StudentsClubsRoute: typeof StudentsClubsRoute
+  TransportationRoute: typeof TransportationRoute
+  VcMessageRoute: typeof VcMessageRoute
+  VisionMissionRoute: typeof VisionMissionRoute
+  WomenCellRoute: typeof WomenCellRoute
+  AcademicsMinorDegreeRoute: typeof AcademicsMinorDegreeRoute
+  AcademicsMscItRoute: typeof AcademicsMscItRoute
+  AcademicsPgdcsRoute: typeof AcademicsPgdcsRoute
+  AdmissionsDegreeRoute: typeof AdmissionsDegreeRoute
+  AdmissionsDiplomaRoute: typeof AdmissionsDiplomaRoute
+  AdmissionsMscItRoute: typeof AdmissionsMscItRoute
+  AdmissionsPgdcsRoute: typeof AdmissionsPgdcsRoute
+  AcademicsDegreeCivilRoute: typeof AcademicsDegreeCivilRoute
+  AcademicsDegreeComputerRoute: typeof AcademicsDegreeComputerRoute
+  AcademicsDegreeElectricalRoute: typeof AcademicsDegreeElectricalRoute
+  AcademicsDegreeHumanitiesRoute: typeof AcademicsDegreeHumanitiesRoute
+  AcademicsDegreeMechanicalRoute: typeof AcademicsDegreeMechanicalRoute
+  AcademicsDiplomaCivilRoute: typeof AcademicsDiplomaCivilRoute
+  AcademicsDiplomaComputerRoute: typeof AcademicsDiplomaComputerRoute
+  AcademicsDiplomaElectricalRoute: typeof AcademicsDiplomaElectricalRoute
+  AcademicsDiplomaHumanitiesRoute: typeof AcademicsDiplomaHumanitiesRoute
+  AcademicsDiplomaMechanicalRoute: typeof AcademicsDiplomaMechanicalRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +638,382 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/achievements': {
+      id: '/achievements'
+      path: '/achievements'
+      fullPath: '/achievements'
+      preLoaderRoute: typeof AchievementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aicte': {
+      id: '/aicte'
+      path: '/aicte'
+      fullPath: '/aicte'
+      preLoaderRoute: typeof AicteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/alumni': {
+      id: '/alumni'
+      path: '/alumni'
+      fullPath: '/alumni'
+      preLoaderRoute: typeof AlumniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/anti-ragging': {
+      id: '/anti-ragging'
+      path: '/anti-ragging'
+      fullPath: '/anti-ragging'
+      preLoaderRoute: typeof AntiRaggingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calendar': {
+      id: '/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof CalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enquiry': {
+      id: '/enquiry'
+      path: '/enquiry'
+      fullPath: '/enquiry'
+      preLoaderRoute: typeof EnquiryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/facility': {
+      id: '/facility'
+      path: '/facility'
+      fullPath: '/facility'
+      preLoaderRoute: typeof FacilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grievance': {
+      id: '/grievance'
+      path: '/grievance'
+      fullPath: '/grievance'
+      preLoaderRoute: typeof GrievanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/institute-committee': {
+      id: '/institute-committee'
+      path: '/institute-committee'
+      fullPath: '/institute-committee'
+      preLoaderRoute: typeof InstituteCommitteeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mandatory-disclosure': {
+      id: '/mandatory-disclosure'
+      path: '/mandatory-disclosure'
+      fullPath: '/mandatory-disclosure'
+      preLoaderRoute: typeof MandatoryDisclosureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/media-coverage': {
+      id: '/media-coverage'
+      path: '/media-coverage'
+      fullPath: '/media-coverage'
+      preLoaderRoute: typeof MediaCoverageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/placement': {
+      id: '/placement'
+      path: '/placement'
+      fullPath: '/placement'
+      preLoaderRoute: typeof PlacementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/principal-message': {
+      id: '/principal-message'
+      path: '/principal-message'
+      fullPath: '/principal-message'
+      preLoaderRoute: typeof PrincipalMessageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/registrar-message': {
+      id: '/registrar-message'
+      path: '/registrar-message'
+      fullPath: '/registrar-message'
+      preLoaderRoute: typeof RegistrarMessageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/regulations': {
+      id: '/regulations'
+      path: '/regulations'
+      fullPath: '/regulations'
+      preLoaderRoute: typeof RegulationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/siemens': {
+      id: '/siemens'
+      path: '/siemens'
+      fullPath: '/siemens'
+      preLoaderRoute: typeof SiemensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solar-energy': {
+      id: '/solar-energy'
+      path: '/solar-energy'
+      fullPath: '/solar-energy'
+      preLoaderRoute: typeof SolarEnergyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/students': {
+      id: '/students'
+      path: '/students'
+      fullPath: '/students'
+      preLoaderRoute: typeof StudentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/students-clubs': {
+      id: '/students-clubs'
+      path: '/students-clubs'
+      fullPath: '/students-clubs'
+      preLoaderRoute: typeof StudentsClubsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transportation': {
+      id: '/transportation'
+      path: '/transportation'
+      fullPath: '/transportation'
+      preLoaderRoute: typeof TransportationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vc-message': {
+      id: '/vc-message'
+      path: '/vc-message'
+      fullPath: '/vc-message'
+      preLoaderRoute: typeof VcMessageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vision-mission': {
+      id: '/vision-mission'
+      path: '/vision-mission'
+      fullPath: '/vision-mission'
+      preLoaderRoute: typeof VisionMissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/women-cell': {
+      id: '/women-cell'
+      path: '/women-cell'
+      fullPath: '/women-cell'
+      preLoaderRoute: typeof WomenCellRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/academics/minor-degree': {
+      id: '/academics/minor-degree'
+      path: '/academics/minor-degree'
+      fullPath: '/academics/minor-degree'
+      preLoaderRoute: typeof AcademicsMinorDegreeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/msc-it': {
+      id: '/academics/msc-it'
+      path: '/academics/msc-it'
+      fullPath: '/academics/msc-it'
+      preLoaderRoute: typeof AcademicsMscItRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/pgdcs': {
+      id: '/academics/pgdcs'
+      path: '/academics/pgdcs'
+      fullPath: '/academics/pgdcs'
+      preLoaderRoute: typeof AcademicsPgdcsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions/degree': {
+      id: '/admissions/degree'
+      path: '/admissions/degree'
+      fullPath: '/admissions/degree'
+      preLoaderRoute: typeof AdmissionsDegreeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions/diploma': {
+      id: '/admissions/diploma'
+      path: '/admissions/diploma'
+      fullPath: '/admissions/diploma'
+      preLoaderRoute: typeof AdmissionsDiplomaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions/msc-it': {
+      id: '/admissions/msc-it'
+      path: '/admissions/msc-it'
+      fullPath: '/admissions/msc-it'
+      preLoaderRoute: typeof AdmissionsMscItRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admissions/pgdcs': {
+      id: '/admissions/pgdcs'
+      path: '/admissions/pgdcs'
+      fullPath: '/admissions/pgdcs'
+      preLoaderRoute: typeof AdmissionsPgdcsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/degree/civil': {
+      id: '/academics/degree/civil'
+      path: '/academics/degree/civil'
+      fullPath: '/academics/degree/civil'
+      preLoaderRoute: typeof AcademicsDegreeCivilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/degree/computer': {
+      id: '/academics/degree/computer'
+      path: '/academics/degree/computer'
+      fullPath: '/academics/degree/computer'
+      preLoaderRoute: typeof AcademicsDegreeComputerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/degree/electrical': {
+      id: '/academics/degree/electrical'
+      path: '/academics/degree/electrical'
+      fullPath: '/academics/degree/electrical'
+      preLoaderRoute: typeof AcademicsDegreeElectricalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/degree/humanities': {
+      id: '/academics/degree/humanities'
+      path: '/academics/degree/humanities'
+      fullPath: '/academics/degree/humanities'
+      preLoaderRoute: typeof AcademicsDegreeHumanitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/degree/mechanical': {
+      id: '/academics/degree/mechanical'
+      path: '/academics/degree/mechanical'
+      fullPath: '/academics/degree/mechanical'
+      preLoaderRoute: typeof AcademicsDegreeMechanicalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/diploma/civil': {
+      id: '/academics/diploma/civil'
+      path: '/academics/diploma/civil'
+      fullPath: '/academics/diploma/civil'
+      preLoaderRoute: typeof AcademicsDiplomaCivilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/diploma/computer': {
+      id: '/academics/diploma/computer'
+      path: '/academics/diploma/computer'
+      fullPath: '/academics/diploma/computer'
+      preLoaderRoute: typeof AcademicsDiplomaComputerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/diploma/electrical': {
+      id: '/academics/diploma/electrical'
+      path: '/academics/diploma/electrical'
+      fullPath: '/academics/diploma/electrical'
+      preLoaderRoute: typeof AcademicsDiplomaElectricalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/diploma/humanities': {
+      id: '/academics/diploma/humanities'
+      path: '/academics/diploma/humanities'
+      fullPath: '/academics/diploma/humanities'
+      preLoaderRoute: typeof AcademicsDiplomaHumanitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/academics/diploma/mechanical': {
+      id: '/academics/diploma/mechanical'
+      path: '/academics/diploma/mechanical'
+      fullPath: '/academics/diploma/mechanical'
+      preLoaderRoute: typeof AcademicsDiplomaMechanicalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AboutRoute: AboutRoute,
+  AchievementsRoute: AchievementsRoute,
+  AicteRoute: AicteRoute,
+  AlumniRoute: AlumniRoute,
+  AntiRaggingRoute: AntiRaggingRoute,
+  AuthRoute: AuthRoute,
+  CalendarRoute: CalendarRoute,
+  EnquiryRoute: EnquiryRoute,
+  FacilityRoute: FacilityRoute,
+  GalleryRoute: GalleryRoute,
+  GrievanceRoute: GrievanceRoute,
+  InstituteCommitteeRoute: InstituteCommitteeRoute,
+  MandatoryDisclosureRoute: MandatoryDisclosureRoute,
+  MediaCoverageRoute: MediaCoverageRoute,
+  PlacementRoute: PlacementRoute,
+  PrincipalMessageRoute: PrincipalMessageRoute,
+  RegistrarMessageRoute: RegistrarMessageRoute,
+  RegulationsRoute: RegulationsRoute,
+  SiemensRoute: SiemensRoute,
+  SolarEnergyRoute: SolarEnergyRoute,
+  StudentsRoute: StudentsRoute,
+  StudentsClubsRoute: StudentsClubsRoute,
+  TransportationRoute: TransportationRoute,
+  VcMessageRoute: VcMessageRoute,
+  VisionMissionRoute: VisionMissionRoute,
+  WomenCellRoute: WomenCellRoute,
+  AcademicsMinorDegreeRoute: AcademicsMinorDegreeRoute,
+  AcademicsMscItRoute: AcademicsMscItRoute,
+  AcademicsPgdcsRoute: AcademicsPgdcsRoute,
+  AdmissionsDegreeRoute: AdmissionsDegreeRoute,
+  AdmissionsDiplomaRoute: AdmissionsDiplomaRoute,
+  AdmissionsMscItRoute: AdmissionsMscItRoute,
+  AdmissionsPgdcsRoute: AdmissionsPgdcsRoute,
+  AcademicsDegreeCivilRoute: AcademicsDegreeCivilRoute,
+  AcademicsDegreeComputerRoute: AcademicsDegreeComputerRoute,
+  AcademicsDegreeElectricalRoute: AcademicsDegreeElectricalRoute,
+  AcademicsDegreeHumanitiesRoute: AcademicsDegreeHumanitiesRoute,
+  AcademicsDegreeMechanicalRoute: AcademicsDegreeMechanicalRoute,
+  AcademicsDiplomaCivilRoute: AcademicsDiplomaCivilRoute,
+  AcademicsDiplomaComputerRoute: AcademicsDiplomaComputerRoute,
+  AcademicsDiplomaElectricalRoute: AcademicsDiplomaElectricalRoute,
+  AcademicsDiplomaHumanitiesRoute: AcademicsDiplomaHumanitiesRoute,
+  AcademicsDiplomaMechanicalRoute: AcademicsDiplomaMechanicalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
