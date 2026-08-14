@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { EASE_SOFT } from "@/components/motion/motion-primitives";
 
 type Banner = { id: string; image_url: string; caption: string | null; link_url: string | null };
 
@@ -22,9 +24,20 @@ export function HomeSlider({ banners }: { banners: Banner[] }) {
           <div key={b.id} className="relative w-full shrink-0">
             <img src={b.image_url} alt={b.caption ?? "GTU-ITR"} className="h-[38vw] max-h-[520px] min-h-[180px] w-full object-cover" />
             {b.caption && (
-              <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-brand-navy-dark/85 to-transparent px-5 py-4 text-center">
-                <p className="font-heading text-base font-bold uppercase tracking-wide text-primary-foreground md:text-2xl">{b.caption}</p>
-              </div>
+              <AnimatePresence mode="wait">
+                {banners[i]?.id === b.id && (
+                  <motion.div
+                    key={b.id}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 12 }}
+                    transition={{ duration: 0.8, delay: 0.15, ease: EASE_SOFT }}
+                    className="absolute inset-x-0 bottom-0 bg-linear-to-t from-brand-navy-dark/85 to-transparent px-5 py-4 text-center"
+                  >
+                    <p className="font-heading text-base font-bold uppercase tracking-wide text-primary-foreground md:text-2xl">{b.caption}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             )}
           </div>
         ))}
@@ -33,14 +46,14 @@ export function HomeSlider({ banners }: { banners: Banner[] }) {
       <button
         aria-label="Previous slide"
         onClick={() => setI((v) => (v - 1 + count) % count)}
-        className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-brand-navy/70 p-2 text-primary-foreground transition-colors hover:bg-brand-red"
+        className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-brand-navy/70 p-2 text-primary-foreground transition-all duration-300 hover:scale-110 hover:bg-brand-red"
       >
         <ChevronLeft className="h-5 w-5" />
       </button>
       <button
         aria-label="Next slide"
         onClick={() => setI((v) => (v + 1) % count)}
-        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-brand-navy/70 p-2 text-primary-foreground transition-colors hover:bg-brand-red"
+        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-brand-navy/70 p-2 text-primary-foreground transition-all duration-300 hover:scale-110 hover:bg-brand-red"
       >
         <ChevronRight className="h-5 w-5" />
       </button>

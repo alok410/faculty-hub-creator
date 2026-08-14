@@ -3,6 +3,7 @@ import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { FileText, GraduationCap, Building2, FlaskConical, Factory, Briefcase, Landmark } from "lucide-react";
 import { getHomeContent } from "@/lib/site-content.functions";
 import { HomeSlider } from "@/components/site/HomeSlider";
+import { CountUp, FadeIn, Stagger, StaggerItem } from "@/components/motion/motion-primitives";
 
 const homeQuery = queryOptions({ queryKey: ["home-content"], queryFn: () => getHomeContent() });
 
@@ -76,7 +77,7 @@ function Home() {
       )}
 
       <section className="mx-auto grid max-w-[1200px] gap-8 px-5 py-10 md:grid-cols-[1fr_380px]">
-        <div>
+        <FadeIn>
           <h2 className="section-title">What We Have</h2>
           <div className="mt-2 h-1 w-16 bg-brand-red" />
           <p className="mt-4 text-[15px] leading-relaxed text-foreground/85">
@@ -84,18 +85,18 @@ function Home() {
             Well Established Laboratories, MOOCs Courses, Wi-Fi Campus, Transportation, Training and Placement Cell,
             Hygienic Cafeteria.
           </p>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+          <Stagger className="mt-6 grid gap-5 sm:grid-cols-2">
             {FEATURES.map((f) => (
-              <article key={f.title} className="border border-border border-l-4 border-l-brand-red bg-card p-5 shadow-sm">
-                <f.icon className="h-7 w-7 text-brand-red" />
+              <StaggerItem key={f.title} className="group h-full border border-border border-l-4 border-l-brand-red bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <f.icon className="h-7 w-7 text-brand-red transition-transform duration-300 group-hover:scale-110" />
                 <h3 className="mt-3 font-heading text-base font-bold uppercase text-brand-navy">{f.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
-              </article>
+              </StaggerItem>
             ))}
-          </div>
-        </div>
+          </Stagger>
+        </FadeIn>
 
-        <aside>
+        <FadeIn as="aside" delay={0.15}>
           <h2 className="section-title">News</h2>
           <div className="mt-2 h-1 w-16 bg-brand-red" />
           <div className="mt-4 h-[420px] overflow-hidden border border-border bg-brand-surface">
@@ -114,34 +115,38 @@ function Home() {
               ))}
             </div>
           </div>
-          <Link to="/admissions/degree" className="mt-4 block bg-brand-navy py-3 text-center font-heading text-sm font-bold uppercase tracking-wide text-primary-foreground transition-colors hover:bg-brand-red">
+          <Link to="/admissions/degree" className="mt-4 block bg-brand-navy py-3 text-center font-heading text-sm font-bold uppercase tracking-wide text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red hover:shadow-lg">
             Admission Open 2026
           </Link>
-        </aside>
+        </FadeIn>
       </section>
 
       <section className="bg-brand-navy py-10">
-        <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-6 px-5 text-center md:grid-cols-4">
+        <Stagger className="mx-auto grid max-w-[1200px] grid-cols-2 gap-6 px-5 text-center md:grid-cols-4">
           {STATS.map((s) => (
-            <div key={s.label}>
-              <p className="font-display text-4xl text-brand-gold md:text-5xl">{s.value}</p>
+            <StaggerItem key={s.label}>
+              <p className="font-display text-4xl text-brand-gold md:text-5xl">
+                <CountUp value={Number(s.value)} />
+              </p>
               <p className="mt-1 text-sm uppercase tracking-wide text-primary-foreground/80">{s.label}</p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </section>
 
       <section className="mx-auto max-w-[1200px] px-5 py-10">
-        <h2 className="section-title">Student Testimonials</h2>
-        <div className="mt-2 h-1 w-16 bg-brand-red" />
-        <div className="mt-6 grid gap-5 md:grid-cols-2">
+        <FadeIn>
+          <h2 className="section-title">Student Testimonials</h2>
+          <div className="mt-2 h-1 w-16 bg-brand-red" />
+        </FadeIn>
+        <Stagger className="mt-6 grid gap-5 md:grid-cols-2">
           {TESTIMONIALS.map((t) => (
-            <blockquote key={t.name} className="border border-border bg-card p-5 shadow-sm">
+            <StaggerItem key={t.name} className="h-full border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <p className="text-sm leading-relaxed text-muted-foreground">"{t.text}"</p>
-              <footer className="mt-3 font-heading text-sm font-bold uppercase text-brand-navy">- {t.name}</footer>
-            </blockquote>
+              <p className="mt-3 font-heading text-sm font-bold uppercase text-brand-navy">- {t.name}</p>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </section>
     </>
   );
