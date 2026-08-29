@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { FileText, GraduationCap, Building2, FlaskConical, Factory, Briefcase, Landmark } from "lucide-react";
 import { getHomeContent } from "@/lib/site-content.functions";
-import { HomeSlider } from "@/components/site/HomeSlider";
+
 import { CountUp, FadeIn, Stagger, StaggerItem } from "@/components/motion/motion-primitives";
 
 const homeQuery = queryOptions({ queryKey: ["home-content"], queryFn: () => getHomeContent() });
