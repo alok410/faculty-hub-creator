@@ -19,6 +19,7 @@ import { Route as AntiRaggingRouteImport } from './routes/anti-ragging'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as EnquiryRouteImport } from './routes/enquiry'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as FacilityRouteImport } from './routes/facility'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GrievanceRouteImport } from './routes/grievance'
@@ -103,6 +104,11 @@ const CalendarRoute = CalendarRouteImport.update({
 const EnquiryRoute = EnquiryRouteImport.update({
   id: '/enquiry',
   path: '/enquiry',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FacilityRoute = FacilityRouteImport.update({
@@ -303,6 +309,7 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/calendar': typeof CalendarRoute
   '/enquiry': typeof EnquiryRoute
+  '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
@@ -350,6 +357,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/calendar': typeof CalendarRoute
   '/enquiry': typeof EnquiryRoute
+  '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
@@ -399,6 +407,7 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/calendar': typeof CalendarRoute
   '/enquiry': typeof EnquiryRoute
+  '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
@@ -448,6 +457,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/calendar'
     | '/enquiry'
+    | '/events'
     | '/facility'
     | '/gallery'
     | '/grievance'
@@ -495,6 +505,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/calendar'
     | '/enquiry'
+    | '/events'
     | '/facility'
     | '/gallery'
     | '/grievance'
@@ -543,6 +554,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/calendar'
     | '/enquiry'
+    | '/events'
     | '/facility'
     | '/gallery'
     | '/grievance'
@@ -592,6 +604,7 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   CalendarRoute: typeof CalendarRoute
   EnquiryRoute: typeof EnquiryRoute
+  EventsRoute: typeof EventsRoute
   FacilityRoute: typeof FacilityRoute
   GalleryRoute: typeof GalleryRoute
   GrievanceRoute: typeof GrievanceRoute
@@ -699,6 +712,13 @@ declare module '@tanstack/react-router' {
       path: '/enquiry'
       fullPath: '/enquiry'
       preLoaderRoute: typeof EnquiryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/facility': {
@@ -978,6 +998,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   CalendarRoute: CalendarRoute,
   EnquiryRoute: EnquiryRoute,
+  EventsRoute: EventsRoute,
   FacilityRoute: FacilityRoute,
   GalleryRoute: GalleryRoute,
   GrievanceRoute: GrievanceRoute,
