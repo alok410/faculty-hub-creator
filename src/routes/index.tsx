@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { FileText, GraduationCap, Building2, FlaskConical, Factory, Briefcase, Landmark } from "lucide-react";
 import { getHomeContent } from "@/lib/site-content.functions";
-import { HomeSlider } from "@/components/site/HomeSlider";
+
 import { CountUp, FadeIn, Stagger, StaggerItem } from "@/components/motion/motion-primitives";
 
 const homeQuery = queryOptions({ queryKey: ["home-content"], queryFn: () => getHomeContent() });
@@ -55,8 +55,6 @@ function Home() {
 
   return (
     <>
-      <HomeSlider banners={data.banners} />
-
       {data.updates.length > 0 && (
         <div className="flex items-stretch overflow-hidden bg-brand-red text-primary-foreground">
           <div className="flex shrink-0 items-center bg-brand-navy px-4 font-heading text-sm font-bold uppercase tracking-wider">Updates</div>
@@ -78,22 +76,14 @@ function Home() {
 
       <section className="mx-auto grid max-w-[1200px] gap-8 px-5 py-10 md:grid-cols-[1fr_380px]">
         <FadeIn>
-          <h2 className="section-title">What We Have</h2>
+          <h2 className="section-title">Welcome to GTU-ITR</h2>
           <div className="mt-2 h-1 w-16 bg-brand-red" />
           <p className="mt-4 text-[15px] leading-relaxed text-foreground/85">
-            Experienced Faculty Members, SIEMENS Center of Excellence, Elegant Architecture, Industrial Linkage,
-            Well Established Laboratories, MOOCs Courses, Wi-Fi Campus, Transportation, Training and Placement Cell,
-            Hygienic Cafeteria.
+            GTU Institute of Technology &amp; Research, Mehsana — a constituent institute of Gujarat
+            Technological University — offers degree and diploma engineering programmes with a
+            SIEMENS Centre of Excellence, well-established laboratories, and a dedicated Training
+            &amp; Placement Cell on a lush green, solar-powered campus.
           </p>
-          <Stagger className="mt-6 grid gap-5 sm:grid-cols-2">
-            {FEATURES.map((f) => (
-              <StaggerItem key={f.title} className="group h-full border border-border border-l-4 border-l-brand-red bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <f.icon className="h-7 w-7 text-brand-red transition-transform duration-300 group-hover:scale-110" />
-                <h3 className="mt-3 font-heading text-base font-bold uppercase text-brand-navy">{f.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
-              </StaggerItem>
-            ))}
-          </Stagger>
         </FadeIn>
 
         <FadeIn as="aside" delay={0.15}>
@@ -118,6 +108,27 @@ function Home() {
           <Link to="/admissions/degree" className="mt-4 block bg-brand-navy py-3 text-center font-heading text-sm font-bold uppercase tracking-wide text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red hover:shadow-lg">
             Admission Open 2026
           </Link>
+        </FadeIn>
+      </section>
+
+      <section className="mx-auto max-w-[1200px] px-5 py-10">
+        <FadeIn>
+          <h2 className="section-title">What We Have</h2>
+          <div className="mt-2 h-1 w-16 bg-brand-red" />
+          <p className="mt-4 text-[15px] leading-relaxed text-foreground/85">
+            Experienced Faculty Members, SIEMENS Center of Excellence, Elegant Architecture, Industrial Linkage,
+            Well Established Laboratories, MOOCs Courses, Wi-Fi Campus, Transportation, Training and Placement Cell,
+            Hygienic Cafeteria.
+          </p>
+          <Stagger className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {FEATURES.map((f) => (
+              <StaggerItem key={f.title} className="group h-full border border-border border-l-4 border-l-brand-red bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <f.icon className="h-7 w-7 text-brand-red transition-transform duration-300 group-hover:scale-110" />
+                <h3 className="mt-3 font-heading text-base font-bold uppercase text-brand-navy">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
+              </StaggerItem>
+            ))}
+          </Stagger>
         </FadeIn>
       </section>
 
