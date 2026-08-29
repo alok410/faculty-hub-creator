@@ -97,13 +97,13 @@ function Home() {
         </FadeIn>
 
         <FadeIn as="aside" delay={0.15}>
-          <h2 className="section-title">News</h2>
+          <h2 className="section-title">News &amp; Updates</h2>
           <div className="mt-2 h-1 w-16 bg-brand-red" />
-          <div className="mt-4 h-[420px] overflow-hidden border border-border bg-brand-surface">
-            <div className="animate-marquee-y">
-              {[...data.news, ...data.news].map((n, idx) => (
+          <div className="mt-4 max-h-[420px] overflow-y-auto border border-border bg-brand-surface">
+            <div>
+              {data.news.map((n) => (
                 <a
-                  key={`${n.id}-${idx}`}
+                  key={n.id}
                   href={n.document_url ?? "#"}
                   target={n.document_url ? "_blank" : undefined}
                   rel="noreferrer"
