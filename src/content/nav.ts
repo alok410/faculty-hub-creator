@@ -1,4 +1,4 @@
-export type NavLink = { label: string; to?: string; href?: string; children?: NavLink[] };
+export type NavLink = { label: string; to?: string; href?: string; download?: boolean; children?: NavLink[] };
 
 export const NAV: NavLink[] = [
   { label: "GTU-ITR", to: "/" },
@@ -11,7 +11,7 @@ export const NAV: NavLink[] = [
       { label: "Registrar Message", to: "/registrar-message" },
       { label: "Principal Message", to: "/principal-message" },
       { label: "Women Empowerment Cell", to: "/women-cell" },
-      { label: "Mandatory Disclosure", to: "/mandatory-disclosure" },
+      { label: "Mandatory Disclosure", href: "/mandatory-disclosure.pdf", download: true },
     ],
   },
   {

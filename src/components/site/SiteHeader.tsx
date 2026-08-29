@@ -10,7 +10,8 @@ function DesktopItem({ item }: { item: NavLink }) {
     return item.href ? (
       <a
         href={item.href}
-        target="_blank"
+        target={item.download ? undefined : "_blank"}
+        download={item.download ? true : undefined}
         rel="noreferrer"
         className="block px-3 py-2.5 text-[13px] font-medium uppercase tracking-wide text-primary-foreground/90 transition-colors hover:bg-brand-red hover:text-primary-foreground"
       >
@@ -39,7 +40,8 @@ function DesktopItem({ item }: { item: NavLink }) {
             <a
               key={child.label}
               href={child.href}
-              target="_blank"
+              target={child.download ? undefined : "_blank"}
+              download={child.download ? true : undefined}
               rel="noreferrer"
               className="block border-b border-border px-4 py-2.5 text-[13px] text-foreground transition-all duration-300 hover:translate-x-1 hover:bg-brand-surface hover:text-brand-red"
             >
@@ -122,7 +124,14 @@ export function SiteHeader() {
                       >
                         {item.children.map((child) =>
                           child.href ? (
-                            <a key={child.label} href={child.href} target="_blank" rel="noreferrer" className="block px-6 py-2 text-[13px] text-primary-foreground/80">
+                            <a
+                              key={child.label}
+                              href={child.href}
+                              target={child.download ? undefined : "_blank"}
+                              download={child.download ? true : undefined}
+                              rel="noreferrer"
+                              className="block px-6 py-2 text-[13px] text-primary-foreground/80"
+                            >
                               {child.label}
                             </a>
                           ) : (
@@ -136,7 +145,13 @@ export function SiteHeader() {
                     </AnimatePresence>
                   </>
                 ) : item.href ? (
-                  <a href={item.href} target="_blank" rel="noreferrer" className="block px-4 py-3 text-sm font-medium uppercase text-primary-foreground">
+                  <a
+                    href={item.href}
+                    target={item.download ? undefined : "_blank"}
+                    download={item.download ? true : undefined}
+                    rel="noreferrer"
+                    className="block px-4 py-3 text-sm font-medium uppercase text-primary-foreground"
+                  >
                     {item.label}
                   </a>
                 ) : (
