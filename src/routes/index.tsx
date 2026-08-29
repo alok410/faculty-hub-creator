@@ -120,7 +120,7 @@ function Home() {
             Well Established Laboratories, MOOCs Courses, Wi-Fi Campus, Transportation, Training and Placement Cell,
             Hygienic Cafeteria.
           </p>
-          <Stagger className="mt-6 grid gap-5 sm:grid-cols-2">
+          <Stagger className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
               <StaggerItem key={f.title} className="group h-full border border-border border-l-4 border-l-brand-red bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <f.icon className="h-7 w-7 text-brand-red transition-transform duration-300 group-hover:scale-110" />
@@ -129,30 +129,6 @@ function Home() {
               </StaggerItem>
             ))}
           </Stagger>
-        </FadeIn>
-
-        <FadeIn as="aside" delay={0.15}>
-          <h2 className="section-title">News &amp; Updates</h2>
-          <div className="mt-2 h-1 w-16 bg-brand-red" />
-          <div className="mt-4 max-h-[420px] overflow-y-auto border border-border bg-brand-surface">
-            <div>
-              {data.news.map((n) => (
-                <a
-                  key={n.id}
-                  href={n.document_url ?? "#"}
-                  target={n.document_url ? "_blank" : undefined}
-                  rel="noreferrer"
-                  className="flex gap-2 border-b border-border px-4 py-3 text-[13px] leading-snug text-foreground transition-colors hover:bg-card hover:text-brand-red"
-                >
-                  <FileText className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
-                  <span>{n.title}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-          <Link to="/admissions/degree" className="mt-4 block bg-brand-navy py-3 text-center font-heading text-sm font-bold uppercase tracking-wide text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red hover:shadow-lg">
-            Admission Open 2026
-          </Link>
         </FadeIn>
       </section>
 
