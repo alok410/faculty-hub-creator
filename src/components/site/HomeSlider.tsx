@@ -5,7 +5,7 @@ import { EASE_SOFT } from "@/components/motion/motion-primitives";
 
 type Banner = { id: string; image_url: string; caption: string | null; link_url: string | null };
 
-export function HomeSlider({ banners }: { banners: Banner[] }) {
+export function HomeSlider({ banners, heightClass = "h-[38vw] max-h-[520px] min-h-[180px]" }: { banners: Banner[]; heightClass?: string }) {
   const [i, setI] = useState(0);
   const count = banners.length;
 
