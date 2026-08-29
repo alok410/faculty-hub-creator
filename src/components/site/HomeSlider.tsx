@@ -5,7 +5,7 @@ import { EASE_SOFT } from "@/components/motion/motion-primitives";
 
 type Banner = { id: string; image_url: string; caption: string | null; link_url: string | null };
 
-export function HomeSlider({ banners }: { banners: Banner[] }) {
+export function HomeSlider({ banners, heightClass = "h-[38vw] max-h-[520px] min-h-[180px]" }: { banners: Banner[]; heightClass?: string }) {
   const [i, setI] = useState(0);
   const count = banners.length;
 
@@ -22,7 +22,7 @@ export function HomeSlider({ banners }: { banners: Banner[] }) {
       <div className="flex transition-transform duration-700 ease-out" style={{ transform: `translateX(-${i * 100}%)` }}>
         {banners.map((b) => (
           <div key={b.id} className="relative w-full shrink-0">
-            <img src={b.image_url} alt={b.caption ?? "GTU-ITR"} className="h-[38vw] max-h-[520px] min-h-[180px] w-full object-cover" />
+            <img src={b.image_url} alt={b.caption ?? "GTU-ITR"} className={`${heightClass} w-full object-cover`} />
             {b.caption && (
               <AnimatePresence mode="wait">
                 {banners[i]?.id === b.id && (

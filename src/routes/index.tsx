@@ -4,6 +4,7 @@ import { FileText, GraduationCap, Building2, FlaskConical, Factory, Briefcase, L
 import { getHomeContent } from "@/lib/site-content.functions";
 
 import { CountUp, FadeIn, Stagger, StaggerItem } from "@/components/motion/motion-primitives";
+import { HomeSlider } from "@/components/site/HomeSlider";
 
 const homeQuery = queryOptions({ queryKey: ["home-content"], queryFn: () => getHomeContent() });
 
@@ -84,6 +85,9 @@ function Home() {
             SIEMENS Centre of Excellence, well-established laboratories, and a dedicated Training
             &amp; Placement Cell on a lush green, solar-powered campus.
           </p>
+          <div className="mt-6 overflow-hidden border border-border shadow-md">
+            <HomeSlider banners={data.banners} heightClass="h-[300px] md:h-[360px]" />
+          </div>
         </FadeIn>
 
         <FadeIn as="aside" delay={0.15}>
