@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Campus Connect Hub
+
+Crater a same to same my this website into loavebel - https://gtuitr.gtu.ac.in/- also admin panel i nehich i can manage faculties , banners ,news ,update ,every comtine member and everything
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://faculty-hub-creator.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/6354170c-659c-4fed-8f3a-0967a20e5742).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
