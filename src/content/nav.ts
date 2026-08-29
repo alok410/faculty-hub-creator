@@ -43,7 +43,7 @@ export const NAV: NavLink[] = [
     ],
   },
   { label: "Placement", to: "/placement" },
-  { label: "Gallery", to: "/gallery" },
+  { label: "Events", to: "/events" },
   {
     label: "Student Corner",
     children: [
@@ -78,6 +78,7 @@ export const NAV: NavLink[] = [
   {
     label: "GTU-ITR Media",
     children: [
+      { label: "Gallery", to: "/gallery" },
       { label: "Newsletter", href: "https://heyzine.com/flip-book/226dcd1dbe.html" },
       { label: "Media Coverage", to: "/media-coverage" },
       { label: "Online Coverage", href: "https://maroawaj.com/?s=%E0%AA%9C%E0%AB%80%E0%AA%AA%E0%AB%87%E0%AA%B0%E0%AB%80" },
