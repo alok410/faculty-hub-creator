@@ -55,8 +55,6 @@ function Home() {
 
   return (
     <>
-      <HomeSlider banners={data.banners} />
-
       {data.updates.length > 0 && (
         <div className="flex items-stretch overflow-hidden bg-brand-red text-primary-foreground">
           <div className="flex shrink-0 items-center bg-brand-navy px-4 font-heading text-sm font-bold uppercase tracking-wider">Updates</div>
@@ -77,6 +75,43 @@ function Home() {
       )}
 
       <section className="mx-auto grid max-w-[1200px] gap-8 px-5 py-10 md:grid-cols-[1fr_380px]">
+        <FadeIn>
+          <h2 className="section-title">Welcome to GTU-ITR</h2>
+          <div className="mt-2 h-1 w-16 bg-brand-red" />
+          <p className="mt-4 text-[15px] leading-relaxed text-foreground/85">
+            GTU Institute of Technology &amp; Research, Mehsana — a constituent institute of Gujarat
+            Technological University — offers degree and diploma engineering programmes with a
+            SIEMENS Centre of Excellence, well-established laboratories, and a dedicated Training
+            &amp; Placement Cell on a lush green, solar-powered campus.
+          </p>
+        </FadeIn>
+
+        <FadeIn as="aside" delay={0.15}>
+          <h2 className="section-title">News &amp; Updates</h2>
+          <div className="mt-2 h-1 w-16 bg-brand-red" />
+          <div className="mt-4 max-h-[420px] overflow-y-auto border border-border bg-brand-surface">
+            <div>
+              {data.news.map((n) => (
+                <a
+                  key={n.id}
+                  href={n.document_url ?? "#"}
+                  target={n.document_url ? "_blank" : undefined}
+                  rel="noreferrer"
+                  className="flex gap-2 border-b border-border px-4 py-3 text-[13px] leading-snug text-foreground transition-colors hover:bg-card hover:text-brand-red"
+                >
+                  <FileText className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
+                  <span>{n.title}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+          <Link to="/admissions/degree" className="mt-4 block bg-brand-navy py-3 text-center font-heading text-sm font-bold uppercase tracking-wide text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red hover:shadow-lg">
+            Admission Open 2026
+          </Link>
+        </FadeIn>
+      </section>
+
+      <section className="mx-auto max-w-[1200px] px-5 py-10">
         <FadeIn>
           <h2 className="section-title">What We Have</h2>
           <div className="mt-2 h-1 w-16 bg-brand-red" />
