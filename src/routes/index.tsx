@@ -50,15 +50,8 @@ const TESTIMONIALS = [
   { name: "Daniel Rakotoarisoa", text: "A very good college that prepares its students for a better future as well as to be a good engineer. This college has its best way of teaching related to the field that makes it different from other colleges, especially in terms of the Minor Degree." },
   { name: "Varia Dhruvkumar", text: "GTU-ITR is a fantastic engineering college that has truly helped me grow both academically and personally. They focus not only on academic growth but also on developing soft skills such as communication, leadership and responsibility." },
 ];
+import { EVENTS } from "@/content/events";
 
-const EVENTS = [
-  { image: "/site/x2.jpg", day: "05", month: "Sep", title: "Engineer's Day Celebration & Technical Quiz", tag: "Technical" },
-  { image: "/site/x3.jpg", day: "12", month: "Sep", title: "SIEMENS CoE Industrial Automation Workshop", tag: "Workshop" },
-  { image: "/site/x4.jpg", day: "26", month: "Sep", title: "Kaushalya - Annual Cultural Fest", tag: "Cultural" },
-  { image: "/site/x5.jpg", day: "09", month: "Oct", title: "Shaurya Sports Meet 2026", tag: "Sports" },
-  { image: "/site/x6.jpeg", day: "18", month: "Oct", title: "Campus Placement Drive - MNC Recruiters", tag: "Placement" },
-  { image: "/site/s1.jpg", day: "30", month: "Oct", title: "National Seminar on Emerging Technologies", tag: "Seminar" },
-];
 
 function Home() {
   const { data } = useSuspenseQuery(homeQuery);
@@ -153,18 +146,23 @@ function Home() {
           </FadeIn>
           <Stagger className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {EVENTS.map((e) => (
-              <StaggerItem key={e.title} className="group h-full overflow-hidden border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div className="relative h-44 overflow-hidden">
-                  <img src={e.image} alt={e.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  <div className="absolute left-3 top-3 bg-brand-red px-3 py-1.5 text-center leading-none text-primary-foreground shadow-md">
-                    <p className="font-display text-xl">{e.day}</p>
-                    <p className="text-[10px] font-semibold uppercase tracking-widest">{e.month}</p>
+              <StaggerItem key={e.id} className="group h-full overflow-hidden border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <Link to="/events/$eventId" params={{ eventId: e.id }} className="block h-full cursor-pointer">
+                  <div className="relative h-44 overflow-hidden">
+                    <img src={e.image} alt={e.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className="absolute left-3 top-3 bg-brand-red px-3 py-1.5 text-center leading-none text-primary-foreground shadow-md">
+                      <p className="font-display text-xl">{e.day}</p>
+                      <p className="text-[10px] font-semibold uppercase tracking-widest">{e.month}</p>
+                    </div>
+                    <div className="absolute right-3 top-3 rounded-full bg-brand-navy/80 px-2 py-0.5 text-[9px] font-semibold text-primary-foreground backdrop-blur-sm">
+                      View Details
+                    </div>
                   </div>
-                </div>
-                <div className="p-4">
-                  <span className="inline-block bg-brand-navy px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">{e.tag}</span>
-                  <h3 className="mt-2 font-heading text-sm font-bold uppercase leading-snug text-brand-navy transition-colors group-hover:text-brand-red">{e.title}</h3>
-                </div>
+                  <div className="p-4">
+                    <span className="inline-block bg-brand-navy px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">{e.tag}</span>
+                    <h3 className="mt-2 font-heading text-sm font-bold uppercase leading-snug text-brand-navy transition-colors group-hover:text-brand-red">{e.title}</h3>
+                  </div>
+                </Link>
               </StaggerItem>
             ))}
           </Stagger>

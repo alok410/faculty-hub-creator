@@ -46,6 +46,7 @@ import { Route as AdmissionsDegreeRouteImport } from './routes/admissions.degree
 import { Route as AdmissionsDiplomaRouteImport } from './routes/admissions.diploma'
 import { Route as AdmissionsMscItRouteImport } from './routes/admissions.msc-it'
 import { Route as AdmissionsPgdcsRouteImport } from './routes/admissions.pgdcs'
+import { Route as EventsEventIdRouteImport } from './routes/events_.$eventId'
 import { Route as AcademicsDegreeCivilRouteImport } from './routes/academics.degree.civil'
 import { Route as AcademicsDegreeComputerRouteImport } from './routes/academics.degree.computer'
 import { Route as AcademicsDegreeElectricalRouteImport } from './routes/academics.degree.electrical'
@@ -241,6 +242,11 @@ const AdmissionsPgdcsRoute = AdmissionsPgdcsRouteImport.update({
   path: '/admissions/pgdcs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsEventIdRoute = EventsEventIdRouteImport.update({
+  id: '/events_/$eventId',
+  path: '/events/$eventId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AcademicsDegreeCivilRoute = AcademicsDegreeCivilRouteImport.update({
   id: '/academics/degree/civil',
   path: '/academics/degree/civil',
@@ -336,6 +342,7 @@ export interface FileRoutesByFullPath {
   '/admissions/diploma': typeof AdmissionsDiplomaRoute
   '/admissions/msc-it': typeof AdmissionsMscItRoute
   '/admissions/pgdcs': typeof AdmissionsPgdcsRoute
+  '/events/$eventId': typeof EventsEventIdRoute
   '/academics/degree/civil': typeof AcademicsDegreeCivilRoute
   '/academics/degree/computer': typeof AcademicsDegreeComputerRoute
   '/academics/degree/electrical': typeof AcademicsDegreeElectricalRoute
@@ -384,6 +391,7 @@ export interface FileRoutesByTo {
   '/admissions/diploma': typeof AdmissionsDiplomaRoute
   '/admissions/msc-it': typeof AdmissionsMscItRoute
   '/admissions/pgdcs': typeof AdmissionsPgdcsRoute
+  '/events/$eventId': typeof EventsEventIdRoute
   '/academics/degree/civil': typeof AcademicsDegreeCivilRoute
   '/academics/degree/computer': typeof AcademicsDegreeComputerRoute
   '/academics/degree/electrical': typeof AcademicsDegreeElectricalRoute
@@ -434,6 +442,7 @@ export interface FileRoutesById {
   '/admissions/diploma': typeof AdmissionsDiplomaRoute
   '/admissions/msc-it': typeof AdmissionsMscItRoute
   '/admissions/pgdcs': typeof AdmissionsPgdcsRoute
+  '/events_/$eventId': typeof EventsEventIdRoute
   '/academics/degree/civil': typeof AcademicsDegreeCivilRoute
   '/academics/degree/computer': typeof AcademicsDegreeComputerRoute
   '/academics/degree/electrical': typeof AcademicsDegreeElectricalRoute
@@ -484,6 +493,7 @@ export interface FileRouteTypes {
     | '/admissions/diploma'
     | '/admissions/msc-it'
     | '/admissions/pgdcs'
+    | '/events/$eventId'
     | '/academics/degree/civil'
     | '/academics/degree/computer'
     | '/academics/degree/electrical'
@@ -532,6 +542,7 @@ export interface FileRouteTypes {
     | '/admissions/diploma'
     | '/admissions/msc-it'
     | '/admissions/pgdcs'
+    | '/events/$eventId'
     | '/academics/degree/civil'
     | '/academics/degree/computer'
     | '/academics/degree/electrical'
@@ -581,6 +592,7 @@ export interface FileRouteTypes {
     | '/admissions/diploma'
     | '/admissions/msc-it'
     | '/admissions/pgdcs'
+    | '/events_/$eventId'
     | '/academics/degree/civil'
     | '/academics/degree/computer'
     | '/academics/degree/electrical'
@@ -630,6 +642,7 @@ export interface RootRouteChildren {
   AdmissionsDiplomaRoute: typeof AdmissionsDiplomaRoute
   AdmissionsMscItRoute: typeof AdmissionsMscItRoute
   AdmissionsPgdcsRoute: typeof AdmissionsPgdcsRoute
+  EventsEventIdRoute: typeof EventsEventIdRoute
   AcademicsDegreeCivilRoute: typeof AcademicsDegreeCivilRoute
   AcademicsDegreeComputerRoute: typeof AcademicsDegreeComputerRoute
   AcademicsDegreeElectricalRoute: typeof AcademicsDegreeElectricalRoute
@@ -903,6 +916,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdmissionsPgdcsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events_/$eventId': {
+      id: '/events_/$eventId'
+      path: '/events/$eventId'
+      fullPath: '/events/$eventId'
+      preLoaderRoute: typeof EventsEventIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/academics/degree/civil': {
       id: '/academics/degree/civil'
       path: '/academics/degree/civil'
@@ -1024,6 +1044,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdmissionsDiplomaRoute: AdmissionsDiplomaRoute,
   AdmissionsMscItRoute: AdmissionsMscItRoute,
   AdmissionsPgdcsRoute: AdmissionsPgdcsRoute,
+  EventsEventIdRoute: EventsEventIdRoute,
   AcademicsDegreeCivilRoute: AcademicsDegreeCivilRoute,
   AcademicsDegreeComputerRoute: AcademicsDegreeComputerRoute,
   AcademicsDegreeElectricalRoute: AcademicsDegreeElectricalRoute,
