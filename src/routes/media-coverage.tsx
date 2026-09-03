@@ -107,8 +107,8 @@ function Page() {
 
   return (
     <PageShell title="Media Coverage" subtitle="Follow GTU-ITR across social media — explore our latest posts, videos and updates.">
-      {/* ── Tab bar ─────────────────────────────────────────── */}
-      <div className="mb-8 flex flex-wrap gap-2 border-b border-border pb-1">
+      {/* ── Sub menu (Platform Tabs) ─────────────────────────────────── */}
+      <div className="mb-8 flex flex-wrap gap-2.5 border-b-2 border-yellow-400/50 pb-2">
         {PLATFORMS.map((p) => {
           const isActive = p.key === active;
           return (
@@ -116,25 +116,22 @@ function Page() {
               key={p.key}
               id={`tab-${p.key}`}
               onClick={() => navigate({ to: "/media-coverage", search: { tab: p.key }, replace: true })}
-              className="group relative flex items-center gap-2 rounded-t-lg px-5 py-3 text-sm font-semibold uppercase tracking-wide transition-all duration-300"
-              style={{
-                color: isActive ? "#fff" : p.color,
-                backgroundColor: isActive ? p.color : "transparent",
-                boxShadow: isActive ? `0 4px 20px ${p.color}30` : "none",
-              }}
-              onMouseEnter={(e) => {
-                if (!isActive) e.currentTarget.style.backgroundColor = p.hoverBg;
-              }}
-              onMouseLeave={(e) => {
-                if (!isActive) e.currentTarget.style.backgroundColor = "transparent";
-              }}
+              className={`group relative flex items-center gap-2 rounded-lg px-4 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
+                isActive
+                  ? "bg-yellow-400 text-slate-950 shadow-md shadow-yellow-500/30 ring-2 ring-yellow-400 hover:bg-yellow-300"
+                  : "border border-yellow-400/50 bg-yellow-50/60 text-yellow-950 hover:border-yellow-500 hover:bg-yellow-100 dark:bg-yellow-950/30 dark:text-yellow-200 dark:hover:bg-yellow-900/40 dark:hover:text-yellow-100"
+              }`}
             >
-              <span className="transition-transform duration-200 group-hover:scale-110">{p.icon}</span>
-              <span className="hidden sm:inline">{p.label}</span>
+              <span
+                className="transition-transform duration-200 group-hover:scale-110"
+                style={{ color: isActive ? "#020617" : p.color }}
+              >
+                {p.icon}
+              </span>
+              <span>{p.label}</span>
               {isActive && (
                 <span
-                  className="absolute bottom-0 left-0 h-[3px] w-full rounded-t-full"
-                  style={{ backgroundColor: p.color }}
+                  className="absolute -bottom-2.5 left-0 h-[3px] w-full rounded-t-full bg-yellow-500 shadow-sm"
                 />
               )}
             </button>
