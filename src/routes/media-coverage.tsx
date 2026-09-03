@@ -1,5 +1,5 @@
-import { createFileRoute, useNavigate, useSearch } from "@tanstack/react-router";
-import { useMemo } from "react";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useMemo, type ReactNode } from "react";
 import { ExternalLink, Calendar } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { SOCIAL_POSTS, type Platform } from "@/content/social-posts";
@@ -7,14 +7,18 @@ import { Stagger, StaggerItem } from "@/components/motion/motion-primitives";
 
 /* ──────────────────────────── Route ──────────────────────────── */
 
-type MediaSearch = { tab?: Platform };
+type MediaSearch = { tab?: Platform | undefined };
 
 export const Route = createFileRoute("/media-coverage")({
-  validateSearch: (search: Record<string, unknown>): MediaSearch => ({
-    tab: (["youtube", "linkedin", "facebook", "instagram"].includes(search.tab as string)
-      ? (search.tab as Platform)
-      : undefined),
-  }),
+  validateSearch: (search: Record<string, unknown>): MediaSearch => {
+    const rawTab = search["tab"];
+    const validTabs: Platform[] = ["youtube", "linkedin", "facebook", "instagram"];
+    return {
+      tab: typeof rawTab === "string" && validTabs.includes(rawTab as Platform)
+        ? (rawTab as Platform)
+        : undefined,
+    };
+  },
   head: () => ({
     meta: [
       { title: "Media Coverage | GTU-ITR" },
@@ -30,7 +34,7 @@ export const Route = createFileRoute("/media-coverage")({
 
 /* ──────────────────────── Platform config ─────────────────────── */
 
-const PLATFORMS: { key: Platform; label: string; color: string; hoverBg: string; icon: JSX.Element }[] = [
+const PLATFORMS: { key: Platform; label: string; color: string; hoverBg: string; icon: ReactNode }[] = [
   {
     key: "youtube",
     label: "YouTube",
