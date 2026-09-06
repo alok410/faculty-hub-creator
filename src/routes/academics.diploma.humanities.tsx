@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { FacultyTabContent } from "@/components/site/FacultyTabContent";
+import { FACULTY_DATA } from "@/content/faculty";
 import {
   Atom,
   Languages,
@@ -113,8 +115,9 @@ function DiplomaHumanitiesPage() {
 
       {/* Main Tabs */}
       <Tabs defaultValue="overview" className="w-full space-y-8">
-        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 md:grid-cols-4">
+        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 md:grid-cols-5">
           <TabsTrigger value="overview" className="py-2.5 font-medium">Department Role</TabsTrigger>
+          <TabsTrigger value="faculty" className="py-2.5 font-medium">Faculty Members (4)</TabsTrigger>
           <TabsTrigger value="bridge" className="py-2.5 font-medium">Bridge Course &amp; Mentoring</TabsTrigger>
           <TabsTrigger value="curriculum" className="py-2.5 font-medium">1st Year Syllabus</TabsTrigger>
           <TabsTrigger value="labs" className="py-2.5 font-medium">Foundational Labs</TabsTrigger>
@@ -166,7 +169,16 @@ function DiplomaHumanitiesPage() {
           </div>
         </TabsContent>
 
-        {/* 2. BRIDGE COURSE */}
+        {/* 2. FACULTY MEMBERS */}
+        <TabsContent value="faculty" className="focus-visible:outline-none">
+          <FacultyTabContent
+            departmentTitle="Humanities & Sciences (Diploma)"
+            teachingFaculty={FACULTY_DATA["diploma-humanities"].teaching}
+            technicalStaff={FACULTY_DATA["diploma-humanities"].technical}
+          />
+        </TabsContent>
+
+        {/* 3. BRIDGE COURSE */}
         <TabsContent value="bridge" className="space-y-6">
           <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
             <h2 className="text-2xl font-bold tracking-tight text-brand-navy">Bridge Course &amp; Student Mentorship</h2>

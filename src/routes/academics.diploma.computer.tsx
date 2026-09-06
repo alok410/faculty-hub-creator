@@ -127,7 +127,16 @@ function ComputerDiplomaPage() {
           </div>
         </TabsContent>
 
-        {/* Tab 2: Labs */}
+        {/* Tab 2: Faculty Members */}
+        <TabsContent value="faculty" className="focus-visible:outline-none">
+          <FacultyTabContent
+            departmentTitle="Computer Engineering (Diploma)"
+            teachingFaculty={FACULTY_DATA["diploma-computer"].teaching}
+            technicalStaff={FACULTY_DATA["diploma-computer"].technical}
+          />
+        </TabsContent>
+
+        {/* Tab 3: Labs */}
         <TabsContent value="labs" className="space-y-8 focus-visible:outline-none">
           <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
             <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">Diploma Computer Laboratories</h2>

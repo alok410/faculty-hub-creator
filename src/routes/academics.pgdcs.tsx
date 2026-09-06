@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { FacultyTabContent } from "@/components/site/FacultyTabContent";
+import { FACULTY_DATA } from "@/content/faculty";
 import {
   ShieldAlert,
   ShieldCheck,
@@ -123,8 +125,9 @@ function PgdcsAcademicsPage() {
 
       {/* Main Tabs */}
       <Tabs defaultValue="curriculum" className="w-full space-y-8">
-        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
+        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-4">
           <TabsTrigger value="curriculum" className="py-2.5 font-medium">Curriculum Structure</TabsTrigger>
+          <TabsTrigger value="faculty" className="py-2.5 font-medium">Faculty Mentors (3)</TabsTrigger>
           <TabsTrigger value="cyber-range" className="py-2.5 font-medium">Cyber Range Labs (4)</TabsTrigger>
           <TabsTrigger value="certifications" className="py-2.5 font-medium">Industry Mappings</TabsTrigger>
         </TabsList>
@@ -180,7 +183,15 @@ function PgdcsAcademicsPage() {
           </div>
         </TabsContent>
 
-        {/* 2. CYBER RANGE LABS */}
+        {/* 2. FACULTY MENTORS */}
+        <TabsContent value="faculty" className="focus-visible:outline-none">
+          <FacultyTabContent
+            departmentTitle="PG Diploma in Cyber Security (PGDCS)"
+            teachingFaculty={FACULTY_DATA["pgdcs"].teaching}
+          />
+        </TabsContent>
+
+        {/* 3. CYBER RANGE LABS */}
         <TabsContent value="cyber-range" className="space-y-6">
           <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
             <h2 className="text-2xl font-bold tracking-tight text-brand-navy">Departmental Cyber Range &amp; Toolkits</h2>

@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { FacultyTabContent } from "@/components/site/FacultyTabContent";
+import { FACULTY_DATA } from "@/content/faculty";
 import {
   Code,
   Layers,
@@ -164,8 +166,9 @@ function MscItAcademicsPage() {
 
       {/* Main Tabs */}
       <Tabs defaultValue="architecture" className="w-full space-y-8">
-        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
+        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-4">
           <TabsTrigger value="architecture" className="py-2.5 font-medium">Curriculum Phases</TabsTrigger>
+          <TabsTrigger value="faculty" className="py-2.5 font-medium">Faculty Mentors (4)</TabsTrigger>
           <TabsTrigger value="nep-exits" className="py-2.5 font-medium">NEP Modular Exits</TabsTrigger>
           <TabsTrigger value="laboratories" className="py-2.5 font-medium">Specialized IT Labs</TabsTrigger>
         </TabsList>
@@ -205,7 +208,15 @@ function MscItAcademicsPage() {
           </div>
         </TabsContent>
 
-        {/* 2. NEP MODULAR EXITS */}
+        {/* 2. FACULTY MENTORS */}
+        <TabsContent value="faculty" className="focus-visible:outline-none">
+          <FacultyTabContent
+            departmentTitle="Integrated M.Sc. in IT (5 Years)"
+            teachingFaculty={FACULTY_DATA["msc-it"].teaching}
+          />
+        </TabsContent>
+
+        {/* 3. NEP MODULAR EXITS */}
         <TabsContent value="nep-exits" className="space-y-6">
           <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
             <h2 className="text-2xl font-bold tracking-tight text-brand-navy">National Education Policy (NEP 2020) Modular Exits</h2>
