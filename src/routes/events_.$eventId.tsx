@@ -3,15 +3,10 @@ import {
   CalendarDays,
   Clock,
   MapPin,
-  User,
-  Mail,
-  Phone,
   ArrowLeft,
   Share2,
-  CheckCircle2,
   Users,
   Award,
-  Sparkles,
 } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { getEventById, EVENTS } from "@/content/events";
@@ -160,46 +155,6 @@ function EventDetailPage() {
             </div>
           </section>
 
-          {/* Key Highlights */}
-          {event.highlights && event.highlights.length > 0 && (
-            <section className="border border-border bg-card p-6 shadow-sm">
-              <div className="flex items-center gap-2">
-                <Sparkles className="h-5 w-5 text-brand-red" />
-                <h2 className="section-title text-xl">Key Highlights</h2>
-              </div>
-              <div className="mb-4 mt-2 h-1 w-14 bg-brand-red" />
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {event.highlights.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-sm text-foreground/90">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          {/* Schedule Timeline */}
-          {event.schedule && event.schedule.length > 0 && (
-            <section className="border border-border bg-card p-6 shadow-sm">
-              <div className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-brand-red" />
-                <h2 className="section-title text-xl">Event Schedule</h2>
-              </div>
-              <div className="mb-6 mt-2 h-1 w-14 bg-brand-red" />
-              <div className="relative space-y-6 border-l-2 border-brand-navy/20 pl-6">
-                {event.schedule.map((slot, idx) => (
-                  <div key={idx} className="group relative">
-                    <div className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-brand-red bg-card transition-colors group-hover:bg-brand-red" />
-                    <span className="inline-block bg-brand-navy/10 px-2 py-0.5 text-xs font-bold text-brand-navy">
-                      {slot.time}
-                    </span>
-                    <p className="mt-1 text-sm font-semibold text-foreground">{slot.activity}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
         </FadeIn>
 
         {/* Sidebar Info */}
@@ -243,31 +198,6 @@ function EventDetailPage() {
               </Link>
             </div>
           </div>
-
-          {/* Contact Person Card */}
-          {event.contactPerson && (
-            <div className="border border-border bg-brand-surface p-6 shadow-sm">
-              <h3 className="border-b border-border pb-2 font-heading text-sm font-bold uppercase tracking-wider text-brand-navy">
-                Event Contact
-              </h3>
-              <div className="mt-3 space-y-2 text-xs">
-                <p className="flex items-center gap-2 font-heading text-sm font-bold text-foreground">
-                  <User className="h-4 w-4 text-brand-red" /> {event.contactPerson.name}
-                </p>
-                <p className="pl-6 text-muted-foreground">{event.contactPerson.role}</p>
-                {event.contactPerson.email && (
-                  <p className="flex items-center gap-2 pl-6 pt-1 text-foreground/90">
-                    <Mail className="h-3.5 w-3.5 text-brand-red" /> {event.contactPerson.email}
-                  </p>
-                )}
-                {event.contactPerson.phone && (
-                  <p className="flex items-center gap-2 pl-6 text-foreground/90">
-                    <Phone className="h-3.5 w-3.5 text-brand-red" /> {event.contactPerson.phone}
-                  </p>
-                )}
-              </div>
-            </div>
-          )}
 
           {/* Other Events Sidebar widget */}
           <div className="border border-border bg-card p-6 shadow-sm">
