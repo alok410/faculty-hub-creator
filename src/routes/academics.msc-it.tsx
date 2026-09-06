@@ -9,7 +9,6 @@ import {
   BookOpen,
   Award,
   CheckCircle2,
-  Briefcase,
   ArrowRight,
   Sparkles,
   Cpu,

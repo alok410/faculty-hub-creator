@@ -11,7 +11,6 @@ import {
   BookOpen,
   CheckCircle2,
   Sparkles,
-  Briefcase,
   ArrowRight,
   Eye,
   Target,
@@ -27,13 +26,13 @@ export const Route = createFileRoute("/academics/degree/electrical")({
       {
         name: "description",
         content:
-          "Bachelor of Engineering in Electrical Engineering at GTU-ITR Mehsana. Power systems, industrial drives, renewable solar energy, high voltage lab, and EESA student chapter.",
+          "Bachelor of Engineering in Electrical Engineering at GTU-ITR Mehsana. Power systems, industrial drives, renewable solar energy, and high voltage lab.",
       },
       { property: "og:title", content: "B.E. in Electrical Engineering | GTU-ITR" },
       {
         property: "og:description",
         content:
-          "Undergraduate B.E. Electrical Engineering curriculum, vision, laboratories, and career paths at GTU-ITR.",
+          "Undergraduate B.E. Electrical Engineering curriculum, vision, and laboratories at GTU-ITR.",
       },
       { property: "og:url", content: "/academics/degree/electrical" },
     ],
@@ -133,33 +132,6 @@ const CURRICULUM_SEMESTERS = [
       "Major Capstone Project (Power/Renewables/EV)",
       "Comprehensive Technical Seminar & Viva",
     ],
-  },
-];
-
-const CAREER_PROSPECTS = [
-  {
-    title: "Power Utilities & Transmission Giants",
-    desc: "Executive engineer roles in GETCO, Power Grid Corp of India (PGCIL), Torrent Power, Tata Power, and NTPC.",
-  },
-  {
-    title: "Renewable Energy & Solar Parks",
-    desc: "Design, commissioning, and operations in utility-scale solar and wind farms with Adani Green, ReNew Power, and Suzlon.",
-  },
-  {
-    title: "Industrial Automation & Drives",
-    desc: "Automation systems integration, PLC-SCADA programming, and drive commissioning with Siemens, ABB, and Schneider.",
-  },
-  {
-    title: "Electric Vehicle (EV) Powertrain",
-    desc: "Battery management systems (BMS), motor controllers, regenerative braking, and EV charging station infrastructure.",
-  },
-  {
-    title: "Testing, Certification & Switchgear",
-    desc: "Quality control and technical operations at ERDA, L&T Electrical & Automation, and switchgear manufacturing facilities.",
-  },
-  {
-    title: "Higher Studies & GATE",
-    desc: "Pursue M.Tech / Ph.D. in Power Electronics, Power Systems, and Smart Grids at IITs, IISc, NITs, and global universities.",
   },
 ];
 

@@ -11,7 +11,6 @@ import {
   Layers,
   BookOpen,
   CheckCircle2,
-  Briefcase,
   ArrowRight,
   FileCheck,
   Server,
@@ -94,25 +93,6 @@ const CURRICULUM_SEMESTERS = [
       "Cloud Security & DevSecOps Architecture",
       "Major Capstone Cyber Defense Project / Threat Report",
     ],
-  },
-];
-
-const CAREER_ROLES = [
-  {
-    role: "SOC Analyst (Tier 1 / Tier 2)",
-    desc: "Monitor security information and event management (SIEM) systems, triage alerts, and coordinate incident containment.",
-  },
-  {
-    role: "VAPT Consultant / Penetration Tester",
-    desc: "Perform authorized simulated attacks against corporate networks, web applications, and mobile APIs to discover vulnerabilities.",
-  },
-  {
-    role: "Digital Forensics Investigator",
-    desc: "Analyze seized storage media, recover deleted evidence, and generate forensic reports admissible in legal court proceedings.",
-  },
-  {
-    role: "Information Security Auditor (ISO 27001)",
-    desc: "Audit enterprise security governance, access control policies, disaster recovery plans, and regulatory compliance.",
   },
 ];
 

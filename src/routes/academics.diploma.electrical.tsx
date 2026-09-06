@@ -9,9 +9,6 @@ import {
   CheckCircle2,
   BookOpen,
   ArrowRight,
-  GraduationCap,
-  Briefcase,
-  Wrench,
   Sun,
   ShieldCheck,
 } from "lucide-react";
@@ -101,25 +98,6 @@ const SEMESTERS = [
       "Electrical Estimation & Costing",
       "Diploma Capstone Project & Industry Training",
     ],
-  },
-];
-
-const CAREER_OPPORTUNITIES = [
-  {
-    title: "Direct D2D Lateral Entry to B.E.",
-    desc: "Direct admission into the 2nd Year (3rd Semester) of B.E. Electrical Engineering across engineering colleges in Gujarat.",
-  },
-  {
-    title: "GETCO / DISCOM Junior Assistant",
-    desc: "Eligible for government and state distribution company positions (UGVCL, PGVCL, MGVCL, DGVCL) in maintenance and line supervision.",
-  },
-  {
-    title: "Electrical Maintenance Supervisor",
-    desc: "Supervise switchboards, transformer substations, diesel generator sets, and industrial machinery maintenance in manufacturing plants.",
-  },
-  {
-    title: "Solar Rooftop Installation Technician",
-    desc: "Lead residential and commercial rooftop solar installation, inverter connection, and net-metering synchronization projects.",
   },
 ];
 

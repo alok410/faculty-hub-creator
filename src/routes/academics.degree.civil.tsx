@@ -27,13 +27,13 @@ export const Route = createFileRoute("/academics/degree/civil")({
       {
         name: "description",
         content:
-          "Bachelor of Engineering in Civil Engineering at GTU-ITR Mehsana. Structural analysis, surveying, geotech, concrete tech, environmental engineering, and CESA student chapter.",
+          "Bachelor of Engineering in Civil Engineering at GTU-ITR Mehsana. Structural analysis, surveying, geotech, concrete tech, and environmental engineering.",
       },
       { property: "og:title", content: "B.E. in Civil Engineering | GTU-ITR" },
       {
         property: "og:description",
         content:
-          "Undergraduate B.E. Civil Engineering curriculum, vision, laboratories, and career paths at GTU-ITR.",
+          "Undergraduate B.E. Civil Engineering curriculum, vision, and laboratories at GTU-ITR.",
       },
       { property: "og:url", content: "/academics/degree/civil" },
     ],
@@ -137,32 +137,6 @@ const CURRICULUM_SEMESTERS = [
   },
 ];
 
-const CAREER_PROSPECTS = [
-  {
-    title: "Structural & Design Consultant",
-    desc: "Analyze and engineer multi-story residential complexes, industrial sheds, and bridges using modern FEA software.",
-  },
-  {
-    title: "Public Infrastructure & Govt Services",
-    desc: "Executive engineering roles in CPWD, State R&B, Irrigation, Metro Rail corporations, and municipal authorities.",
-  },
-  {
-    title: "Site & Construction Project Manager",
-    desc: "Supervise on-site resource planning, quality compliance, bar-bending schedules, and safety protocols for megaprojects.",
-  },
-  {
-    title: "Geotechnical & Highway Engineer",
-    desc: "Execute sub-surface investigations, slope stabilization, foundation profiling, and express highway alignment.",
-  },
-  {
-    title: "Environmental & Water Resource Specialist",
-    desc: "Design Sewage Treatment Plants (STP), Effluent Treatment Plants (ETP), and smart urban stormwater distribution networks.",
-  },
-  {
-    title: "Higher Studies & Research",
-    desc: "Pursue M.Tech / M.S. and Ph.D. at premier IITs, NITs, CEPT, and international universities via GATE qualifications.",
-  },
-];
 
 function CivilDegreePage() {
   return (

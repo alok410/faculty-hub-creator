@@ -4,16 +4,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import {
   Compass,
-  HardHat,
   Building2,
   CheckCircle2,
   BookOpen,
   ArrowRight,
   Layers,
   Users,
-  GraduationCap,
-  Briefcase,
-  Wrench,
   FileText,
 } from "lucide-react";
 
@@ -102,25 +98,6 @@ const SEMESTERS = [
       "Irrigation Engineering",
       "Diploma Capstone Project & Viva",
     ],
-  },
-];
-
-const CAREER_OPPORTUNITIES = [
-  {
-    title: "Direct D2D Lateral Entry to B.E.",
-    desc: "Eligible for direct admission into the 2nd Year (3rd Semester) of B.E. Civil Engineering across Gujarat through ACPC lateral entry.",
-  },
-  {
-    title: "Junior Site Engineer / Supervisor",
-    desc: "Oversee on-site execution, workforce coordination, material receipts, and quality checks with construction contractors.",
-  },
-  {
-    title: "Government & Municipal Overseer",
-    desc: "Apply for Junior Engineer / Technical Assistant posts in R&B, Panchayat Irrigation, Municipal Corporations, and Railways.",
-  },
-  {
-    title: "Quantity Surveyor & Estimator",
-    desc: "Prepare measurement sheets, abstract sheets, bill of quantities (BOQ), and rate analysis for building tenders.",
   },
 ];
 
