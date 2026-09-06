@@ -7,7 +7,7 @@ import {
   ShieldAlert,
   IdCard,
   HardHat,
-  SmartphoneOff,
+  Smartphone,
   Home,
   CheckCircle2,
   AlertOctagon,
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/regulations")({
 const MANDATORY_HIGHLIGHTS = [
   { label: "Valid Identity Card", desc: "Must be worn and produced on demand at all times", icon: IdCard },
   { label: "Helmet Safety", desc: "Compulsory for all two-wheeler riders to & from campus", icon: HardHat },
-  { label: "Classroom Mobile Ban", desc: "Strictly prohibited inside classrooms, labs & corridors", icon: SmartphoneOff },
+  { label: "Classroom Mobile Ban", desc: "Strictly prohibited inside classrooms, labs & corridors", icon: Smartphone },
   { label: "Zero Substance Policy", desc: "Strict prohibition of alcohol, tobacco & intoxicants", icon: AlertOctagon },
 ];
 
