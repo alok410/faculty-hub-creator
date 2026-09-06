@@ -3,7 +3,6 @@ import { PageShell } from "@/components/site/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import {
-  Code,
   Cpu,
   Monitor,
   CheckCircle2,
@@ -15,7 +14,7 @@ import {
   Layers,
   Sparkles,
   ArrowRight,
-  Briefcase,
+  FileText,
 } from "lucide-react";
 
 export const Route = createFileRoute("/academics/degree/computer")({
@@ -25,12 +24,12 @@ export const Route = createFileRoute("/academics/degree/computer")({
       {
         name: "description",
         content:
-          "Bachelor of Engineering in Computer Engineering at GTU-ITR Mehsana. AI/ML, Cloud Computing, Full-Stack Development, Siemens NX software, and ACES student chapter.",
+          "Bachelor of Engineering in Computer Engineering at GTU-ITR Mehsana. AI/ML, Cloud Computing, Full-Stack Development, and Siemens NX software.",
       },
       { property: "og:title", content: "B.E. in Computer Engineering | GTU-ITR" },
       {
         property: "og:description",
-        content: "Undergraduate B.E. Computer Engineering curriculum, vision, laboratories, and career paths at GTU-ITR.",
+        content: "Undergraduate B.E. Computer Engineering curriculum, vision, and laboratories at GTU-ITR.",
       },
       { property: "og:url", content: "/academics/degree/computer" },
     ],
@@ -43,7 +42,7 @@ const STATS = [
   { label: "Duration & Creds", value: "4 Yrs (8 Sems)", icon: Layers, desc: "AICTE approved B.E. Degree" },
   { label: "Approved Intake", value: "60 Seats", icon: Users, desc: "100% ACPC counseling allocation" },
   { label: "Specialized Labs", value: "6 Labs", icon: Cpu, desc: "High-spec desktops & gigabit LAN" },
-  { label: "Active Chapter", value: "ACES Chapter", icon: Award, desc: "Association of Computer Eng. Students" },
+  { label: "Faculty Mentors", value: "Ph.D. & M.Tech", icon: Award, desc: "Experienced academic educators" },
 ];
 
 const LABS = [
@@ -99,48 +98,25 @@ function ComputerDegreePage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-primary-foreground">
-              <s.icon className="h-6 w-6 text-brand-red" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-navy/10 text-brand-navy">
+              <s.icon className="h-6 w-6" />
             </div>
             <div>
-              <p className="font-display text-base font-bold text-brand-navy">{s.value}</p>
-              <p className="text-xs font-bold uppercase tracking-wider text-foreground">{s.label}</p>
-              <p className="mt-0.5 text-[11px] text-muted-foreground">{s.desc}</p>
+              <div className="text-xl font-bold tracking-tight text-foreground">{s.value}</div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-brand-navy">{s.label}</div>
+              <p className="mt-0.5 text-xs text-muted-foreground">{s.desc}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Tabs Interface */}
-      <Tabs defaultValue="overview" className="w-full">
-        <div className="mb-8 rounded-xl border border-brand-navy/20 bg-brand-navy p-2 shadow-md">
-          <TabsList className="grid w-full grid-cols-1 gap-2 bg-transparent p-0 sm:grid-cols-4">
-            <TabsTrigger
-              value="overview"
-              className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"
-            >
-              Overview &amp; Vision
-            </TabsTrigger>
-            <TabsTrigger
-              value="labs"
-              className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"
-            >
-              Laboratories (6)
-            </TabsTrigger>
-            <TabsTrigger
-              value="curriculum"
-              className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"
-            >
-              Curriculum (Sem 1-8)
-            </TabsTrigger>
-            <TabsTrigger
-              value="careers"
-              className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"
-            >
-              Careers &amp; ACES
-            </TabsTrigger>
-          </TabsList>
-        </div>
+      <Tabs defaultValue="overview" className="w-full space-y-8">
+        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
+          <TabsTrigger value="overview" className="py-2.5 font-medium">Department Overview</TabsTrigger>
+          <TabsTrigger value="curriculum" className="py-2.5 font-medium">GTU Curriculum</TabsTrigger>
+          <TabsTrigger value="labs" className="py-2.5 font-medium">Laboratories (6)</TabsTrigger>
+        </TabsList>
 
         {/* Tab 1: Overview */}
         <TabsContent value="overview" className="space-y-8 focus-visible:outline-none">
@@ -162,41 +138,40 @@ function ComputerDegreePage() {
             </div>
 
             <p className="text-sm leading-relaxed text-foreground/85">
-              The Department of Computer Engineering is the technological powerhouse of GTU-ITR. It features highly
-              experienced faculty members and specialized technical staff delivering an industry-aligned curriculum in
-              Programming, Algorithms, Artificial Intelligence, Distributed Networks, Database Architectures, and Cloud Systems.
+              The Department of Computer Engineering at Gujarat Technological University - Institute of Technology &amp; Research (GTU-ITR), Mehsana, offers a 4-year undergraduate B.E. degree designed to prepare engineers for the rapidly changing landscape of software technologies, AI/ML, cloud ecosystems, and data analytics.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-foreground/85">
+              With 6 dedicated high-end computing laboratories, licensed engineering simulation software, gigabit campus networking, and guidance from highly qualified faculty members, students gain solid foundational theory combined with real-world project development capabilities.
             </p>
 
+            {/* Vision & Mission */}
             <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <div className="rounded-xl border border-border/70 bg-brand-surface/40 p-6">
-                <div className="flex items-center gap-2">
+              <div className="rounded-xl border border-brand-navy/20 bg-brand-surface/40 p-6">
+                <div className="flex items-center gap-2 font-heading text-base font-bold uppercase text-brand-navy">
                   <Eye className="h-5 w-5 text-brand-red" />
-                  <h3 className="font-heading text-base font-bold uppercase text-brand-navy">Department Vision</h3>
+                  <h3>Department Vision</h3>
                 </div>
-                <div className="mb-4 mt-2 h-0.5 w-10 bg-brand-red" />
-                <p className="text-xs leading-relaxed text-foreground/85">
-                  &quot;To offer quality education in the field of computer engineering for transforming the students into
-                  competent technocrats along with professional ethics.&quot;
+                <p className="mt-3 text-xs leading-relaxed text-foreground/80">
+                  To achieve excellence in education, innovation, and technological research in the domain of Computer Engineering, developing socially committed, ethically responsible, and globally competent software engineers.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-border/70 bg-brand-surface/40 p-6">
-                <div className="flex items-center gap-2">
+              <div className="rounded-xl border border-brand-navy/20 bg-brand-surface/40 p-6">
+                <div className="flex items-center gap-2 font-heading text-base font-bold uppercase text-brand-navy">
                   <Target className="h-5 w-5 text-brand-red" />
-                  <h3 className="font-heading text-base font-bold uppercase text-brand-navy">Department Mission</h3>
+                  <h3>Department Mission</h3>
                 </div>
-                <div className="mb-4 mt-2 h-0.5 w-10 bg-brand-red" />
-                <ul className="space-y-2 text-xs text-foreground/85">
+                <ul className="mt-3 space-y-2 text-xs text-foreground/80">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-brand-red shrink-0 mt-0.5" />
-                    <span>Cultivate an excellent academic environment through state-of-the-art laboratories and proficient faculty.</span>
+                    <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-red" />
+                    <span>Provide high-standard technical pedagogy bridging algorithmic theory with modern framework engineering.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-brand-red shrink-0 mt-0.5" />
-                    <span>Inculcate innovative sustainable engineering practices and entrepreneurial spirit.</span>
+                    <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-red" />
+                    <span>Inculcate problem-solving, innovative design capabilities, and entrepreneurship mindset through project labs.</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-brand-red shrink-0 mt-0.5" />
+                    <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-red" />
                     <span>Strengthen industry linkages for continuous knowledge sharing and student placements.</span>
                   </li>
                 </ul>
@@ -220,7 +195,46 @@ function ComputerDegreePage() {
           </div>
         </TabsContent>
 
-        {/* Tab 2: Laboratories */}
+        {/* Tab 2: Curriculum */}
+        <TabsContent value="curriculum" className="space-y-8 focus-visible:outline-none">
+          <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
+            <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">4-Year Curriculum Structure</h2>
+            <div className="mb-6 mt-2 h-1 w-16 bg-brand-red" />
+            <div className="grid gap-6 md:grid-cols-2">
+              {CURRICULUM_SEMESTERS.map((sem, i) => (
+                <div key={i} className="rounded-xl border border-border bg-brand-surface/30 p-5">
+                  <Badge className="bg-brand-navy text-white uppercase text-[10px]">{sem.year}</Badge>
+                  <ul className="mt-4 space-y-2 text-xs">
+                    {sem.courses.map((c, cidx) => (
+                      <li key={cidx} className="flex items-center gap-2 text-foreground/90 font-medium">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-brand-red shrink-0" />
+                        <span>{c}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl bg-brand-surface p-5 border border-border">
+              <div>
+                <div className="font-semibold text-foreground text-sm">Official GTU Teaching Scheme &amp; Detailed Subject Codes</div>
+                <div className="text-xs text-muted-foreground">Download authentic credit matrices, laboratory experiment lists, and end-term grading criteria.</div>
+              </div>
+              <a
+                href="https://www.gtu.ac.in/Syllabus_List.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-brand-navy px-4 py-2 text-xs font-semibold text-white shadow hover:bg-brand-navy/90 shrink-0 transition-colors"
+              >
+                <FileText className="h-4 w-4" />
+                <span>GTU Official Syllabus</span>
+              </a>
+            </div>
+          </div>
+        </TabsContent>
+
+        {/* Tab 3: Laboratories */}
         <TabsContent value="labs" className="space-y-8 focus-visible:outline-none">
           <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
             <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">Departmental Laboratories</h2>
@@ -247,80 +261,6 @@ function ComputerDegreePage() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </TabsContent>
-
-        {/* Tab 3: Curriculum */}
-        <TabsContent value="curriculum" className="space-y-8 focus-visible:outline-none">
-          <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
-            <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">4-Year Curriculum Structure</h2>
-            <div className="mb-6 mt-2 h-1 w-16 bg-brand-red" />
-            <div className="grid gap-6 md:grid-cols-2">
-              {CURRICULUM_SEMESTERS.map((sem, i) => (
-                <div key={i} className="rounded-xl border border-border bg-brand-surface/30 p-5">
-                  <Badge className="bg-brand-navy text-white uppercase text-[10px]">{sem.year}</Badge>
-                  <ul className="mt-4 space-y-2 text-xs">
-                    {sem.courses.map((c, cidx) => (
-                      <li key={cidx} className="flex items-center gap-2 text-foreground/90 font-medium">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-brand-red shrink-0" />
-                        <span>{c}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </TabsContent>
-
-        {/* Tab 4: Careers & ACES */}
-        <TabsContent value="careers" className="space-y-8 focus-visible:outline-none">
-          <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
-            <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">Career Outcomes &amp; ACES Chapter</h2>
-            <div className="mb-6 mt-2 h-1 w-16 bg-brand-red" />
-
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-xl border border-border/70 bg-brand-surface/40 p-6">
-                <h3 className="font-heading text-base font-bold uppercase text-brand-navy">Association of Computer Eng. Students (ACES)</h3>
-                <p className="mt-2 text-xs leading-relaxed text-foreground/80">
-                  ACES is the vibrant student chapter of the department organizing weekly coding challenges, open source
-                  sprints, technical symposiums, and peer tutoring sessions.
-                </p>
-                <div className="mt-4 space-y-2 text-xs text-foreground/85">
-                  <p className="flex items-center gap-2">
-                    <Sparkles className="h-3.5 w-3.5 text-brand-red" /> Annual Hackathon &amp; Codeathon
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <Sparkles className="h-3.5 w-3.5 text-brand-red" /> Linux &amp; Git Workshops
-                  </p>
-                  <p className="flex items-center gap-2">
-                    <Sparkles className="h-3.5 w-3.5 text-brand-red" /> Industry Expert Webinars
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col justify-between rounded-xl border border-brand-navy bg-brand-navy p-6 text-white">
-                <div>
-                  <h3 className="font-heading text-base font-bold uppercase text-white">Career Roles for Graduates</h3>
-                  <div className="mt-4 space-y-1.5 text-xs text-white/90">
-                    <p>• Full-Stack Software Developer</p>
-                    <p>• Artificial Intelligence / ML Engineer</p>
-                    <p>• Cloud Solutions Architect &amp; DevOps Specialist</p>
-                    <p>• Database Administrator &amp; Big Data Analyst</p>
-                    <p>• Cybersecurity Specialist &amp; Ethical Hacker</p>
-                  </div>
-                </div>
-
-                <div className="mt-6 border-t border-white/10 pt-4">
-                  <Link
-                    to="/enquiry"
-                    className="block w-full rounded-lg bg-brand-red py-2.5 text-center font-heading text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-white hover:text-brand-navy"
-                  >
-                    Apply for Computer Engineering
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </TabsContent>

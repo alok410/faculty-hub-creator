@@ -143,11 +143,10 @@ function PgdcsAcademicsPage() {
 
       {/* Main Tabs */}
       <Tabs defaultValue="curriculum" className="w-full space-y-8">
-        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 md:grid-cols-4">
+        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
           <TabsTrigger value="curriculum" className="py-2.5 font-medium">Curriculum Structure</TabsTrigger>
           <TabsTrigger value="cyber-range" className="py-2.5 font-medium">Cyber Range Labs (4)</TabsTrigger>
           <TabsTrigger value="certifications" className="py-2.5 font-medium">Industry Mappings</TabsTrigger>
-          <TabsTrigger value="careers" className="py-2.5 font-medium">Careers &amp; Admissions</TabsTrigger>
         </TabsList>
 
         {/* 1. CURRICULUM */}
@@ -263,48 +262,6 @@ function PgdcsAcademicsPage() {
                 <Badge variant="outline" className="border-brand-navy/30 text-brand-navy mb-2">BSI / ISO</Badge>
                 <div className="font-bold text-foreground text-sm">ISO/IEC 27001 Lead Auditor</div>
                 <p className="text-xs text-muted-foreground mt-1">Covered via IT governance, risk mitigation, and cyber law curriculum.</p>
-              </div>
-            </div>
-          </div>
-        </TabsContent>
-
-        {/* 4. CAREERS & ADMISSIONS */}
-        <TabsContent value="careers" className="space-y-6">
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
-            <h2 className="text-2xl font-bold tracking-tight text-brand-navy">High-Demand Cyber Defense Careers</h2>
-            <div className="mt-2 mb-6 h-1 w-16 bg-brand-red rounded-full" />
-            <p className="text-sm text-muted-foreground mb-6">
-              With strict data protection laws and escalating threat vectors, cybersecurity professionals command premium compensation across banking, consulting, telecom, and government defense units.
-            </p>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {CAREER_ROLES.map((role, idx) => (
-                <div key={idx} className="rounded-xl border border-border bg-card p-5 shadow-sm">
-                  <div className="flex items-center gap-2 font-semibold text-brand-navy text-sm mb-1.5">
-                    <Briefcase className="h-4 w-4 text-brand-red shrink-0" />
-                    <span>{role.role}</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{role.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Admissions Banner */}
-            <div className="mt-8 rounded-xl bg-gradient-to-r from-brand-navy to-brand-navy/90 p-6 text-white shadow-md">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div>
-                  <h3 className="text-lg font-bold">Apply for 1-Year PGDCS at GTU-ITR</h3>
-                  <p className="text-xs text-white/80 mt-1 max-w-xl">
-                    Admissions are open for graduates holding B.E., B.Tech, BCA, B.Sc. (IT/CS) or equivalent degrees. Check seat quota and application steps.
-                  </p>
-                </div>
-                <Link
-                  to="/admissions/pgdcs"
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-brand-red px-4 py-2 text-xs font-semibold text-white shadow hover:bg-brand-red/90 transition-colors"
-                >
-                  <span>PGDCS Admissions</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
               </div>
             </div>
           </div>

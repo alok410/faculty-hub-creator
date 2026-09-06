@@ -25,12 +25,12 @@ export const Route = createFileRoute("/students-clubs")({
       {
         name: "description",
         content:
-          "Active technical, cultural, sports, and community clubs at GTU-ITR Mehsana: ACES, Robotics & IoT, Kaushalya Cultural Fest, Shaurya Sports, and NSS.",
+          "Active technical, cultural, sports, and community clubs at GTU-ITR Mehsana: Coding Club, Robotics & IoT, Kaushalya Cultural Fest, Shaurya Sports, and NSS.",
       },
-      { property: "og:title", content: "Student Clubs & Chapters | GTU-ITR" },
+      { property: "og:title", content: "Student Clubs & Co-Curricular Chapters | GTU-ITR" },
       {
         property: "og:description",
-        content: "Explore student-led technical clubs, annual fests, and extracurricular chapters at GTU-ITR.",
+        content: "Discover student chapters, coding societies, and cultural clubs at GTU-ITR Mehsana.",
       },
       { property: "og:url", content: "/students-clubs" },
     ],
@@ -48,7 +48,7 @@ const STATS = [
 
 const TECHNICAL_CLUBS = [
   {
-    name: "ACES (Association of Computer Engineering Students)",
+    name: "CodeHub (Computer & Coding Society)",
     icon: Code,
     tag: "Computer Eng.",
     desc: "Premier coding hub conducting competitive programming contests, full-stack hackathons, Git workshops, and tech seminars.",

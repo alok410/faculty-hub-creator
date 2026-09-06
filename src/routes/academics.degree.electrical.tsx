@@ -46,7 +46,7 @@ const STATS = [
   { label: "Duration & Creds", value: "4 Yrs (8 Sems)", icon: Layers, desc: "AICTE approved B.E. Degree" },
   { label: "Approved Intake", value: "60 Seats", icon: Users, desc: "100% ACPC counseling allocation" },
   { label: "Specialized Labs", value: "7 Labs", icon: Zap, desc: "High voltage, machines & solar tech" },
-  { label: "Active Chapter", value: "EESA Chapter", icon: Award, desc: "Electrical Engineering Students Association" },
+  { label: "Faculty Mentors", value: "Ph.D. & M.Tech", icon: Award, desc: "Power systems & drives experts" },
 ];
 
 const LABS = [
@@ -190,12 +190,10 @@ function ElectricalDegreePage() {
 
       {/* Main Tabs */}
       <Tabs defaultValue="overview" className="w-full space-y-8">
-        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 md:grid-cols-5">
+        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
           <TabsTrigger value="overview" className="py-2.5 font-medium">Department Overview</TabsTrigger>
           <TabsTrigger value="curriculum" className="py-2.5 font-medium">GTU Curriculum</TabsTrigger>
           <TabsTrigger value="laboratories" className="py-2.5 font-medium">Laboratories (7)</TabsTrigger>
-          <TabsTrigger value="student-chapter" className="py-2.5 font-medium">EESA Chapter</TabsTrigger>
-          <TabsTrigger value="careers" className="py-2.5 font-medium">Careers & Admissions</TabsTrigger>
         </TabsList>
 
         {/* 1. OVERVIEW */}
@@ -350,93 +348,6 @@ function ElectricalDegreePage() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </TabsContent>
-
-        {/* 4. STUDENT CHAPTER */}
-        <TabsContent value="student-chapter" className="space-y-6">
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red">
-                <Zap className="h-6 w-6" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold tracking-tight text-brand-navy">EESA - Electrical Engineering Students Association</h2>
-                <p className="text-sm text-muted-foreground">Department Technical &amp; Co-Curricular Student Body</p>
-              </div>
-            </div>
-            <div className="mt-4 mb-6 h-1 w-16 bg-brand-red rounded-full" />
-
-            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
-              <p>
-                EESA organizes specialized technical workshops on PCB design, electrical panel fabrication, MATLAB circuit simulation, and industrial visits to 220 kV / 400 kV GETCO electrical substations and thermal power generation stations.
-              </p>
-            </div>
-
-            <div className="mt-6 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-xl border border-border bg-brand-surface/50 p-4">
-                <div className="font-semibold text-brand-navy text-sm mb-1">Circuit Debugging &amp; IoT</div>
-                <p className="text-xs text-muted-foreground">Hands-on micro-soldering and real-time electronic circuit fault tracing contests under timed pressure.</p>
-              </div>
-              <div className="rounded-xl border border-border bg-brand-surface/50 p-4">
-                <div className="font-semibold text-brand-navy text-sm mb-1">Solar Rooftop Workshops</div>
-                <p className="text-xs text-muted-foreground">Co-hosted with the Anchor Institute of Solar Energy: on-site net-metering, inverter wiring, and tilt angle calculation.</p>
-              </div>
-              <div className="rounded-xl border border-border bg-brand-surface/50 p-4">
-                <div className="font-semibold text-brand-navy text-sm mb-1">Substation Field Expeditions</div>
-                <p className="text-xs text-muted-foreground">Guided industrial visits to GETCO substations to observe SF6 circuit breakers, lightning arresters, and capacitor banks.</p>
-              </div>
-            </div>
-          </div>
-        </TabsContent>
-
-        {/* 5. CAREERS & ADMISSIONS */}
-        <TabsContent value="careers" className="space-y-6">
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
-            <h2 className="text-2xl font-bold tracking-tight text-brand-navy">Career Pathways &amp; Recruitment</h2>
-            <div className="mt-2 mb-6 h-1 w-16 bg-brand-red rounded-full" />
-            <p className="text-sm text-muted-foreground mb-6">
-              Electrical engineers are central to the nationwide transition towards clean green energy, industrial robotics, smart grids, and electric mobility (EVs).
-            </p>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {CAREER_PROSPECTS.map((cp, idx) => (
-                <div key={idx} className="rounded-xl border border-border bg-card p-5 shadow-sm">
-                  <div className="flex items-center gap-2 font-semibold text-brand-navy text-sm mb-1.5">
-                    <Briefcase className="h-4 w-4 text-brand-red shrink-0" />
-                    <span>{cp.title}</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{cp.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Admissions Banner */}
-            <div className="mt-8 rounded-xl bg-gradient-to-r from-brand-navy to-brand-navy/90 p-6 text-white shadow-md">
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                <div>
-                  <h3 className="text-lg font-bold">Apply for B.E. in Electrical Engineering</h3>
-                  <p className="text-xs text-white/80 mt-1 max-w-xl">
-                    Admissions are administered 100% through the Admission Committee for Professional Courses (ACPC), Government of Gujarat, based on GUJCET and 12th Science merit.
-                  </p>
-                </div>
-                <div className="flex gap-3">
-                  <Link
-                    to="/admissions/degree"
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-brand-red px-4 py-2 text-xs font-semibold text-white shadow hover:bg-brand-red/90 transition-colors"
-                  >
-                    <span>Degree Admissions</span>
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </Link>
-                  <Link
-                    to="/solar-energy"
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-white/10 px-4 py-2 text-xs font-semibold text-white hover:bg-white/20 transition-colors"
-                  >
-                    <span>Solar Institute</span>
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </TabsContent>

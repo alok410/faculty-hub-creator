@@ -165,11 +165,10 @@ function MscItAcademicsPage() {
 
       {/* Main Tabs */}
       <Tabs defaultValue="architecture" className="w-full space-y-8">
-        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 md:grid-cols-4">
+        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
           <TabsTrigger value="architecture" className="py-2.5 font-medium">Curriculum Phases</TabsTrigger>
           <TabsTrigger value="nep-exits" className="py-2.5 font-medium">NEP Modular Exits</TabsTrigger>
           <TabsTrigger value="laboratories" className="py-2.5 font-medium">Specialized IT Labs</TabsTrigger>
-          <TabsTrigger value="careers" className="py-2.5 font-medium">Careers &amp; Admissions</TabsTrigger>
         </TabsList>
 
         {/* 1. CURRICULUM PHASES */}
@@ -271,51 +270,6 @@ function MscItAcademicsPage() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </TabsContent>
-
-        {/* 4. CAREERS & ADMISSIONS */}
-        <TabsContent value="careers" className="space-y-6">
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
-            <h2 className="text-2xl font-bold tracking-tight text-brand-navy">Career Trajectories &amp; Admission Link</h2>
-            <div className="mt-2 mb-6 h-1 w-16 bg-brand-red rounded-full" />
-            <p className="text-sm text-muted-foreground mb-6">
-              Graduates of Integrated M.Sc. IT command high-paying roles across software product companies, MNC consultancies, cloud providers, and startups.
-            </p>
-
-            <div className="grid gap-4 sm:grid-cols-3 mb-8">
-              <div className="rounded-xl border border-border bg-card p-4">
-                <div className="font-semibold text-brand-navy text-sm mb-1">Full-Stack Engineer</div>
-                <p className="text-xs text-muted-foreground">Architecting scalable React, Node.js, and Python web platforms.</p>
-              </div>
-              <div className="rounded-xl border border-border bg-card p-4">
-                <div className="font-semibold text-brand-navy text-sm mb-1">Cloud &amp; DevOps Specialist</div>
-                <p className="text-xs text-muted-foreground">Automating CI/CD pipelines, Docker containerization, and AWS services.</p>
-              </div>
-              <div className="rounded-xl border border-border bg-card p-4">
-                <div className="font-semibold text-brand-navy text-sm mb-1">Data &amp; AI Engineer</div>
-                <p className="text-xs text-muted-foreground">Building data ingestion pipelines, analytical dashboards, and ML models.</p>
-              </div>
-            </div>
-
-            {/* Admission CTA */}
-            <div className="rounded-xl bg-gradient-to-r from-brand-navy to-brand-navy/90 p-6 text-white shadow-md">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div>
-                  <h3 className="text-lg font-bold">Apply for 5-Year Integrated M.Sc. (IT)</h3>
-                  <p className="text-xs text-white/80 mt-1 max-w-xl">
-                    Admissions are open for 12th Standard graduates (Science or Commerce with Mathematics/Statistics). Check eligibility and download the guidelines brochure.
-                  </p>
-                </div>
-                <Link
-                  to="/admissions/msc-it"
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-brand-red px-4 py-2 text-xs font-semibold text-white shadow hover:bg-brand-red/90 transition-colors"
-                >
-                  <span>Admission Details</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
             </div>
           </div>
         </TabsContent>

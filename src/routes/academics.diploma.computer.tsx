@@ -10,7 +10,6 @@ import {
   BookOpen,
   ArrowRight,
   Monitor,
-  Cpu,
   GraduationCap,
 } from "lucide-react";
 
@@ -68,42 +67,25 @@ function ComputerDiplomaPage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-primary-foreground">
-              <s.icon className="h-6 w-6 text-brand-red" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-navy/10 text-brand-navy">
+              <s.icon className="h-6 w-6" />
             </div>
             <div>
-              <p className="font-display text-base font-bold text-brand-navy">{s.value}</p>
-              <p className="text-xs font-bold uppercase tracking-wider text-foreground">{s.label}</p>
-              <p className="mt-0.5 text-[11px] text-muted-foreground">{s.desc}</p>
+              <div className="text-xl font-bold tracking-tight text-foreground">{s.value}</div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-brand-navy">{s.label}</div>
+              <p className="mt-0.5 text-xs text-muted-foreground">{s.desc}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Tabs */}
-      <Tabs defaultValue="overview" className="w-full">
-        <div className="mb-8 rounded-xl border border-brand-navy/20 bg-brand-navy p-2 shadow-md">
-          <TabsList className="grid w-full grid-cols-1 gap-2 bg-transparent p-0 sm:grid-cols-3">
-            <TabsTrigger
-              value="overview"
-              className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"
-            >
-              Program Overview
-            </TabsTrigger>
-            <TabsTrigger
-              value="labs"
-              className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"
-            >
-              Practical Labs
-            </TabsTrigger>
-            <TabsTrigger
-              value="curriculum"
-              className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"
-            >
-              Semester Plan
-            </TabsTrigger>
-          </TabsList>
-        </div>
+      <Tabs defaultValue="overview" className="w-full space-y-8">
+        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
+          <TabsTrigger value="overview" className="py-2.5 font-medium">Program Overview</TabsTrigger>
+          <TabsTrigger value="labs" className="py-2.5 font-medium">Practical Labs</TabsTrigger>
+          <TabsTrigger value="curriculum" className="py-2.5 font-medium">6-Semester Syllabus</TabsTrigger>
+        </TabsList>
 
         {/* Tab 1: Overview */}
         <TabsContent value="overview" className="space-y-8 focus-visible:outline-none">

@@ -49,7 +49,7 @@ const PROGRAMMES = [
     name: "Computer Engineering",
     duration: "4 Years (8 Semesters)",
     intake: "60 Seats",
-    highlights: "AI/ML, Web Systems, Cloud Computing, Siemens CAD/CAM & ACES Club",
+    highlights: "AI/ML, Web Systems, Cloud Computing, Siemens CAD/CAM & Coding Labs",
   },
   {
     name: "Mechanical Engineering",

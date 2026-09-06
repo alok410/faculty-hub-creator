@@ -150,11 +150,10 @@ function ElectricalDiplomaPage() {
 
       {/* Tabs */}
       <Tabs defaultValue="overview" className="w-full space-y-8">
-        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 md:grid-cols-4">
+        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
           <TabsTrigger value="overview" className="py-2.5 font-medium">Program Overview</TabsTrigger>
           <TabsTrigger value="labs" className="py-2.5 font-medium">Practical Workshops &amp; Labs</TabsTrigger>
           <TabsTrigger value="curriculum" className="py-2.5 font-medium">6-Semester Syllabus</TabsTrigger>
-          <TabsTrigger value="d2d-careers" className="py-2.5 font-medium">D2D &amp; Careers</TabsTrigger>
         </TabsList>
 
         {/* 1. OVERVIEW */}
@@ -267,56 +266,6 @@ function ElectricalDiplomaPage() {
                   </ul>
                 </div>
               ))}
-            </div>
-          </div>
-        </TabsContent>
-
-        {/* 4. D2D & CAREERS */}
-        <TabsContent value="d2d-careers" className="space-y-6">
-          <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
-            <h2 className="text-2xl font-bold tracking-tight text-brand-navy">D2D Lateral Progression &amp; Employment</h2>
-            <div className="mt-2 mb-6 h-1 w-16 bg-brand-red rounded-full" />
-            <p className="text-sm text-muted-foreground mb-6">
-              After obtaining a Diploma in Electrical Engineering, students can either immediately enter manufacturing, solar installation, and state power utility roles or pursue direct B.E. admission.
-            </p>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {CAREER_OPPORTUNITIES.map((co, idx) => (
-                <div key={idx} className="rounded-xl border border-border bg-card p-5 shadow-sm">
-                  <div className="flex items-center gap-2 font-semibold text-brand-navy text-sm mb-1.5">
-                    <Briefcase className="h-4 w-4 text-brand-red shrink-0" />
-                    <span>{co.title}</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{co.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Admission CTA */}
-            <div className="mt-8 rounded-xl bg-gradient-to-r from-brand-navy to-brand-navy/90 p-6 text-white shadow-md">
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                <div>
-                  <h3 className="text-lg font-bold">Apply for Diploma in Electrical Engineering</h3>
-                  <p className="text-xs text-white/80 mt-1 max-w-xl">
-                    Admissions are open after 10th Standard. 50% seats via ACPDC centralized counselling and 50% Management Quota / Vacant Quota direct admissions at institute campus.
-                  </p>
-                </div>
-                <div className="flex gap-3">
-                  <Link
-                    to="/admissions/diploma"
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-brand-red px-4 py-2 text-xs font-semibold text-white shadow hover:bg-brand-red/90 transition-colors"
-                  >
-                    <span>Diploma Admissions</span>
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </Link>
-                  <Link
-                    to="/transportation"
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-white/10 px-4 py-2 text-xs font-semibold text-white hover:bg-white/20 transition-colors"
-                  >
-                    <span>Bus Routes</span>
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </TabsContent>

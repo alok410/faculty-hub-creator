@@ -9,7 +9,6 @@ import {
   CheckCircle2,
   BookOpen,
   ArrowRight,
-  Cpu,
   GraduationCap,
 } from "lucide-react";
 
@@ -67,42 +66,25 @@ function MechanicalDiplomaPage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-primary-foreground">
-              <s.icon className="h-6 w-6 text-brand-red" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-navy/10 text-brand-navy">
+              <s.icon className="h-6 w-6" />
             </div>
             <div>
-              <p className="font-display text-base font-bold text-brand-navy">{s.value}</p>
-              <p className="text-xs font-bold uppercase tracking-wider text-foreground">{s.label}</p>
-              <p className="mt-0.5 text-[11px] text-muted-foreground">{s.desc}</p>
+              <div className="text-xl font-bold tracking-tight text-foreground">{s.value}</div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-brand-navy">{s.label}</div>
+              <p className="mt-0.5 text-xs text-muted-foreground">{s.desc}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Tabs */}
-      <Tabs defaultValue="overview" className="w-full">
-        <div className="mb-8 rounded-xl border border-brand-navy/20 bg-brand-navy p-2 shadow-md">
-          <TabsList className="grid w-full grid-cols-1 gap-2 bg-transparent p-0 sm:grid-cols-3">
-            <TabsTrigger
-              value="overview"
-              className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"
-            >
-              Program Overview
-            </TabsTrigger>
-            <TabsTrigger
-              value="labs"
-              className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"
-            >
-              Workshop &amp; Labs
-            </TabsTrigger>
-            <TabsTrigger
-              value="curriculum"
-              className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"
-            >
-              Semester Matrix
-            </TabsTrigger>
-          </TabsList>
-        </div>
+      <Tabs defaultValue="overview" className="w-full space-y-8">
+        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
+          <TabsTrigger value="overview" className="py-2.5 font-medium">Program Overview</TabsTrigger>
+          <TabsTrigger value="labs" className="py-2.5 font-medium">Workshop &amp; Labs</TabsTrigger>
+          <TabsTrigger value="curriculum" className="py-2.5 font-medium">6-Semester Syllabus</TabsTrigger>
+        </TabsList>
 
         {/* Tab 1: Overview */}
         <TabsContent value="overview" className="space-y-8 focus-visible:outline-none">
@@ -119,13 +101,13 @@ function MechanicalDiplomaPage() {
                 to="/admissions/diploma"
                 className="inline-flex items-center gap-2 rounded-lg bg-brand-navy px-4 py-2 font-heading text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-red"
               >
-                Admission Criteria <ArrowRight className="h-4 w-4" />
+                Admission Details <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <p className="text-sm leading-relaxed text-foreground/85">
-              The Diploma in Mechanical Engineering equips students after 10th Standard with hands-on mechanical fabrication,
-              CAD drafting, lathe machining, thermal systems, and quality inspection skills. Students benefit from access to
-              our sprawling central workshop and Siemens Centre of Excellence facilities.
+              The 3-Year Diploma in Mechanical Engineering at GTU-ITR provides students who have completed 10th standard
+              with comprehensive practical training in mechanical fabrication, workshop machining, thermal machinery,
+              and computer-aided drafting (CAD).
             </p>
 
             <div className="mt-8 rounded-xl border border-brand-navy/20 bg-brand-surface/40 p-6">
@@ -133,8 +115,8 @@ function MechanicalDiplomaPage() {
                 The D2D (Diploma-to-Degree) Pathway
               </h3>
               <p className="mt-2 text-xs leading-relaxed text-foreground/85">
-                Completing this 3-year diploma unlocks direct lateral entry into Semester-3 of the Bachelor of Engineering
-                (B.E.) program through ACPC counselling, giving students a prestigious degree qualification with deep practical grounding.
+                Graduates can directly enter the 2nd year (3rd semester) of any Bachelor of Engineering (B.E.) Mechanical
+                Engineering course in Gujarat through ACPC centralized lateral entry, giving them both a diploma and degree.
               </p>
             </div>
           </div>
@@ -143,7 +125,7 @@ function MechanicalDiplomaPage() {
         {/* Tab 2: Labs */}
         <TabsContent value="labs" className="space-y-8 focus-visible:outline-none">
           <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
-            <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">Mechanical Workshop Bays &amp; Labs</h2>
+            <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">Workshop Bays &amp; Testing Labs</h2>
             <div className="mb-6 mt-2 h-1 w-16 bg-brand-red" />
             <div className="grid gap-6 md:grid-cols-2">
               {LABS.map((l, i) => (
@@ -159,7 +141,7 @@ function MechanicalDiplomaPage() {
         {/* Tab 3: Curriculum */}
         <TabsContent value="curriculum" className="space-y-8 focus-visible:outline-none">
           <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
-            <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">6-Semester Curriculum Matrix</h2>
+            <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">6-Semester Curriculum Structure</h2>
             <div className="mb-6 mt-2 h-1 w-16 bg-brand-red" />
             <div className="grid gap-6 md:grid-cols-3">
               {SEMESTERS.map((s, i) => (

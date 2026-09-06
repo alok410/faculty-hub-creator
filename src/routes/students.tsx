@@ -40,7 +40,7 @@ export const Route = createFileRoute("/students")({
 });
 
 const QUICK_LINKS = [
-  { title: "Student Clubs", desc: "ACES, Robotics, Coding, Cultural & Sports", href: "/students-clubs", icon: Sparkles },
+  { title: "Student Clubs", desc: "Robotics, Coding, Cultural & Sports", href: "/students-clubs", icon: Sparkles },
   { title: "Academic Calendar", desc: "Semester milestones & exam schedules", href: "/calendar", icon: CalendarDays },
   { title: "Achievements", desc: "National Ideathon & SSIP grant awards", href: "/achievements", icon: Trophy },
   { title: "Anti-Ragging Cell", desc: "Zero-tolerance policy & mentoring cell", href: "/anti-ragging", icon: ShieldAlert },
