@@ -154,8 +154,6 @@ function EventDetailPage() {
               )}
             </div>
           </section>
-
-
         </FadeIn>
 
         {/* Sidebar Info */}
@@ -199,8 +197,6 @@ function EventDetailPage() {
               </Link>
             </div>
           </div>
-
-
 
           {/* Other Events Sidebar widget */}
           <div className="border border-border bg-card p-6 shadow-sm">
