@@ -154,7 +154,6 @@ function EventDetailPage() {
               )}
             </div>
           </section>
-
         </FadeIn>
 
         {/* Sidebar Info */}

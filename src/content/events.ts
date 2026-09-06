@@ -24,7 +24,6 @@ export type SiteEvent = {
   organizer?: string;
   targetAudience?: string;
   fullDescription?: string[];
-  highlights?: string[];
   schedule?: EventScheduleItem[];
   contactPerson?: EventContact;
   registrationLink?: string;
@@ -49,12 +48,6 @@ export const EVENTS: SiteEvent[] = [
       "GTU Institute of Technology & Research (GTU-ITR), Mehsana invites all students and faculty members to celebrate Engineer's Day on September 5th, 2026, honoring the birth anniversary of India's iconic engineer, Sir M. Visvesvaraya.",
       "The grand event features an inter-departmental technical quiz competition, student prototype project exhibition, and a keynote lecture by distinguished guest speakers from industry and academia. Participants will showcase innovative engineering solutions to real-world problems.",
       "Cash prizes, trophies, and certificates of merit will be awarded to top-performing teams across Degree and Diploma departments.",
-    ],
-    highlights: [
-      "Inter-departmental Tech Quiz with Live Buzzer Rounds",
-      "Student Engineering Model & Prototype Exhibition",
-      "Keynote Address on 'Engineering Solutions for Sustainable Future'",
-      "Certificates & Cash Prizes worth ₹15,000 for Winners",
     ],
     schedule: [
       { time: "09:30 AM - 10:30 AM", activity: "Inaugural Ceremony & Lamp Lighting" },
@@ -91,12 +84,6 @@ export const EVENTS: SiteEvent[] = [
       "Equipped with 9 world-class laboratories established by the Govt. of Gujarat in collaboration with Siemens Industry Software, participants will gain direct exposure to PLC logic design, SCADA human-machine interface configuration, and industrial robot programming.",
       "This workshop serves as a gateway for students seeking professional Siemens certification courses offered at our campus.",
     ],
-    highlights: [
-      "Hands-on practice on Siemens SIMATIC S7-1200 / S7-1500 PLCs",
-      "Real-time SCADA screen development & process monitoring",
-      "Live demonstration of 6-Axis Industrial Robotics cell",
-      "Official Certificate of Participation issued by SIEMENS CoE",
-    ],
     schedule: [
       { time: "10:00 AM - 11:30 AM", activity: "Overview of Industrial Automation & PLC Hardware Setup" },
       { time: "11:30 AM - 01:00 PM", activity: "Hands-on Lab Session: TIA Portal & Ladder Logic Programming" },
@@ -130,13 +117,6 @@ export const EVENTS: SiteEvent[] = [
       "Kaushalya 2026 is the premier annual cultural celebration of GTU Institute of Technology & Research, bringing together hundreds of creative minds in a vibrant showcase of art, music, dance, literature, and theatrical performance.",
       "Designed to foster self-expression, cultural awareness, and unity, the day-long fest features multi-stage talent competitions, street plays addressing social causes, fine art installations, and a grand musical evening performance.",
       "Food stalls, photo booths, and interactive student club kiosks will keep the campus energized throughout the event.",
-    ],
-    highlights: [
-      "Solo & Group Dance Face-Off (Folk, Classical & Hip-Hop)",
-      "Battle of the Campus Bands & Solo Singing",
-      "Nukkad Natak (Street Play) & Skit Competition",
-      "Rangoli, Painting & Digital Art Competitions",
-      "Grand Celebrity Evening & DJ Night",
     ],
     schedule: [
       { time: "09:00 AM - 10:00 AM", activity: "Fest Inauguration & Folk Welcoming Performance" },
@@ -172,13 +152,6 @@ export const EVENTS: SiteEvent[] = [
       "Events range from high-energy outdoor field games like Cricket, Football, Volleyball, and Kabaddi to track & field athletics, as well as indoor championships in Table Tennis, Chess, Badminton, and Carrom.",
       "Inter-departmental championship trophies will be contested by Degree and Diploma teams with medals awarded for individual and team events.",
     ],
-    highlights: [
-      "Inter-Department T20 Cricket & Football Tournaments",
-      "Track & Field Athletics (100m, 200m, 4x100m Relay, Long Jump, Shotput)",
-      "Kabaddi & Volleyball Knockout Championships",
-      "Indoor Championships: Badminton, Table Tennis & Chess",
-      "Overall Championship Trophy for the Top Branch",
-    ],
     schedule: [
       { time: "Day 1 - 08:00 AM", activity: "Torch Relay, March Past & Official Opening Ceremony" },
       { time: "Day 1 - 09:30 AM", activity: "Athletics Heats & Cricket / Football League Matches" },
@@ -211,12 +184,6 @@ export const EVENTS: SiteEvent[] = [
       "The Training & Placement (T&P) Cell at GTU-ITR is organizing a dedicated multi-company placement drive for final-year graduating students across Computer, Mechanical, Electrical, Civil, and MSc IT streams.",
       "Reputed national and multinational recruiters will be visiting our campus to conduct technical screening, online aptitude assessments, technical interviews, and HR discussions.",
       "Eligible students will have the opportunity to secure job offers across software development, core engineering, industrial design, technical consulting, and automation domains.",
-    ],
-    highlights: [
-      "Participation of 15+ IT and Core Engineering Industry Leaders",
-      "On-campus Aptitude, Coding & Technical Skill Assessments",
-      "Direct Interview Rounds with Corporate HR & Tech Panels",
-      "Pre-placement Orientation & Resume Building Sessions prior to drive",
     ],
     schedule: [
       { time: "09:00 AM - 09:45 AM", activity: "Student Registration & Document Verification" },
@@ -251,12 +218,6 @@ export const EVENTS: SiteEvent[] = [
       "The R&D Cell of GTU Institute of Technology & Research presents a National Seminar on 'Emerging Technologies: AI, Clean Energy & Industry 4.0 Transformation'.",
       "The seminar brings together renowned academicians, research scientists, and industry leaders to discuss cutting-edge advancements in Artificial Intelligence, Machine Learning applications in power grids, Internet of Things (IoT), and sustainable green technologies.",
       "Participants can submit research abstracts for poster and paper presentations. Selected papers will be published in the seminar conference proceedings with ISBN.",
-    ],
-    highlights: [
-      "Keynote Addresses by Professors from IITs & NITs",
-      "Interactive Panel Discussion on 'Generative AI & Engineering Future'",
-      "Oral Research Paper & Poster Presentation Sessions",
-      "Conference Proceedings with ISBN Publication",
     ],
     schedule: [
       { time: "09:30 AM - 10:15 AM", activity: "Registration & Welcome Tea" },
