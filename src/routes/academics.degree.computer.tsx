@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { FacultyTabContent } from "@/components/site/FacultyTabContent";
+import { FACULTY_DATA } from "@/content/faculty";
 import {
   Cpu,
   Monitor,
@@ -112,8 +114,9 @@ function ComputerDegreePage() {
 
       {/* Tabs Interface */}
       <Tabs defaultValue="overview" className="w-full space-y-8">
-        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
+        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-4">
           <TabsTrigger value="overview" className="py-2.5 font-medium">Department Overview</TabsTrigger>
+          <TabsTrigger value="faculty" className="py-2.5 font-medium">Faculty Members (5)</TabsTrigger>
           <TabsTrigger value="curriculum" className="py-2.5 font-medium">GTU Curriculum</TabsTrigger>
           <TabsTrigger value="labs" className="py-2.5 font-medium">Laboratories (6)</TabsTrigger>
         </TabsList>
@@ -195,7 +198,16 @@ function ComputerDegreePage() {
           </div>
         </TabsContent>
 
-        {/* Tab 2: Curriculum */}
+        {/* Tab 2: Faculty Members */}
+        <TabsContent value="faculty" className="focus-visible:outline-none">
+          <FacultyTabContent
+            departmentTitle="Computer Engineering (B.E.)"
+            teachingFaculty={FACULTY_DATA["degree-computer"].teaching}
+            technicalStaff={FACULTY_DATA["degree-computer"].technical}
+          />
+        </TabsContent>
+
+        {/* Tab 3: Curriculum */}
         <TabsContent value="curriculum" className="space-y-8 focus-visible:outline-none">
           <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
             <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">4-Year Curriculum Structure</h2>

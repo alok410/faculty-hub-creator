@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { FacultyTabContent } from "@/components/site/FacultyTabContent";
+import { FACULTY_DATA } from "@/content/faculty";
 import {
   Compass,
   HardHat,
@@ -15,7 +17,6 @@ import {
   Layers,
   Sparkles,
   ArrowRight,
-  Briefcase,
   MapPin,
   FileText,
 } from "lucide-react";
@@ -165,8 +166,9 @@ function CivilDegreePage() {
 
       {/* Main Tabs */}
       <Tabs defaultValue="overview" className="w-full space-y-8">
-        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
+        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 md:grid-cols-4">
           <TabsTrigger value="overview" className="py-2.5 font-medium">Department Overview</TabsTrigger>
+          <TabsTrigger value="faculty" className="py-2.5 font-medium">Faculty Members (6)</TabsTrigger>
           <TabsTrigger value="curriculum" className="py-2.5 font-medium">GTU Curriculum</TabsTrigger>
           <TabsTrigger value="laboratories" className="py-2.5 font-medium">Laboratories (7)</TabsTrigger>
         </TabsList>
@@ -243,7 +245,16 @@ function CivilDegreePage() {
           </div>
         </TabsContent>
 
-        {/* 2. CURRICULUM */}
+        {/* 2. FACULTY MEMBERS */}
+        <TabsContent value="faculty" className="focus-visible:outline-none">
+          <FacultyTabContent
+            departmentTitle="Civil Engineering (B.E.)"
+            teachingFaculty={FACULTY_DATA["degree-civil"].teaching}
+            technicalStaff={FACULTY_DATA["degree-civil"].technical}
+          />
+        </TabsContent>
+
+        {/* 3. CURRICULUM */}
         <TabsContent value="curriculum" className="space-y-8">
           <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">

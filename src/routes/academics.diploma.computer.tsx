@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { FacultyTabContent } from "@/components/site/FacultyTabContent";
+import { FACULTY_DATA } from "@/content/faculty";
 import {
   Code,
   Layers,
@@ -81,8 +83,9 @@ function ComputerDiplomaPage() {
 
       {/* Tabs */}
       <Tabs defaultValue="overview" className="w-full space-y-8">
-        <TabsList className="grid h-auto w-full grid-cols-1 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-3">
+        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-4">
           <TabsTrigger value="overview" className="py-2.5 font-medium">Program Overview</TabsTrigger>
+          <TabsTrigger value="faculty" className="py-2.5 font-medium">Faculty Members (3)</TabsTrigger>
           <TabsTrigger value="labs" className="py-2.5 font-medium">Practical Labs</TabsTrigger>
           <TabsTrigger value="curriculum" className="py-2.5 font-medium">6-Semester Syllabus</TabsTrigger>
         </TabsList>
