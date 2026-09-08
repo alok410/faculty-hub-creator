@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CalendarDays, ArrowRight } from "lucide-react";
+import { CalendarDays, ArrowRight, FileDown } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { EVENTS } from "@/content/events";
 import { Stagger, StaggerItem } from "@/components/motion/motion-primitives";
+import { downloadEventReport } from "@/lib/event-report-pdf";
 
 export const Route = createFileRoute("/events")({
   head: () => ({
@@ -60,10 +61,25 @@ function EventsPage() {
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-3">{e.description}</p>
                 </div>
-                <div className="mt-4 flex items-center justify-between border-t border-border pt-3 text-xs font-semibold uppercase tracking-wide text-brand-red">
-                  <span className="flex items-center gap-1.5">
-                    <CalendarDays className="h-3.5 w-3.5" /> {e.day} {e.month} {e.year || "2026"}
-                  </span>
+                <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-3 text-xs font-semibold uppercase tracking-wide text-brand-red">
+                  <div className="flex items-center gap-2">
+                    <span className="flex items-center gap-1.5">
+                      <CalendarDays className="h-3.5 w-3.5" /> {e.day} {e.month} {e.year || "2026"}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={(ev) => {
+                        ev.preventDefault();
+                        ev.stopPropagation();
+                        downloadEventReport(e);
+                      }}
+                      className="inline-flex cursor-pointer items-center gap-1 rounded bg-brand-navy/10 px-2 py-0.5 text-[10px] font-bold text-brand-navy hover:bg-brand-navy hover:text-white transition-colors"
+                      title="Download Event Report / PDF"
+                    >
+                      <FileDown className="h-3 w-3 text-brand-red" />
+                      <span>Report / PDF</span>
+                    </button>
+                  </div>
                   <span className="inline-flex items-center gap-1 text-xs font-bold text-brand-navy transition-transform duration-200 group-hover:translate-x-1 group-hover:text-brand-red">
                     Full Page <ArrowRight className="h-3.5 w-3.5" />
                   </span>

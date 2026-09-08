@@ -97,5 +97,4 @@ export const NAV: NavLink[] = [
   },
   { label: "Enquiry Form", to: "/enquiry" },
   { label: "Online Payments", href: "https://gtu.ac.in/page.aspx?p=Payment" },
-  { label: "Open GPERI (GTU)", href: "https://gperi.gtu.ac.in/home.aspx" },
 ];

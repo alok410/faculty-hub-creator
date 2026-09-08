@@ -7,11 +7,13 @@ import {
   Share2,
   Users,
   Award,
+  FileDown,
 } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { getEventById, EVENTS } from "@/content/events";
 import { FadeIn } from "@/components/motion/motion-primitives";
 import { toast } from "sonner";
+import { downloadEventReport } from "@/lib/event-report-pdf";
 
 export const Route = createFileRoute("/events_/$eventId")({
   head: ({ params }) => {
@@ -117,14 +119,25 @@ function EventDetailPage() {
 
           {/* Quick Info Grid */}
           <div className="grid gap-4 sm:grid-cols-3">
-            <div className="flex items-start gap-3 border border-border bg-brand-surface p-4 shadow-sm">
-              <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-brand-red" />
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Date</p>
-                <p className="mt-0.5 text-sm font-bold text-brand-navy">
-                  {event.day} {event.month} {event.year || "2026"}
-                </p>
+            <div className="flex items-start justify-between gap-3 border border-border bg-brand-surface p-4 shadow-sm">
+              <div className="flex items-start gap-3">
+                <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-brand-red" />
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Date</p>
+                  <p className="mt-0.5 text-sm font-bold text-brand-navy">
+                    {event.day} {event.month} {event.year || "2026"}
+                  </p>
+                </div>
               </div>
+              <button
+                type="button"
+                onClick={() => downloadEventReport(event)}
+                className="inline-flex cursor-pointer items-center gap-1 rounded bg-brand-navy px-2.5 py-1 text-[11px] font-bold text-white shadow-xs transition-colors hover:bg-brand-red"
+                title="Download Event Report / PDF"
+              >
+                <FileDown className="h-3.5 w-3.5" />
+                <span>PDF Report</span>
+              </button>
             </div>
             <div className="flex items-start gap-3 border border-border bg-brand-surface p-4 shadow-sm">
               <Clock className="mt-0.5 h-5 w-5 shrink-0 text-brand-red" />
@@ -189,12 +202,14 @@ function EventDetailPage() {
             </div>
 
             <div className="mt-6 border-t border-border pt-4">
-              <Link
-                to="/enquiry"
-                className="block w-full bg-brand-red py-3 text-center font-heading text-xs font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-brand-navy hover:shadow-md"
+              <button
+                type="button"
+                onClick={() => downloadEventReport(event)}
+                className="flex w-full cursor-pointer items-center justify-center gap-2 bg-brand-red py-3 text-center font-heading text-xs font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-brand-navy hover:shadow-md"
               >
-                Register / Enquire for Event
-              </Link>
+                <FileDown className="h-4 w-4" />
+                <span>Download Report / PDF</span>
+              </button>
             </div>
           </div>
 
