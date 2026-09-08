@@ -13,7 +13,26 @@ export interface FacultyMember {
   image?: string;
 }
 
-export const FACULTY_DATA: Record<string, { teaching: FacultyMember[]; technical?: FacultyMember[] }> = {
+export type DepartmentFaculty = {
+  teaching: FacultyMember[];
+  technical?: FacultyMember[] | undefined;
+};
+
+export type DepartmentKey =
+  | "degree-computer"
+  | "degree-mechanical"
+  | "degree-civil"
+  | "degree-electrical"
+  | "degree-humanities"
+  | "diploma-computer"
+  | "diploma-civil"
+  | "diploma-mechanical"
+  | "diploma-electrical"
+  | "diploma-humanities"
+  | "msc-it"
+  | "pgdcs";
+
+export const FACULTY_DATA: Record<DepartmentKey, DepartmentFaculty> = {
   // 1. Computer Engineering (Degree)
   "degree-computer": {
     teaching: [
@@ -725,3 +744,78 @@ export const FACULTY_DATA: Record<string, { teaching: FacultyMember[]; technical
     ],
   },
 };
+
+export function getAllFacultyMembers(): FacultyMember[] {
+  const list: FacultyMember[] = [];
+  const seen = new Set<string>();
+  for (const dept of Object.values(FACULTY_DATA)) {
+    if (dept.teaching) {
+      for (const m of dept.teaching) {
+        if (!seen.has(m.name)) {
+          seen.add(m.name);
+          list.push(m);
+        }
+      }
+    }
+    if (dept.technical) {
+      for (const m of dept.technical) {
+        if (!seen.has(m.name)) {
+          seen.add(m.name);
+          list.push(m);
+        }
+      }
+    }
+  }
+  return list;
+}
+
+export function cleanFacultyName(name: string): string {
+  return name
+    .replace(/(Dr\.|Prof\.|Mr\.|Mrs\.|Ms\.)/gi, "")
+    .trim()
+    .toLowerCase();
+}
+
+const FALLBACK_FACULTY: FacultyMember = {
+  name: "Dr. Vishal G. Barot",
+  designation: "Head of Department & Assistant Professor",
+  department: "Computer Engineering",
+  program: "Degree",
+  qualification: "Ph.D. in Computer Science & Engineering, M.E.",
+  specialization: "Artificial Intelligence, Data Science & Machine Learning",
+  type: "teaching",
+  isHod: true,
+  profileUrl: "/faculty-profile",
+  email: "vishal.barot@gtu.edu.in",
+  image: "/vishal-barot.jpg",
+};
+
+export function findFacultyMember(query?: { name?: string | undefined; id?: string | undefined }): FacultyMember {
+  const all = getAllFacultyMembers();
+  if (!query || (!query.name && !query.id)) {
+    return all.find((f) => f.name.includes("Vishal")) ?? all[0] ?? FALLBACK_FACULTY;
+  }
+
+  if (query.id) {
+    const slugQuery = query.id.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const found = all.find((f) => {
+      const s = f.name.toLowerCase().replace(/[^a-z0-9]/g, "");
+      return s.includes(slugQuery) || slugQuery.includes(s);
+    });
+    if (found) return found;
+  }
+
+  if (query.name) {
+    const targetClean = cleanFacultyName(query.name);
+    const exact = all.find((f) => cleanFacultyName(f.name) === targetClean);
+    if (exact) return exact;
+
+    const partial = all.find((f) => {
+      const c = cleanFacultyName(f.name);
+      return c.includes(targetClean) || targetClean.includes(c);
+    });
+    if (partial) return partial;
+  }
+
+  return all.find((f) => f.name.includes("Vishal")) ?? all[0] ?? FALLBACK_FACULTY;
+}

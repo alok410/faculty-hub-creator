@@ -18,6 +18,7 @@ import {
   Database,
   Globe,
   FileText,
+  Briefcase,
 } from "lucide-react";
 
 export const Route = createFileRoute("/academics/msc-it")({

@@ -13,6 +13,8 @@ import {
   ArrowRight,
   Sun,
   ShieldCheck,
+  GraduationCap,
+  Wrench,
 } from "lucide-react";
 
 export const Route = createFileRoute("/academics/diploma/electrical")({

@@ -163,27 +163,14 @@ export function FacultyTabContent({
                 ) : (
                   <span className="text-[11px] text-muted-foreground">GTU-ITR Campus</span>
                 )}
-                {fac.profileUrl && (
-                  fac.profileUrl.startsWith("/") ? (
-                    <Link
-                      to={fac.profileUrl}
-                      className="inline-flex shrink-0 items-center gap-1 rounded bg-brand-navy/5 px-2 py-1 text-[11px] font-medium text-brand-navy hover:bg-brand-navy hover:text-white transition-colors"
-                    >
-                      <span>Profile</span>
-                      <ExternalLink className="h-3 w-3" />
-                    </Link>
-                  ) : (
-                    <a
-                      href={fac.profileUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex shrink-0 items-center gap-1 rounded bg-brand-navy/5 px-2 py-1 text-[11px] font-medium text-brand-navy hover:bg-brand-navy hover:text-white transition-colors"
-                    >
-                      <span>Profile</span>
-                      <ExternalLink className="h-3 w-3" />
-                    </a>
-                  )
-                )}
+                <Link
+                  to="/faculty-profile"
+                  search={{ name: fac.name }}
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded bg-brand-navy/10 px-2.5 py-1 text-[11px] font-semibold text-brand-navy hover:bg-brand-navy hover:text-white transition-colors cursor-pointer"
+                >
+                  <span>Profile</span>
+                  <ExternalLink className="h-3 w-3" />
+                </Link>
               </div>
             </div>
           ))}
@@ -220,16 +207,13 @@ export function FacultyTabContent({
                   </div>
                   <div className="text-xs font-medium text-brand-navy">{staff.designation}</div>
                   <div className="mt-1 text-[11px] text-muted-foreground">{staff.specialization}</div>
-                  {staff.profileUrl && (
-                    <a
-                      href={staff.profileUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-brand-navy hover:underline"
-                    >
-                      Official Record <ExternalLink className="h-2.5 w-2.5" />
-                    </a>
-                  )}
+                  <Link
+                    to="/faculty-profile"
+                    search={{ name: staff.name }}
+                    className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-brand-navy hover:underline"
+                  >
+                    View Profile <ExternalLink className="h-2.5 w-2.5" />
+                  </Link>
                 </div>
               </div>
             ))}

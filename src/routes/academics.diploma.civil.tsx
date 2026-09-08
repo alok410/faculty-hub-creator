@@ -13,6 +13,9 @@ import {
   Layers,
   Users,
   FileText,
+  HardHat,
+  GraduationCap,
+  Wrench,
 } from "lucide-react";
 
 export const Route = createFileRoute("/academics/diploma/civil")({
