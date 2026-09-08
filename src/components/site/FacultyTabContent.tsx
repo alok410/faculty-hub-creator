@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
 import { Mail, ExternalLink, GraduationCap, Award, Wrench, Sparkles, UserCheck } from "lucide-react";
 import type { FacultyMember } from "@/content/faculty";
@@ -122,15 +123,25 @@ export function FacultyTabContent({
                   <span className="text-[11px] text-muted-foreground">GTU-ITR Campus</span>
                 )}
                 {fac.profileUrl && (
-                  <a
-                    href={fac.profileUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex shrink-0 items-center gap-1 rounded bg-brand-navy/5 px-2 py-1 text-[11px] font-medium text-brand-navy hover:bg-brand-navy hover:text-white transition-colors"
-                  >
-                    <span>Profile</span>
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
+                  fac.profileUrl.startsWith("/") ? (
+                    <Link
+                      to={fac.profileUrl}
+                      className="inline-flex shrink-0 items-center gap-1 rounded bg-brand-navy/5 px-2 py-1 text-[11px] font-medium text-brand-navy hover:bg-brand-navy hover:text-white transition-colors"
+                    >
+                      <span>Profile</span>
+                      <ExternalLink className="h-3 w-3" />
+                    </Link>
+                  ) : (
+                    <a
+                      href={fac.profileUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex shrink-0 items-center gap-1 rounded bg-brand-navy/5 px-2 py-1 text-[11px] font-medium text-brand-navy hover:bg-brand-navy hover:text-white transition-colors"
+                    >
+                      <span>Profile</span>
+                      <ExternalLink className="h-3 w-3" />
+                    </a>
+                  )
                 )}
               </div>
             </div>

@@ -10,6 +10,7 @@ export const NAV: NavLink[] = [
       { label: "VC Message", to: "/vc-message" },
       { label: "Registrar Message", to: "/registrar-message" },
       { label: "Principal Message", to: "/principal-message" },
+      { label: "Faculty Profile", to: "/faculty-profile" },
       { label: "Women Empowerment Cell", to: "/women-cell" },
       { label: "Mandatory Disclosure", href: "/mandatory-disclosure.pdf", download: true },
     ],

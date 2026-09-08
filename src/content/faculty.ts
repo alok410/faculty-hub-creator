@@ -25,7 +25,7 @@ export const FACULTY_DATA: Record<string, { teaching: FacultyMember[]; technical
         specialization: "Artificial Intelligence, Data Science & Machine Learning",
         type: "teaching",
         isHod: true,
-        profileUrl: "https://gtuitr.gtu.ac.in/compFac.aspx?ID=31",
+        profileUrl: "/faculty-profile",
         email: "vishal.barot@gtu.edu.in",
       },
       {
