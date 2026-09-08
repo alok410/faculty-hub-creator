@@ -160,8 +160,11 @@ function FacultyProfilePage() {
   };
 
   const isVishal = faculty.name.includes("Vishal");
+  const isDeepak = faculty.name.includes("Deepak");
   const roomLocation = faculty.isPrincipal
     ? "Principal Office, Admin Block"
+    : isDeepak
+    ? "HOD Office (A-201), Computer Engineering"
     : isVishal
     ? "Room A-204, Academic Block"
     : faculty.isHod
@@ -465,12 +468,25 @@ function FacultyProfilePage() {
                 <div className="space-y-3">
                   <TitleCard title="About" />
                   <ContentCard className="space-y-3 leading-relaxed">
-                    {isVishal ? (
+                    {isDeepak ? (
                       <>
                         <p>
-                          Dr. Vishal G. Barot is currently working as Head Of Department in Computer
-                          Engineering / Information Technology. He has experience of more than 15 years in
-                          the fields of teaching and research.
+                          Dr. Deepak Sharma is currently working as Head of the Department in Computer
+                          Engineering at GTU-ITR Mehsana. He brings over 15 years of distinguished academic leadership,
+                          advanced engineering pedagogy, and doctoral research expertise in Artificial Intelligence and Machine Learning (AI/ML).
+                        </p>
+                        <p className="text-muted-foreground text-xs leading-relaxed">
+                          As Head of Department, he oversees academic planning, GTU syllabus alignment, state-of-the-art
+                          computing laboratories, institutional MOUs, funded research initiatives, and technical hackathons
+                          to empower engineering scholars for global technological excellence.
+                        </p>
+                      </>
+                    ) : isVishal ? (
+                      <>
+                        <p>
+                          Dr. Vishal G. Barot is currently working as Assistant Professor in Computer
+                          Engineering. He has experience of more than 15 years in
+                          the fields of teaching, machine learning, and university research.
                         </p>
                         <p className="text-muted-foreground text-xs leading-relaxed">
                           Throughout his tenure at Gujarat Technological University (GTU-ITR), he has spearheaded

@@ -116,7 +116,7 @@ function ComputerDegreePage() {
       <Tabs defaultValue="overview" className="w-full space-y-8">
         <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-4">
           <TabsTrigger value="overview" className="py-2.5 font-medium">Department Overview</TabsTrigger>
-          <TabsTrigger value="faculty" className="py-2.5 font-medium">Faculty Members (5)</TabsTrigger>
+          <TabsTrigger value="faculty" className="py-2.5 font-medium">Faculty Members (6)</TabsTrigger>
           <TabsTrigger value="curriculum" className="py-2.5 font-medium">GTU Curriculum</TabsTrigger>
           <TabsTrigger value="labs" className="py-2.5 font-medium">Laboratories (6)</TabsTrigger>
         </TabsList>

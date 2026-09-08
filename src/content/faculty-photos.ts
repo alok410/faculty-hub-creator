@@ -1,4 +1,5 @@
 export const FACULTY_PHOTO_MAP: Record<string, string> = {
+  "Dr. Deepak Sharma": "/faculty/deepak-sharma.png",
   "Dr. Vishal G. Barot": "/vishal-barot.jpg",
   "Prof. Hemalben M. Patel": "/faculty/hemal-patel.jpg",
   "Prof. Shilpa Vasava": "/faculty/shilpa-vasava.jpg",
