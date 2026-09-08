@@ -21,6 +21,7 @@ import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as EnquiryRouteImport } from './routes/enquiry'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as FacilityRouteImport } from './routes/facility'
+import { Route as FacultyProfileRouteImport } from './routes/faculty-profile'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GrievanceRouteImport } from './routes/grievance'
 import { Route as InstituteCommitteeRouteImport } from './routes/institute-committee'
@@ -115,6 +116,11 @@ const EventsRoute = EventsRouteImport.update({
 const FacilityRoute = FacilityRouteImport.update({
   id: '/facility',
   path: '/facility',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FacultyProfileRoute = FacultyProfileRouteImport.update({
+  id: '/faculty-profile',
+  path: '/faculty-profile',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -317,6 +323,7 @@ export interface FileRoutesByFullPath {
   '/enquiry': typeof EnquiryRoute
   '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
+  '/faculty-profile': typeof FacultyProfileRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
   '/institute-committee': typeof InstituteCommitteeRoute
@@ -366,6 +373,7 @@ export interface FileRoutesByTo {
   '/enquiry': typeof EnquiryRoute
   '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
+  '/faculty-profile': typeof FacultyProfileRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
   '/institute-committee': typeof InstituteCommitteeRoute
@@ -417,6 +425,7 @@ export interface FileRoutesById {
   '/enquiry': typeof EnquiryRoute
   '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
+  '/faculty-profile': typeof FacultyProfileRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
   '/institute-committee': typeof InstituteCommitteeRoute
@@ -468,6 +477,7 @@ export interface FileRouteTypes {
     | '/enquiry'
     | '/events'
     | '/facility'
+    | '/faculty-profile'
     | '/gallery'
     | '/grievance'
     | '/institute-committee'
@@ -517,6 +527,7 @@ export interface FileRouteTypes {
     | '/enquiry'
     | '/events'
     | '/facility'
+    | '/faculty-profile'
     | '/gallery'
     | '/grievance'
     | '/institute-committee'
@@ -567,6 +578,7 @@ export interface FileRouteTypes {
     | '/enquiry'
     | '/events'
     | '/facility'
+    | '/faculty-profile'
     | '/gallery'
     | '/grievance'
     | '/institute-committee'
@@ -618,6 +630,7 @@ export interface RootRouteChildren {
   EnquiryRoute: typeof EnquiryRoute
   EventsRoute: typeof EventsRoute
   FacilityRoute: typeof FacilityRoute
+  FacultyProfileRoute: typeof FacultyProfileRoute
   GalleryRoute: typeof GalleryRoute
   GrievanceRoute: typeof GrievanceRoute
   InstituteCommitteeRoute: typeof InstituteCommitteeRoute
@@ -739,6 +752,13 @@ declare module '@tanstack/react-router' {
       path: '/facility'
       fullPath: '/facility'
       preLoaderRoute: typeof FacilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faculty-profile': {
+      id: '/faculty-profile'
+      path: '/faculty-profile'
+      fullPath: '/faculty-profile'
+      preLoaderRoute: typeof FacultyProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -1020,6 +1040,7 @@ const rootRouteChildren: RootRouteChildren = {
   EnquiryRoute: EnquiryRoute,
   EventsRoute: EventsRoute,
   FacilityRoute: FacilityRoute,
+  FacultyProfileRoute: FacultyProfileRoute,
   GalleryRoute: GalleryRoute,
   GrievanceRoute: GrievanceRoute,
   InstituteCommitteeRoute: InstituteCommitteeRoute,
@@ -1059,13 +1080,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

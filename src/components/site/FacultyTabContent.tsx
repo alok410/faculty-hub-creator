@@ -1,12 +1,14 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
-import { Mail, ExternalLink, GraduationCap, Award, Wrench, Sparkles, UserCheck } from "lucide-react";
+import { Mail, ExternalLink, GraduationCap, Wrench, Sparkles, UserCheck } from "lucide-react";
 import type { FacultyMember } from "@/content/faculty";
+import { getFacultyPhoto } from "@/content/faculty-photos";
 
 interface FacultyTabContentProps {
   departmentTitle: string;
   teachingFaculty: FacultyMember[];
-  technicalStaff?: FacultyMember[];
+  technicalStaff?: FacultyMember[] | undefined;
 }
 
 function getInitials(name: string): string {
@@ -17,6 +19,54 @@ function getInitials(name: string): string {
     .slice(0, 2)
     .map((part) => part[0]?.toUpperCase() || "")
     .join("");
+}
+
+function FacultyPhotoAvatar({
+  fac,
+  size = "md",
+}: {
+  fac: FacultyMember;
+  size?: "md" | "sm";
+}) {
+  const [imgError, setImgError] = useState(false);
+  const photoUrl = getFacultyPhoto(fac.name, fac.image);
+
+  const containerClasses =
+    size === "sm"
+      ? "h-12 w-12 rounded-lg"
+      : "h-16 w-16 sm:h-20 sm:w-20 rounded-xl";
+
+  if (photoUrl && !imgError) {
+    return (
+      <div
+        className={`relative ${containerClasses} shrink-0 overflow-hidden border-2 border-border/80 bg-muted/40 shadow-xs transition-all duration-300 group-hover:border-brand-navy/60 group-hover:shadow-md`}
+      >
+        <img
+          src={photoUrl}
+          alt={fac.name}
+          className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+          onError={() => setImgError(true)}
+          loading="lazy"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={`flex ${containerClasses} shrink-0 items-center justify-center font-heading font-bold shadow-xs ${
+        size === "sm" ? "text-sm" : "text-lg"
+      } ${
+        fac.isPrincipal
+          ? "bg-brand-red text-white"
+          : fac.isHod
+          ? "bg-brand-navy text-white"
+          : "bg-muted text-brand-navy"
+      }`}
+    >
+      {getInitials(fac.name)}
+    </div>
+  );
 }
 
 export function FacultyTabContent({
@@ -62,17 +112,8 @@ export function FacultyTabContent({
             >
               <div>
                 <div className="flex items-start justify-between gap-3">
-                  <div
-                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl font-heading text-base font-bold shadow-sm ${
-                      fac.isPrincipal
-                        ? "bg-brand-red text-white"
-                        : fac.isHod
-                        ? "bg-brand-navy text-white"
-                        : "bg-muted text-brand-navy"
-                    }`}
-                  >
-                    {getInitials(fac.name)}
-                  </div>
+                  <FacultyPhotoAvatar fac={fac} size="md" />
+
                   {fac.isPrincipal ? (
                     <Badge className="bg-brand-red text-white text-[10px] uppercase font-bold tracking-wider">
                       Principal
@@ -172,9 +213,7 @@ export function FacultyTabContent({
                 key={idx}
                 className="flex items-start gap-3 rounded-lg border border-border bg-muted/20 p-4 transition-colors hover:border-brand-navy/30"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-navy/10 font-heading text-sm font-bold text-brand-navy">
-                  {getInitials(staff.name)}
-                </div>
+                <FacultyPhotoAvatar fac={staff} size="sm" />
                 <div className="min-w-0 flex-1">
                   <div className="font-heading text-sm font-bold text-foreground truncate">
                     {staff.name}

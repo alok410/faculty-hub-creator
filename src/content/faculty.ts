@@ -10,6 +10,7 @@ export interface FacultyMember {
   isPrincipal?: boolean;
   profileUrl?: string;
   email?: string;
+  image?: string;
 }
 
 export const FACULTY_DATA: Record<string, { teaching: FacultyMember[]; technical?: FacultyMember[] }> = {
@@ -27,6 +28,7 @@ export const FACULTY_DATA: Record<string, { teaching: FacultyMember[]; technical
         isHod: true,
         profileUrl: "/faculty-profile",
         email: "vishal.barot@gtu.edu.in",
+        image: "/vishal-barot.jpg",
       },
       {
         name: "Prof. Hemalben M. Patel",
@@ -38,6 +40,7 @@ export const FACULTY_DATA: Record<string, { teaching: FacultyMember[]; technical
         type: "teaching",
         profileUrl: "https://gtuitr.gtu.ac.in/compFac.aspx?ID=29",
         email: "hemal.patel@gtu.edu.in",
+        image: "/faculty/hemal-patel.jpg",
       },
       {
         name: "Prof. Shilpa Vasava",
@@ -49,6 +52,7 @@ export const FACULTY_DATA: Record<string, { teaching: FacultyMember[]; technical
         type: "teaching",
         profileUrl: "https://gtuitr.gtu.ac.in/compFac.aspx?ID=19",
         email: "shilpa.vasava@gtu.edu.in",
+        image: "/faculty/shilpa-vasava.jpg",
       },
       {
         name: "Prof. Vijay Punjabhai Khata",
@@ -60,6 +64,7 @@ export const FACULTY_DATA: Record<string, { teaching: FacultyMember[]; technical
         type: "teaching",
         profileUrl: "https://gtuitr.gtu.ac.in/compFac.aspx?ID=27",
         email: "vijay.khata@gtu.edu.in",
+        image: "/faculty/vijay-khata.jpg",
       },
       {
         name: "Prof. Hinal Prajapati",
@@ -71,6 +76,7 @@ export const FACULTY_DATA: Record<string, { teaching: FacultyMember[]; technical
         type: "teaching",
         profileUrl: "https://gtuitr.gtu.ac.in/compFac.aspx?ID=18",
         email: "hinal.prajapati@gtu.edu.in",
+        image: "/faculty/hinal-prajapati.jpg",
       },
     ],
     technical: [
