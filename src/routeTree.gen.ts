@@ -25,6 +25,7 @@ import { Route as FacultyProfileRouteImport } from './routes/faculty-profile'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GrievanceRouteImport } from './routes/grievance'
 import { Route as InstituteCommitteeRouteImport } from './routes/institute-committee'
+import { Route as LibraryRouteImport } from './routes/library'
 import { Route as MandatoryDisclosureRouteImport } from './routes/mandatory-disclosure'
 import { Route as MediaCoverageRouteImport } from './routes/media-coverage'
 import { Route as PlacementRouteImport } from './routes/placement'
@@ -136,6 +137,11 @@ const GrievanceRoute = GrievanceRouteImport.update({
 const InstituteCommitteeRoute = InstituteCommitteeRouteImport.update({
   id: '/institute-committee',
   path: '/institute-committee',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibraryRoute = LibraryRouteImport.update({
+  id: '/library',
+  path: '/library',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MandatoryDisclosureRoute = MandatoryDisclosureRouteImport.update({
@@ -323,6 +329,7 @@ export interface FileRoutesByFullPath {
   '/enquiry': typeof EnquiryRoute
   '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
+  '/library': typeof LibraryRoute
   '/faculty-profile': typeof FacultyProfileRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
@@ -373,6 +380,7 @@ export interface FileRoutesByTo {
   '/enquiry': typeof EnquiryRoute
   '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
+  '/library': typeof LibraryRoute
   '/faculty-profile': typeof FacultyProfileRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
@@ -425,6 +433,7 @@ export interface FileRoutesById {
   '/enquiry': typeof EnquiryRoute
   '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
+  '/library': typeof LibraryRoute
   '/faculty-profile': typeof FacultyProfileRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
@@ -477,6 +486,7 @@ export interface FileRouteTypes {
     | '/enquiry'
     | '/events'
     | '/facility'
+    | '/library'
     | '/faculty-profile'
     | '/gallery'
     | '/grievance'
@@ -527,6 +537,7 @@ export interface FileRouteTypes {
     | '/enquiry'
     | '/events'
     | '/facility'
+    | '/library'
     | '/faculty-profile'
     | '/gallery'
     | '/grievance'
@@ -578,6 +589,7 @@ export interface FileRouteTypes {
     | '/enquiry'
     | '/events'
     | '/facility'
+    | '/library'
     | '/faculty-profile'
     | '/gallery'
     | '/grievance'
@@ -630,6 +642,7 @@ export interface RootRouteChildren {
   EnquiryRoute: typeof EnquiryRoute
   EventsRoute: typeof EventsRoute
   FacilityRoute: typeof FacilityRoute
+  LibraryRoute: typeof LibraryRoute
   FacultyProfileRoute: typeof FacultyProfileRoute
   GalleryRoute: typeof GalleryRoute
   GrievanceRoute: typeof GrievanceRoute
@@ -752,6 +765,13 @@ declare module '@tanstack/react-router' {
       path: '/facility'
       fullPath: '/facility'
       preLoaderRoute: typeof FacilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library': {
+      id: '/library'
+      path: '/library'
+      fullPath: '/library'
+      preLoaderRoute: typeof LibraryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faculty-profile': {
@@ -1040,6 +1060,7 @@ const rootRouteChildren: RootRouteChildren = {
   EnquiryRoute: EnquiryRoute,
   EventsRoute: EventsRoute,
   FacilityRoute: FacilityRoute,
+  LibraryRoute: LibraryRoute,
   FacultyProfileRoute: FacultyProfileRoute,
   GalleryRoute: GalleryRoute,
   GrievanceRoute: GrievanceRoute,

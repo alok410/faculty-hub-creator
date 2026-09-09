@@ -30,10 +30,21 @@ function DesktopItem({ item }: { item: NavLink }) {
 
   return (
     <div className="group relative">
-      <button className="flex items-center gap-1 px-3 py-2.5 text-[13px] font-medium uppercase tracking-wide text-primary-foreground/90 transition-colors group-hover:bg-brand-red group-hover:text-primary-foreground">
-        {item.label}
-        <ChevronDown className="h-3.5 w-3.5" />
-      </button>
+      {item.to ? (
+        <Link
+          to={item.to}
+          className="flex items-center gap-1 px-3 py-2.5 text-[13px] font-medium uppercase tracking-wide text-primary-foreground/90 transition-colors group-hover:bg-brand-red group-hover:text-primary-foreground"
+          activeProps={{ className: "bg-brand-red text-primary-foreground" }}
+        >
+          {item.label}
+          <ChevronDown className="h-3.5 w-3.5" />
+        </Link>
+      ) : (
+        <button className="flex items-center gap-1 px-3 py-2.5 text-[13px] font-medium uppercase tracking-wide text-primary-foreground/90 transition-colors group-hover:bg-brand-red group-hover:text-primary-foreground">
+          {item.label}
+          <ChevronDown className="h-3.5 w-3.5" />
+        </button>
+      )}
 
       {/* 1st Level Dropdown */}
       <div className="invisible absolute left-0 top-full z-50 min-w-[280px] -translate-y-1 border-t-2 border-brand-red bg-[#1c2e74] opacity-0 shadow-2xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">

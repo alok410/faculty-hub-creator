@@ -86,6 +86,21 @@ export const NAV: NavLink[] = [
     ],
   },
   {
+    label: "Library",
+    to: "/library",
+    children: [
+      { label: "Library Home", to: "/library" },
+      { label: "Introduction", to: "/library" },
+      { label: "People & Team", to: "/library" },
+      { label: "Rules & Circulation", to: "/library" },
+      { label: "Library Resources", to: "/library" },
+      { label: "Library Services", to: "/library" },
+      { label: "Membership", to: "/library" },
+      { label: "Ask a Librarian", to: "/library" },
+      { label: "Contact Us", to: "/library" },
+    ],
+  },
+  {
     label: "GTU-ITR Media",
     children: [
       { label: "Gallery", to: "/gallery" },
