@@ -3,7 +3,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { FacultyTabContent } from "@/components/site/FacultyTabContent";
-import { FACULTY_DATA } from "@/content/faculty";
+import { FACULTY_DATA, getDepartmentStaffCount } from "@/content/faculty";
 import {
   ShieldAlert,
   ShieldCheck,
@@ -127,7 +127,7 @@ function PgdcsAcademicsPage() {
       <Tabs defaultValue="curriculum" className="w-full space-y-8">
         <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-4">
           <TabsTrigger value="curriculum" className="py-2.5 font-medium">Curriculum Structure</TabsTrigger>
-          <TabsTrigger value="faculty" className="py-2.5 font-medium">Faculty Mentors (3)</TabsTrigger>
+          <TabsTrigger value="faculty" className="py-2.5 font-medium">Staff Members ({getDepartmentStaffCount("pgdcs")})</TabsTrigger>
           <TabsTrigger value="cyber-range" className="py-2.5 font-medium">Cyber Range Labs (4)</TabsTrigger>
           <TabsTrigger value="certifications" className="py-2.5 font-medium">Industry Mappings</TabsTrigger>
         </TabsList>

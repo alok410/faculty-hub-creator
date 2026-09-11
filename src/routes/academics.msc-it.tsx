@@ -3,7 +3,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { FacultyTabContent } from "@/components/site/FacultyTabContent";
-import { FACULTY_DATA } from "@/content/faculty";
+import { FACULTY_DATA, getDepartmentStaffCount } from "@/content/faculty";
 import {
   Code,
   Layers,
@@ -169,7 +169,7 @@ function MscItAcademicsPage() {
       <Tabs defaultValue="architecture" className="w-full space-y-8">
         <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 sm:grid-cols-4">
           <TabsTrigger value="architecture" className="py-2.5 font-medium">Curriculum Phases</TabsTrigger>
-          <TabsTrigger value="faculty" className="py-2.5 font-medium">Faculty Mentors (4)</TabsTrigger>
+          <TabsTrigger value="faculty" className="py-2.5 font-medium">Staff Members ({getDepartmentStaffCount("msc-it")})</TabsTrigger>
           <TabsTrigger value="nep-exits" className="py-2.5 font-medium">NEP Modular Exits</TabsTrigger>
           <TabsTrigger value="laboratories" className="py-2.5 font-medium">Specialized IT Labs</TabsTrigger>
         </TabsList>

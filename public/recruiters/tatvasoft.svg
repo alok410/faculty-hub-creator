@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 40" width="130" height="40" fill="none">
+  <!-- TatvaSoft geometric folded prism -->
+  <g transform="translate(4, 5)">
+    <polygon points="15,2 27,9 15,16 3,9" fill="#F36C21"/>
+    <polygon points="27,9 27,23 15,30 15,16" fill="#D45314"/>
+    <polygon points="3,9 15,16 15,30 3,23" fill="#E65A1B"/>
+    <polygon points="15,7 23,12 15,17 7,12" fill="#FFFFFF" opacity="0.3"/>
+  </g>
+  <!-- TatvaSoft Typography -->
+  <text x="36" y="24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#1C355E" letter-spacing="-0.3">
+    Tatva<tspan fill="#F36C21">Soft</tspan>
+  </text>
+  <text x="37" y="32" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="6" font-weight="600" fill="#6B7280" letter-spacing="0.5">SCULPTING SOFTWARE</text>
+</svg>

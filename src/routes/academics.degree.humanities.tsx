@@ -3,7 +3,7 @@ import { PageShell } from "@/components/site/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { FacultyTabContent } from "@/components/site/FacultyTabContent";
-import { FACULTY_DATA } from "@/content/faculty";
+import { FACULTY_DATA, getDepartmentStaffCount } from "@/content/faculty";
 import {
   Atom,
   Languages,
@@ -143,7 +143,7 @@ function HumanitiesDegreePage() {
       <Tabs defaultValue="overview" className="w-full space-y-8">
         <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-xl bg-muted/60 p-1.5 md:grid-cols-5">
           <TabsTrigger value="overview" className="py-2.5 font-medium">Department Mission</TabsTrigger>
-          <TabsTrigger value="faculty" className="py-2.5 font-medium">Faculty Members (4)</TabsTrigger>
+          <TabsTrigger value="faculty" className="py-2.5 font-medium">Staff Members ({getDepartmentStaffCount("degree-humanities")})</TabsTrigger>
           <TabsTrigger value="domains" className="py-2.5 font-medium">Curricular Domains</TabsTrigger>
           <TabsTrigger value="laboratories" className="py-2.5 font-medium">Specialized Studios &amp; Labs</TabsTrigger>
           <TabsTrigger value="initiatives" className="py-2.5 font-medium">Clubs &amp; Soft Skills</TabsTrigger>

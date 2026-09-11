@@ -10,7 +10,6 @@ export const NAV: NavLink[] = [
       { label: "VC Message", to: "/vc-message" },
       { label: "Registrar Message", to: "/registrar-message" },
       { label: "Principal Message", to: "/principal-message" },
-      { label: "Women Empowerment Cell", to: "/women-cell" },
       { label: "Mandatory Disclosure", href: "/mandatory-disclosure.pdf", download: true },
     ],
   },
@@ -40,7 +39,6 @@ export const NAV: NavLink[] = [
       },
       { label: "Integrated M.Sc. in Information Technology", to: "/academics/msc-it" },
       { label: "Post Graduate Diploma in Cyber Security (PGDCS)", to: "/academics/pgdcs" },
-      { label: "Institute Committee", to: "/institute-committee" },
     ],
   },
   {
@@ -57,15 +55,21 @@ export const NAV: NavLink[] = [
   {
     label: "Student Corner",
     children: [
-      { label: "About", to: "/students" },
       { label: "Students Clubs", to: "/students-clubs" },
       { label: "Academic Calendar", to: "/calendar" },
-      { label: "Anti Ragging", to: "/anti-ragging" },
       { label: "Transportation", to: "/transportation" },
       { label: "Achievements", to: "/achievements" },
       { label: "Regulations And Discipline", to: "/regulations" },
-      { label: "Student Grievance Redressal Committee", to: "/grievance" },
       { label: "Alumni", to: "/alumni" },
+    ],
+  },
+  {
+    label: "Institutional Initiatives",
+    children: [
+      { label: "Institute Committee", to: "/institute-committee" },
+      { label: "Women Empowerment Cell", to: "/women-cell" },
+      { label: "Anti-Ragging", to: "/anti-ragging" },
+      { label: "Grievance Redressal Committee", to: "/grievance" },
     ],
   },
   {

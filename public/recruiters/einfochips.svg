@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 40" width="135" height="40" fill="none">
+  <!-- Arrow electronics icon -->
+  <g transform="translate(4, 8)">
+    <polygon points="2,12 18,2 18,7 7,12 18,17 18,22" fill="#E21A22"/>
+    <polygon points="12,12 24,5 24,9 16,12 24,15 24,19" fill="#E21A22"/>
+  </g>
+  <!-- eInfochips typography -->
+  <text x="32" y="22" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" fill="#0A2540" letter-spacing="-0.3">
+    eInfo<tspan fill="#E21A22">chips</tspan>
+  </text>
+  <text x="33" y="31" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="6.5" font-weight="600" fill="#555555" letter-spacing="0.2">AN ARROW COMPANY</text>
+</svg>

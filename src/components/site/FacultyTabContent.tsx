@@ -90,7 +90,10 @@ export function FacultyTabContent({
           </div>
           <div className="flex items-center gap-2 rounded-lg bg-brand-navy/5 px-4 py-2 text-xs font-semibold text-brand-navy border border-brand-navy/10">
             <UserCheck className="h-4 w-4 text-brand-red" />
-            <span>{teachingFaculty.length} Full-Time Academic Educators</span>
+            <span>
+              {teachingFaculty.length} Faculty Members
+              {technicalStaff.length > 0 ? ` + ${technicalStaff.length} Technical Staff (${teachingFaculty.length + technicalStaff.length} Total)` : ""}
+            </span>
           </div>
         </div>
         <p className="text-sm leading-relaxed text-foreground/85">

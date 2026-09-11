@@ -810,6 +810,12 @@ export function getAllFacultyMembers(): FacultyMember[] {
   return list;
 }
 
+export function getDepartmentStaffCount(key: DepartmentKey): number {
+  const dept = FACULTY_DATA[key];
+  if (!dept) return 0;
+  return dept.teaching.length + (dept.technical ? dept.technical.length : 0);
+}
+
 export function cleanFacultyName(name: string): string {
   return name
     .replace(/(Dr\.|Prof\.|Mr\.|Mrs\.|Ms\.)/gi, "")

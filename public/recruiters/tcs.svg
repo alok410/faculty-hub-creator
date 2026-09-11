@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40" fill="none">
+  <!-- TATA emblem and TCS mark -->
+  <g transform="translate(6, 4)">
+    <!-- Tata stylized 'T' in oval -->
+    <ellipse cx="14" cy="16" rx="13" ry="14" fill="#004B87"/>
+    <path d="M7 11h14v3.5h-5V24h-4V14.5H7V11z" fill="#FFFFFF"/>
+    <path d="M4 8.5C6.5 6 9.8 4.5 14 4.5s7.5 1.5 10 4" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <!-- TCS Wordmark -->
+  <text x="40" y="24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="900" fill="#004B87" letter-spacing="1">TCS</text>
+  <text x="41" y="32" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="6.5" font-weight="700" fill="#555555" letter-spacing="0.5">TATA CONSULTANCY</text>
+</svg>
