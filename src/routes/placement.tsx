@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Badge } from "@/components/ui/badge";
+import { PlacedStudentsCarousel } from "@/components/site/PlacedStudentsCarousel";
 import {
   Briefcase,
   Building2,
@@ -150,6 +151,9 @@ function PlacementPage() {
           expert lectures, industrial visits, hands-on internships, and customized training modules.
         </p>
       </div>
+
+      {/* Placed Students Carousel */}
+      <PlacedStudentsCarousel />
 
       {/* Prominent Recruiters Grid */}
       <div className="mb-10 rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
