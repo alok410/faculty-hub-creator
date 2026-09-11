@@ -168,28 +168,29 @@ function PlacementPage() {
           {RECRUITERS.map((r, i) => (
             <div
               key={i}
-              className="group flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-1 hover:border-brand-navy/40 hover:shadow-md"
+              className="group flex flex-col justify-between rounded-xl border border-border bg-card p-4.5 transition-all duration-200 hover:-translate-y-1 hover:border-brand-navy/40 hover:shadow-md"
             >
               <div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-16 shrink-0 items-center justify-center rounded-lg border border-border/70 bg-white p-2 shadow-xs transition-transform duration-200 group-hover:scale-105">
-                    <img
-                      src={r.logo}
-                      alt={`${r.name} logo`}
-                      className="max-h-full max-w-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="font-heading text-sm font-bold text-brand-navy transition-colors group-hover:text-brand-red leading-snug">
-                      {r.name}
-                    </p>
-                  </div>
+                {/* Prominent Company Logo Showcase */}
+                <div className="flex h-18 w-full items-center justify-center rounded-lg border border-border/60 bg-white px-4 py-2.5 shadow-xs transition-transform duration-200 group-hover:scale-[1.02]">
+                  <img
+                    src={r.logo}
+                    alt={`${r.name} logo`}
+                    className="h-12 w-full max-w-[200px] object-contain"
+                    loading="lazy"
+                  />
                 </div>
-                <p className="mt-3 text-xs leading-relaxed text-foreground/85">{r.sector}</p>
+
+                {/* Company Name & Sector */}
+                <div className="mt-3.5">
+                  <p className="font-heading text-base font-bold text-brand-navy transition-colors group-hover:text-brand-red leading-snug">
+                    {r.name}
+                  </p>
+                  <p className="mt-1.5 text-xs leading-relaxed text-foreground/85">{r.sector}</p>
+                </div>
               </div>
 
-              <div className="mt-4 flex items-center justify-between border-t border-border/60 pt-2.5 text-[11px] text-muted-foreground">
+              <div className="mt-4 flex items-center justify-between border-t border-border/60 pt-3 text-[11px] text-muted-foreground">
                 <span className="flex items-center gap-1 font-medium">
                   <MapPin className="h-3.5 w-3.5 text-brand-red shrink-0" />
                   {r.location}

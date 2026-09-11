@@ -1,11 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 40" width="130" height="40" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" width="150" height="40" fill="none">
   <!-- Matrix Red Badge -->
-  <g transform="translate(6, 6)">
-    <rect x="0" y="0" width="28" height="28" rx="4" fill="#E30613"/>
-    <!-- Stylized 'M' geometric wave -->
-    <path d="M5 22V6l9 9 9-9v16h-4.5V13.5l-4.5 4.5-4.5-4.5V22H5z" fill="#FFFFFF"/>
+  <g transform="translate(6, 4)">
+    <rect x="0" y="0" width="32" height="32" rx="5" fill="#E30613"/>
+    <path d="M6 25V7l10 10 10-10v18h-5V15.5l-5 5-5-5V25H6z" fill="#FFFFFF"/>
   </g>
   <!-- Matrix Comsec Text -->
-  <text x="40" y="21" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="900" fill="#E30613" letter-spacing="1">MATRIX</text>
-  <text x="41" y="30" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="6.5" font-weight="700" fill="#4B5563" letter-spacing="0.5">TELECOM | SECURITY</text>
+  <text x="46" y="23" font-family="'Arial Black', system-ui, sans-serif" font-size="18" font-weight="900" fill="#E30613" letter-spacing="1">MATRIX</text>
+  <text x="47" y="32" font-family="system-ui, sans-serif" font-size="7.5" font-weight="800" fill="#4B5563" letter-spacing="0.8">TELECOM | SECURITY</text>
 </svg>

@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 40" width="145" height="40" fill="none">
   <!-- Modern Bitscape Hexagonal Cloud Mark -->
-  <g transform="translate(4, 4)">
-    <path d="M16 2L30 10V26L16 34L2 26V10L16 2Z" fill="#0078D4" opacity="0.15"/>
-    <path d="M16 2L30 10L16 18L2 10L16 2Z" fill="#008AD7"/>
-    <path d="M16 18L30 10V26L16 34V18Z" fill="#005A9E"/>
-    <path d="M2 10L16 18V34L2 26V10Z" fill="#0078D4"/>
-    <circle cx="16" cy="18" r="4" fill="#FFFFFF"/>
-    <circle cx="16" cy="6" r="2" fill="#FFFFFF"/>
-    <circle cx="26" cy="22" r="2" fill="#FFFFFF"/>
-    <circle cx="6" cy="22" r="2" fill="#FFFFFF"/>
+  <g transform="translate(6, 3)">
+    <path d="M17 2L32 11V27L17 36L2 27V11L17 2Z" fill="#0078D4" opacity="0.15"/>
+    <path d="M17 2L32 11L17 20L2 11L17 2Z" fill="#008AD7"/>
+    <path d="M17 20L32 11V27L17 36V20Z" fill="#005A9E"/>
+    <path d="M2 11L17 20V36L2 27V11Z" fill="#0078D4"/>
+    <circle cx="17" cy="20" r="4.5" fill="#FFFFFF"/>
+    <circle cx="17" cy="7" r="2.5" fill="#FFFFFF"/>
+    <circle cx="27" cy="25" r="2.5" fill="#FFFFFF"/>
+    <circle cx="7" cy="25" r="2.5" fill="#FFFFFF"/>
   </g>
   <!-- Bitscape Typography -->
-  <text x="40" y="25" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#002050" letter-spacing="-0.5">bitscape</text>
+  <text x="44" y="26" font-family="'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="900" fill="#002050" letter-spacing="-0.5">bitscape</text>
 </svg>

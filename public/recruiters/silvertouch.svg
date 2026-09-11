@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="140" height="40" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" width="160" height="40" fill="none">
   <!-- Silver Touch 'S' Swirl -->
-  <g transform="translate(6, 6)">
-    <path d="M22 6C19 3 14 3 10 5 6 7 4 11 5 15c1 5 6 7 11 8 4 1 6 3 6 5 0 3-3 5-7 4-3-1-5-3-6-6H3c1 6 5 9 11 10 6 0 11-3 12-8 0-5-5-7-10-8-4-1-6-3-6-5 0-2 2-4 6-4 3 0 5 1 6 4h6z" fill="#0072CE"/>
-    <circle cx="21" cy="6" r="3" fill="#E31E24"/>
+  <g transform="translate(6, 4)">
+    <path d="M25 7C21 3 15 3 11 5 6 8 4 12 5 17c1 6 7 8 13 9 4 1 7 4 7 6 0 4-4 6-8 5-4-1-6-4-7-7H3c1 7 6 10 13 11 7 0 13-4 14-10 0-6-6-8-12-9-5-1-7-4-7-6 0-3 3-5 7-5 4 0 6 2 7 5h6z" fill="#0072CE"/>
+    <circle cx="24" cy="7" r="3.5" fill="#E31E24"/>
   </g>
   <!-- Silver Touch Text -->
-  <text x="36" y="21" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="900" fill="#0A2540" letter-spacing="0.3">SILVER TOUCH</text>
-  <text x="37" y="30" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="6.5" font-weight="700" fill="#64748B" letter-spacing="0.8">TECHNOLOGIES</text>
+  <text x="42" y="22" font-family="'Arial Black', system-ui, sans-serif" font-size="14" font-weight="900" fill="#0A2540" letter-spacing="0.3">SILVER TOUCH</text>
+  <text x="43" y="32" font-family="system-ui, sans-serif" font-size="8" font-weight="800" fill="#64748B" letter-spacing="1">TECHNOLOGIES</text>
 </svg>

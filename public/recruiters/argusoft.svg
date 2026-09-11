@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 40" width="130" height="40" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 145 40" width="145" height="40" fill="none">
   <!-- Argusoft Hex / A Icon -->
-  <g transform="translate(6, 6)">
-    <path d="M14 2L2 26h6l6-13 6 13h6L14 2z" fill="#F37021"/>
-    <circle cx="14" cy="19" r="3.5" fill="#003366"/>
-    <path d="M14 6l-4 9h8l-4-9z" fill="#FFFFFF" opacity="0.4"/>
+  <g transform="translate(6, 4)">
+    <path d="M16 2L2 30h7l7-15 7 15h7L16 2z" fill="#F37021"/>
+    <circle cx="16" cy="22" r="4.5" fill="#003366"/>
+    <path d="M16 7l-5 11h10l-5-11z" fill="#FFFFFF" opacity="0.4"/>
   </g>
   <!-- Argusoft Typography -->
-  <text x="36" y="24" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="900" fill="#003366" letter-spacing="0.5">ARGUSOFT</text>
+  <text x="42" y="26" font-family="'Arial Black', system-ui, sans-serif" font-size="18" font-weight="900" fill="#003366" letter-spacing="0.5">ARGUSOFT</text>
 </svg>
