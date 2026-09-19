@@ -329,11 +329,11 @@ export interface FileRoutesByFullPath {
   '/enquiry': typeof EnquiryRoute
   '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
-  '/library': typeof LibraryRoute
   '/faculty-profile': typeof FacultyProfileRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
   '/institute-committee': typeof InstituteCommitteeRoute
+  '/library': typeof LibraryRoute
   '/mandatory-disclosure': typeof MandatoryDisclosureRoute
   '/media-coverage': typeof MediaCoverageRoute
   '/placement': typeof PlacementRoute
@@ -380,11 +380,11 @@ export interface FileRoutesByTo {
   '/enquiry': typeof EnquiryRoute
   '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
-  '/library': typeof LibraryRoute
   '/faculty-profile': typeof FacultyProfileRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
   '/institute-committee': typeof InstituteCommitteeRoute
+  '/library': typeof LibraryRoute
   '/mandatory-disclosure': typeof MandatoryDisclosureRoute
   '/media-coverage': typeof MediaCoverageRoute
   '/placement': typeof PlacementRoute
@@ -433,11 +433,11 @@ export interface FileRoutesById {
   '/enquiry': typeof EnquiryRoute
   '/events': typeof EventsRoute
   '/facility': typeof FacilityRoute
-  '/library': typeof LibraryRoute
   '/faculty-profile': typeof FacultyProfileRoute
   '/gallery': typeof GalleryRoute
   '/grievance': typeof GrievanceRoute
   '/institute-committee': typeof InstituteCommitteeRoute
+  '/library': typeof LibraryRoute
   '/mandatory-disclosure': typeof MandatoryDisclosureRoute
   '/media-coverage': typeof MediaCoverageRoute
   '/placement': typeof PlacementRoute
@@ -486,11 +486,11 @@ export interface FileRouteTypes {
     | '/enquiry'
     | '/events'
     | '/facility'
-    | '/library'
     | '/faculty-profile'
     | '/gallery'
     | '/grievance'
     | '/institute-committee'
+    | '/library'
     | '/mandatory-disclosure'
     | '/media-coverage'
     | '/placement'
@@ -537,11 +537,11 @@ export interface FileRouteTypes {
     | '/enquiry'
     | '/events'
     | '/facility'
-    | '/library'
     | '/faculty-profile'
     | '/gallery'
     | '/grievance'
     | '/institute-committee'
+    | '/library'
     | '/mandatory-disclosure'
     | '/media-coverage'
     | '/placement'
@@ -589,11 +589,11 @@ export interface FileRouteTypes {
     | '/enquiry'
     | '/events'
     | '/facility'
-    | '/library'
     | '/faculty-profile'
     | '/gallery'
     | '/grievance'
     | '/institute-committee'
+    | '/library'
     | '/mandatory-disclosure'
     | '/media-coverage'
     | '/placement'
@@ -642,11 +642,11 @@ export interface RootRouteChildren {
   EnquiryRoute: typeof EnquiryRoute
   EventsRoute: typeof EventsRoute
   FacilityRoute: typeof FacilityRoute
-  LibraryRoute: typeof LibraryRoute
   FacultyProfileRoute: typeof FacultyProfileRoute
   GalleryRoute: typeof GalleryRoute
   GrievanceRoute: typeof GrievanceRoute
   InstituteCommitteeRoute: typeof InstituteCommitteeRoute
+  LibraryRoute: typeof LibraryRoute
   MandatoryDisclosureRoute: typeof MandatoryDisclosureRoute
   MediaCoverageRoute: typeof MediaCoverageRoute
   PlacementRoute: typeof PlacementRoute
@@ -767,13 +767,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FacilityRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/library': {
-      id: '/library'
-      path: '/library'
-      fullPath: '/library'
-      preLoaderRoute: typeof LibraryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/faculty-profile': {
       id: '/faculty-profile'
       path: '/faculty-profile'
@@ -800,6 +793,13 @@ declare module '@tanstack/react-router' {
       path: '/institute-committee'
       fullPath: '/institute-committee'
       preLoaderRoute: typeof InstituteCommitteeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/library': {
+      id: '/library'
+      path: '/library'
+      fullPath: '/library'
+      preLoaderRoute: typeof LibraryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mandatory-disclosure': {
@@ -1060,11 +1060,11 @@ const rootRouteChildren: RootRouteChildren = {
   EnquiryRoute: EnquiryRoute,
   EventsRoute: EventsRoute,
   FacilityRoute: FacilityRoute,
-  LibraryRoute: LibraryRoute,
   FacultyProfileRoute: FacultyProfileRoute,
   GalleryRoute: GalleryRoute,
   GrievanceRoute: GrievanceRoute,
   InstituteCommitteeRoute: InstituteCommitteeRoute,
+  LibraryRoute: LibraryRoute,
   MandatoryDisclosureRoute: MandatoryDisclosureRoute,
   MediaCoverageRoute: MediaCoverageRoute,
   PlacementRoute: PlacementRoute,
