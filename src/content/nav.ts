@@ -17,7 +17,7 @@ export const NAV: NavLink[] = [
     label: "Academics",
     children: [
       {
-        label: "Degree",
+        label: "UG Programs",
         children: [
           { label: "Computer Engineering", to: "/academics/degree/computer" },
           { label: "Civil Engineering", to: "/academics/degree/civil" },
@@ -26,7 +26,6 @@ export const NAV: NavLink[] = [
           { label: "Humanities And Science", to: "/academics/degree/humanities" },
         ],
       },
-      { label: "Minor Degree(BE)", to: "/academics/minor-degree" },
       {
         label: "Diploma",
         children: [
@@ -37,6 +36,7 @@ export const NAV: NavLink[] = [
           { label: "Humanities And Science", to: "/academics/diploma/humanities" },
         ],
       },
+      { label: "Minor Courses", to: "/academics/minor-degree" },
       { label: "Integrated M.Sc. in Information Technology", to: "/academics/msc-it" },
       { label: "Post Graduate Diploma in Cyber Security (PGDCS)", to: "/academics/pgdcs" },
     ],

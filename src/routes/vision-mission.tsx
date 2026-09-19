@@ -78,12 +78,12 @@ function VisionMissionPage() {
         <div className="flex flex-col justify-between rounded-xl border-2 border-brand-navy/20 bg-card p-8 shadow-sm transition-all hover:border-brand-navy/40 hover:shadow-md">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy text-white">
-                <Eye className="h-6 w-6 text-brand-red" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy text-white shadow-sm">
+                <Eye className="h-6 w-6 text-white" />
               </div>
               <div>
                 <Badge className="bg-brand-red uppercase text-white tracking-wider text-[10px]">Our Aspiration</Badge>
-                <h2 className="mt-1 font-heading text-2xl font-bold uppercase text-brand-navy">Institutional Vision</h2>
+                <h2 className="mt-1 font-heading text-2xl font-bold uppercase text-brand-navy">Vision</h2>
               </div>
             </div>
             <div className="mb-6 mt-4 h-1 w-16 bg-brand-red" />
@@ -109,7 +109,7 @@ function VisionMissionPage() {
               </div>
               <div>
                 <Badge className="bg-brand-navy uppercase text-white tracking-wider text-[10px]">Our Purpose</Badge>
-                <h2 className="mt-1 font-heading text-2xl font-bold uppercase text-brand-navy">Institutional Mission</h2>
+                <h2 className="mt-1 font-heading text-2xl font-bold uppercase text-brand-navy">Mission</h2>
               </div>
             </div>
             <div className="mb-6 mt-4 h-1 w-16 bg-brand-red" />
@@ -127,11 +127,11 @@ function VisionMissionPage() {
         </div>
       </div>
 
-      {/* 5 Mission Pillars */}
+      {/* Core Values */}
       <div className="mb-12 space-y-6">
         <div>
-          <h3 className="font-heading text-xl font-bold uppercase text-brand-navy">Mission Strategic Pillars</h3>
-          <p className="mt-1 text-xs text-muted-foreground">The strategic tenets translating our mission into daily academic practice.</p>
+          <h3 className="font-heading text-xl font-bold uppercase text-brand-navy">Core Values</h3>
+          <p className="mt-1 text-xs text-muted-foreground">The core values and strategic tenets translating our mission into daily academic practice.</p>
           <div className="mt-2 mb-4 h-1 w-12 bg-brand-red" />
         </div>
 
@@ -163,8 +163,8 @@ function VisionMissionPage() {
               key={idx}
               className="flex flex-col items-center text-center rounded-xl border border-border/70 bg-brand-surface/30 p-5 transition-all hover:border-brand-navy/30 hover:shadow-xs"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy text-white">
-                <val.icon className="h-6 w-6 text-brand-red" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy text-white shadow-sm">
+                <val.icon className="h-6 w-6 text-white" />
               </div>
               <h4 className="mt-4 font-heading text-sm font-bold uppercase text-brand-navy">{val.title}</h4>
               <p className="mt-2 text-xs leading-relaxed text-foreground/80">{val.desc}</p>

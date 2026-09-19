@@ -21,6 +21,7 @@ import {
   FileText,
   Mic,
   HeartHandshake,
+  ExternalLink,
 } from "lucide-react";
 
 export const Route = createFileRoute("/academics/degree/humanities")({
@@ -75,44 +76,6 @@ const LABS = [
   },
 ];
 
-const CURRICULUM_DOMAINS = [
-  {
-    title: "Engineering Mathematics",
-    courses: [
-      "Mathematics I (Calculus & Linear Algebra)",
-      "Mathematics II (Vector Calculus & Ordinary Differential Equations)",
-      "Probability & Statistics / Numerical Methods",
-      "Complex Variables & Partial Differential Equations",
-    ],
-  },
-  {
-    title: "Engineering Physics & Nanotechnology",
-    courses: [
-      "Optics & Laser Fundamentals",
-      "Semiconductor & Superconductivity Physics",
-      "Quantum Mechanics & Wave Packets",
-      "Fiber Optics & Sensor Systems",
-    ],
-  },
-  {
-    title: "Engineering Chemistry & Green Tech",
-    courses: [
-      "Water Technology & Boiler Feed Treatments",
-      "Fuels, Combustion & Lubrication Science",
-      "Corrosion Science & Surface Engineering",
-      "Environmental Studies & Sustainable Materials",
-    ],
-  },
-  {
-    title: "Professional Communication & Ethics",
-    courses: [
-      "Effective Technical Communication in English",
-      "Universal Human Values & Professional Ethics",
-      "Constitution of India & Civic Responsibilities",
-      "Group Discussion & Technical Presentation Skills",
-    ],
-  },
-];
 
 function HumanitiesDegreePage() {
   return (
@@ -211,44 +174,35 @@ function HumanitiesDegreePage() {
         {/* 3. DOMAINS */}
         <TabsContent value="domains" className="space-y-8">
           <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
-            <h2 className="text-2xl font-bold tracking-tight text-brand-navy">Core Curricular Domains Covered</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-brand-navy">GTU 1st Year Engineering Curriculum</h2>
             <div className="mt-2 mb-6 h-1 w-16 bg-brand-red rounded-full" />
-            <p className="text-sm text-muted-foreground mb-8">
-              Every first-year engineering student across Computer, Civil, Mechanical, and Electrical branches completes foundational courses administered by this department under GTU teaching schemes.
+            
+            <p className="text-sm text-foreground/80 leading-relaxed mb-6">
+              Every first-year engineering student across Computer, Civil, Mechanical, and Electrical branches completes foundational courses in Mathematics, Physics, Chemistry, and Professional Communication administered directly under Gujarat Technological University (GTU) teaching schemes.
             </p>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              {CURRICULUM_DOMAINS.map((domain, idx) => (
-                <div key={idx} className="flex flex-col rounded-xl border border-border bg-card p-5 shadow-sm">
-                  <div className="flex items-center gap-2 font-bold text-brand-navy mb-3 text-base border-b border-border pb-2">
-                    <BookOpen className="h-4 w-4 text-brand-red" />
-                    <h4>{domain.title}</h4>
-                  </div>
-                  <ul className="space-y-2">
-                    {domain.courses.map((c, cIdx) => (
-                      <li key={cIdx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                        <span className="h-1.5 w-1.5 rounded-full bg-brand-red mt-1.5 shrink-0" />
-                        <span>{c}</span>
-                      </li>
-                    ))}
-                  </ul>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 rounded-xl bg-brand-surface p-6 md:p-8 border border-border shadow-xs">
+              <div className="space-y-2 max-w-xl">
+                <div className="flex items-center gap-2">
+                  <Badge className="bg-brand-navy text-white uppercase text-[10px]">Official GTU Portal</Badge>
+                  <span className="text-xs font-semibold text-brand-red">Real-time University Syllabus</span>
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl bg-brand-surface p-5 border border-border">
-              <div>
-                <div className="font-semibold text-foreground text-sm">Official GTU 1st Year Engineering Teaching Scheme</div>
-                <div className="text-xs text-muted-foreground">Complete syllabus breakdown including credits, theory lecture hours, and lab marks.</div>
+                <h3 className="font-heading text-lg font-bold text-brand-navy">
+                  Access Official GTU 1st Year Syllabus
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Click below to directly view, explore, and download the official 1st year teaching scheme, credit structure, theory lecture hours, and laboratory marks distribution.
+                </p>
               </div>
+
               <a
-                href="https://www.gtu.ac.in/Syllabus_List.aspx"
+                href="https://old26.gtu.ac.in/syllabus/syllabus.aspx"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-brand-navy px-4 py-2 text-xs font-semibold text-white shadow hover:bg-brand-navy/90 shrink-0 transition-colors"
+                className="inline-flex items-center gap-2.5 rounded-lg bg-brand-navy px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-brand-red hover:shadow-md shrink-0"
               >
-                <FileText className="h-4 w-4" />
-                <span>GTU 1st Year Syllabus</span>
+                <ExternalLink className="h-4 w-4 text-brand-gold" />
+                <span>Open GTU Syllabus</span>
               </a>
             </div>
           </div>

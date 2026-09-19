@@ -18,6 +18,7 @@ import {
   Eye,
   Target,
   FileText,
+  ExternalLink,
 } from "lucide-react";
 
 export const Route = createFileRoute("/academics/degree/mechanical")({
@@ -42,7 +43,7 @@ export const Route = createFileRoute("/academics/degree/mechanical")({
 });
 
 const STATS = [
-  { label: "Duration & Creds", value: "4 Yrs (8 Sems)", icon: Layers, desc: "AICTE approved B.E. Degree" },
+  { label: "Duration & Creds", value: "4 Yrs", icon: Layers, desc: "AICTE approved B.E. Degree" },
   { label: "Approved Intake", value: "60 Seats", icon: Users, desc: "100% ACPC counseling allocation" },
   { label: "CoE Synergy", value: "Siemens CoE", icon: Cog, desc: "9 specialized industrial labs on campus" },
   { label: "Faculty Mentors", value: "Ph.D. & M.Tech", icon: Award, desc: "Thermal, design & manufacturing experts" },
@@ -81,12 +82,6 @@ const LABS = [
   },
 ];
 
-const CURRICULUM_SEMESTERS = [
-  { year: "First Year (Sem 1 & 2)", courses: ["Basics of Mechanical Engineering", "Engineering Graphics & Design", "Engineering Mathematics I & II", "Applied Physics", "Workshop Practice"] },
-  { year: "Second Year (Sem 3 & 4)", courses: ["Material Science & Metallurgy", "Thermodynamics", "Kinematics of Machinery", "Fluid Mechanics & Hydraulic Machines", "Manufacturing Processes", "Machine Design & Industrial Drafting"] },
-  { year: "Third Year (Sem 5 & 6)", courses: ["Heat Transfer", "Dynamics of Machinery", "Design of Machine Elements", "Internal Combustion Engines", "Control Engineering & Mechatronics", "Departmental Elective I"] },
-  { year: "Final Year (Sem 7 & 8)", courses: ["Computer Aided Design & Manufacturing (CAD/CAM)", "Refrigeration & Air Conditioning", "Power Plant Engineering", "Major Capstone Project", "Comprehensive Technical Seminar"] },
-];
 
 function MechanicalDegreePage() {
   return (
@@ -214,37 +209,35 @@ function MechanicalDegreePage() {
         {/* Tab 3: Curriculum */}
         <TabsContent value="curriculum" className="space-y-8 focus-visible:outline-none">
           <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
-            <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">4-Year Curriculum Structure</h2>
+            <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">GTU Curriculum &amp; Teaching Scheme</h2>
             <div className="mb-6 mt-2 h-1 w-16 bg-brand-red" />
-            <div className="grid gap-6 md:grid-cols-2">
-              {CURRICULUM_SEMESTERS.map((sem, i) => (
-                <div key={i} className="rounded-xl border border-border bg-brand-surface/30 p-5">
-                  <Badge className="bg-brand-navy text-white uppercase text-[10px]">{sem.year}</Badge>
-                  <ul className="mt-4 space-y-2 text-xs">
-                    {sem.courses.map((c, cidx) => (
-                      <li key={cidx} className="flex items-center gap-2 text-foreground/90 font-medium">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-brand-red shrink-0" />
-                        <span>{c}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+            
+            <p className="text-sm text-foreground/80 leading-relaxed mb-6">
+              The official academic syllabus, semester-wise teaching scheme, credit structure, and course codes for Bachelor of Engineering (Mechanical Engineering) are administered directly by Gujarat Technological University (GTU).
+            </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl bg-brand-surface p-5 border border-border">
-              <div>
-                <div className="font-semibold text-foreground text-sm">Official GTU Teaching Scheme &amp; Detailed Subject Codes</div>
-                <div className="text-xs text-muted-foreground">Download authentic credit matrices, laboratory experiment lists, and end-term grading criteria.</div>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 rounded-xl bg-brand-surface p-6 md:p-8 border border-border shadow-xs">
+              <div className="space-y-2 max-w-xl">
+                <div className="flex items-center gap-2">
+                  <Badge className="bg-brand-navy text-white uppercase text-[10px]">Official GTU Portal</Badge>
+                  <span className="text-xs font-semibold text-brand-red">Real-time University Syllabus</span>
+                </div>
+                <h3 className="font-heading text-lg font-bold text-brand-navy">
+                  Access Official GTU Syllabus Portal
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Click below to directly view, explore, and download the latest semester-wise syllabus PDFs, teaching schemes, subject credit matrices, and laboratory guidelines.
+                </p>
               </div>
+
               <a
-                href="https://www.gtu.ac.in/Syllabus_List.aspx"
+                href="https://old26.gtu.ac.in/syllabus/syllabus.aspx"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-brand-navy px-4 py-2 text-xs font-semibold text-white shadow hover:bg-brand-navy/90 shrink-0 transition-colors"
+                className="inline-flex items-center gap-2.5 rounded-lg bg-brand-navy px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-brand-red hover:shadow-md shrink-0"
               >
-                <FileText className="h-4 w-4" />
-                <span>GTU Official Syllabus</span>
+                <ExternalLink className="h-4 w-4 text-brand-gold" />
+                <span>Open GTU Curriculum</span>
               </a>
             </div>
           </div>

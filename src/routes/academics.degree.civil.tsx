@@ -19,6 +19,7 @@ import {
   ArrowRight,
   MapPin,
   FileText,
+  ExternalLink,
 } from "lucide-react";
 
 export const Route = createFileRoute("/academics/degree/civil")({
@@ -44,7 +45,7 @@ export const Route = createFileRoute("/academics/degree/civil")({
 });
 
 const STATS = [
-  { label: "Duration & Creds", value: "4 Yrs (8 Sems)", icon: Layers, desc: "AICTE approved B.E. Degree" },
+  { label: "Duration & Creds", value: "4 Yrs", icon: Layers, desc: "AICTE approved B.E. Degree" },
   { label: "Approved Intake", value: "60 Seats", icon: Users, desc: "100% ACPC counseling allocation" },
   { label: "Specialized Labs", value: "7 Labs", icon: HardHat, desc: "Field-grade testing machinery & CAD" },
   { label: "Faculty Mentors", value: "Ph.D. & M.Tech", icon: Award, desc: "Structural & geotechnical experts" },
@@ -88,55 +89,6 @@ const LABS = [
   },
 ];
 
-const CURRICULUM_SEMESTERS = [
-  {
-    year: "First Year (Sem 1 & 2)",
-    courses: [
-      "Basics of Civil & Mechanical Engineering",
-      "Engineering Graphics & Design (AutoCAD)",
-      "Engineering Mathematics I & II",
-      "Physics of Materials",
-      "Environmental Studies & Green Tech",
-    ],
-  },
-  {
-    year: "Second Year (Sem 3 & 4)",
-    courses: [
-      "Mechanics of Solids",
-      "Surveying & Geomatics",
-      "Fluid Mechanics",
-      "Concrete Technology",
-      "Building Construction Technology",
-      "Structural Analysis I",
-      "Geotechnical Engineering I",
-      "Complex Variables & Numerical Methods",
-    ],
-  },
-  {
-    year: "Third Year (Sem 5 & 6)",
-    courses: [
-      "Design of Reinforced Concrete Structures (IS 456)",
-      "Highway & Traffic Engineering",
-      "Hydrology & Water Resources Engineering",
-      "Environmental Engineering I (Water Supply)",
-      "Structural Analysis II",
-      "Foundation Engineering",
-      "Disaster Management & Mitigation",
-      "Departmental Elective I",
-    ],
-  },
-  {
-    year: "Final Year (Sem 7 & 8)",
-    courses: [
-      "Design of Steel Structures (IS 800)",
-      "Estimation, Costing & Valuation",
-      "Irrigation Engineering & Hydraulic Structures",
-      "Construction Management & Professional Ethics",
-      "Major Capstone Project (Industry / Site Investigation)",
-      "Comprehensive Viva Voce",
-    ],
-  },
-];
 
 
 function CivilDegreePage() {
@@ -257,49 +209,35 @@ function CivilDegreePage() {
         {/* 3. CURRICULUM */}
         <TabsContent value="curriculum" className="space-y-8">
           <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-              <div>
-                <h2 className="text-2xl font-bold tracking-tight text-brand-navy">GTU Prescribed Curriculum (B.E. Civil)</h2>
-                <p className="text-sm text-muted-foreground mt-1">Structured across 8 semesters with continuous internal evaluation, university exams, and site training.</p>
-              </div>
-              <Badge variant="outline" className="border-brand-navy/30 text-brand-navy self-start md:self-auto px-3 py-1">
-                AICTE Model Syllabus
-              </Badge>
-            </div>
-            <div className="mb-6 h-1 w-16 bg-brand-red rounded-full" />
+            <h2 className="text-2xl font-bold tracking-tight text-brand-navy">GTU Prescribed Curriculum (B.E. Civil)</h2>
+            <div className="mb-6 mt-2 h-1 w-16 bg-brand-red rounded-full" />
+            
+            <p className="text-sm text-foreground/80 leading-relaxed mb-6">
+              The official academic syllabus, semester-wise teaching scheme, credit structure, and course codes for Bachelor of Engineering (Civil Engineering) are administered directly by Gujarat Technological University (GTU).
+            </p>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              {CURRICULUM_SEMESTERS.map((sem, idx) => (
-                <div key={idx} className="flex flex-col rounded-xl border border-border bg-card p-5 shadow-sm">
-                  <div className="flex items-center gap-2 font-bold text-brand-navy mb-3 text-base border-b border-border pb-2">
-                    <BookOpen className="h-4 w-4 text-brand-red" />
-                    <h4>{sem.year}</h4>
-                  </div>
-                  <ul className="space-y-2">
-                    {sem.courses.map((c, cIdx) => (
-                      <li key={cIdx} className="flex items-start gap-2 text-xs text-muted-foreground">
-                        <span className="h-1.5 w-1.5 rounded-full bg-brand-red mt-1.5 shrink-0" />
-                        <span>{c}</span>
-                      </li>
-                    ))}
-                  </ul>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 rounded-xl bg-brand-surface p-6 md:p-8 border border-border shadow-xs">
+              <div className="space-y-2 max-w-xl">
+                <div className="flex items-center gap-2">
+                  <Badge className="bg-brand-navy text-white uppercase text-[10px]">Official GTU Portal</Badge>
+                  <span className="text-xs font-semibold text-brand-red">Real-time University Syllabus</span>
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-xl bg-brand-surface p-5 border border-border">
-              <div>
-                <div className="font-semibold text-foreground text-sm">Looking for official course codes &amp; detailed syllabus PDFs?</div>
-                <div className="text-xs text-muted-foreground">Access official Gujarat Technological University teaching schemes and subject marks distribution.</div>
+                <h3 className="font-heading text-lg font-bold text-brand-navy">
+                  Access Official GTU Syllabus Portal
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Click below to directly view, explore, and download the latest semester-wise syllabus PDFs, teaching schemes, subject credit matrices, and laboratory guidelines.
+                </p>
               </div>
+
               <a
-                href="https://www.gtu.ac.in/Syllabus_List.aspx"
+                href="https://old26.gtu.ac.in/syllabus/syllabus.aspx"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-brand-navy px-4 py-2 text-xs font-semibold text-white shadow hover:bg-brand-navy/90 shrink-0 transition-colors"
+                className="inline-flex items-center gap-2.5 rounded-lg bg-brand-navy px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-brand-red hover:shadow-md shrink-0"
               >
-                <FileText className="h-4 w-4" />
-                <span>GTU Official Syllabus</span>
+                <ExternalLink className="h-4 w-4 text-brand-gold" />
+                <span>Open GTU Curriculum</span>
               </a>
             </div>
           </div>
