@@ -5,10 +5,10 @@ import { Quote, Award } from "lucide-react";
 export const Route = createFileRoute("/vc-message")({
   head: () => ({
     meta: [
-      { title: "Vice Chancellor's Message | GTU-ITR" },
-      { name: "description", content: "Vice Chancellor's Message at GTU Institute of Technology & Research, Mehsana." },
-      { property: "og:title", content: "Vice Chancellor's Message | GTU-ITR" },
-      { property: "og:description", content: "Vice Chancellor's Message at GTU Institute of Technology & Research, Mehsana." },
+      { title: "Honourable Vice Chancellor's Message | GTU-ITR" },
+      { name: "description", content: "Honourable Vice Chancellor's Message at GTU Institute of Technology & Research, Mehsana." },
+      { property: "og:title", content: "Honourable Vice Chancellor's Message | GTU-ITR" },
+      { property: "og:description", content: "Honourable Vice Chancellor's Message at GTU Institute of Technology & Research, Mehsana." },
       { property: "og:url", content: "/vc-message" },
     ],
     links: [{ rel: "canonical", href: "/vc-message" }],
@@ -18,18 +18,18 @@ export const Route = createFileRoute("/vc-message")({
 
 function Page() {
   return (
-    <PageShell title="Vice Chancellor's Message">
+    <PageShell title="Honourable Vice Chancellor's Message">
       <div className="grid gap-8 lg:grid-cols-[300px_1fr]">
         <div className="flex flex-col items-center overflow-hidden border border-border bg-card p-4 shadow-md text-center rounded-lg">
           <div className="relative aspect-[3/4] w-full overflow-hidden rounded-md border border-border bg-muted">
             <img
               src="/site/vc.jpg"
-              alt="Vice Chancellor - GTU"
+              alt="Honourable Vice Chancellor - GTU"
               className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
           <div className="mt-4 w-full border-t border-border pt-3">
-            <h3 className="font-heading text-lg font-bold text-brand-navy">Vice Chancellor</h3>
+            <h3 className="font-heading text-lg font-bold text-brand-navy">Honourable Vice Chancellor</h3>
             <p className="text-xs font-semibold uppercase tracking-wider text-brand-red">Gujarat Technological University</p>
           </div>
         </div>
@@ -37,7 +37,7 @@ function Page() {
         <Prose>
           <section className="relative rounded-lg border border-border bg-brand-surface p-6 shadow-sm md:p-8">
             <Quote className="absolute right-6 top-6 h-12 w-12 text-brand-red/10" />
-            <h2 className="section-title text-xl md:text-2xl font-heading font-bold uppercase text-brand-navy">From the Vice Chancellor</h2>
+            <h2 className="section-title text-xl md:text-2xl font-heading font-bold uppercase text-brand-navy">From the Honourable Vice Chancellor</h2>
             <div className="mt-2 mb-6 h-1 w-16 bg-brand-red" />
             <p className="text-[15px] leading-relaxed text-foreground/90 font-sans">
               Gujarat Technological University has consistently worked towards making technical education accessible, industry relevant and research driven. GTU-ITR is a flagship campus of the University where this philosophy is translated into practice every single day.

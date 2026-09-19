@@ -7,7 +7,7 @@ export const NAV: NavLink[] = [
     children: [
       { label: "About Us", to: "/about" },
       { label: "Vision-Mission", to: "/vision-mission" },
-      { label: "VC Message", to: "/vc-message" },
+      { label: "Honourable VC Message", to: "/vc-message" },
       { label: "Registrar Message", to: "/registrar-message" },
       { label: "Principal Message", to: "/principal-message" },
       { label: "Mandatory Disclosure", href: "/mandatory-disclosure.pdf", download: true },

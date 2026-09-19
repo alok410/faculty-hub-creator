@@ -1,4 +1,4 @@
-export type EventScheduleItem = {
+wexport type EventScheduleItem = {
   time: string;
   activity: string;
 };

@@ -54,7 +54,7 @@ const PROCEDURAL_RULES = [
   "The term of the chairperson and members of the committee is 2 years from date of appointment; student special invitees remain members for 2 years or until completion of their enrolled degree.",
   "The quorum of any meeting of SGRC including the chairperson (excluding special invitee) is strictly three members.",
   "In considering any student grievance, the committee strictly adheres to the established principles of natural justice and fair hearing.",
-  "The SGRC is required to conclude its inquiry and submit a detailed report with recommendations to the Head of Institute / Vice Chancellor, with an official copy to the aggrieved student within 15 days of receiving the complaint.",
+  "The SGRC is required to conclude its inquiry and submit a detailed report with recommendations to the Head of Institute / Honourable Vice Chancellor, with an official copy to the aggrieved student within 15 days of receiving the complaint.",
   "Grievances can be registered through the online Google Form portal, email, or submitted as a sealed physical petition.",
 ];
 

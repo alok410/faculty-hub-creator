@@ -41,7 +41,7 @@ const STATS = [
   { label: "University Status", value: "GTU Managed", icon: Building2, desc: "Constituent institute of GTU Ahmedabad" },
   { label: "Campus Scale", value: "25 Acres", icon: Compass, desc: "Eco-friendly, lush green campus" },
   { label: "Engineering Labs", value: "52+ Labs", icon: Cpu, desc: "Including 9 Siemens CoE laboratories" },
-  { label: "Regional Pioneer", value: "1st in North Guj", icon: Award, desc: "First degree engineering college managed by GTU" },
+  { label: "Regional Presence", value: "North Guj", icon: Award, desc: "Degree engineering college managed by GTU" },
 ];
 
 const WHAT_WE_HAVE = [
@@ -81,7 +81,7 @@ const WHAT_WE_HAVE = [
 
 const LEADERSHIP_MESSAGES = [
   {
-    title: "Vice Chancellor's Message",
+    title: "Honourable VC's Message",
     role: "Gujarat Technological University",
     link: "/vc-message",
     desc: "Vision for transforming GTU-ITR into a state-wide epicenter for high-tech engineering education.",
@@ -104,7 +104,7 @@ function AboutPage() {
   return (
     <PageShell
       title="About GTU-ITR"
-      subtitle="First ever Degree Engineering Institution in North Gujarat managed directly by Gujarat Technological University (GTU)."
+      subtitle="Degree Engineering Institution in North Gujarat managed directly by Gujarat Technological University (GTU) with 25 acre lush green campus."
     >
       {/* Top Banner Stats */}
       <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -133,11 +133,11 @@ function AboutPage() {
         </h2>
         <div className="mb-6 mt-2 h-1 w-16 bg-brand-red" />
 
-        <div className="space-y-4 text-sm leading-relaxed text-foreground/85">
+        <div className="space-y-4 text-sm leading-relaxed text-foreground/85 text-justify">
           <p>
             <strong>Gujarat Technological University - Institute of Technology &amp; Research (GTU-ITR)</strong>, formerly
-            known as Gujarat Power Engineering and Research Institute (GPERI), is the first degree engineering institution
-            in the North Gujarat region managed directly by Gujarat Technological University (GTU), Ahmedabad. The institute
+            known as Gujarat Power Engineering and Research Institute (GPERI), is a premier degree engineering institution
+            in North Gujarat managed directly by Gujarat Technological University (GTU), Ahmedabad with a 25-acre lush green campus. The institute
             is situated near Mevad toll-booth on the Ahmedabad - Mehsana Express Highway, Mehsana.
           </p>
           <p>

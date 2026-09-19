@@ -121,15 +121,17 @@ export function SiteHeader() {
     <header>
       {/* Desktop Header: Left-Aligned Logo, Center-Left Typography & Right-Aligned NAAC Logo */}
       <div className="hidden bg-white md:block border-b border-border/40 py-2.5">
-        <div className="mx-auto flex max-w-[1400px] items-center gap-4 px-6">
-          <Link to="/" className="shrink-0 flex items-center" title="GTU-ITR Home">
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6">
+          <Link to="/" className="shrink-0 flex items-center w-20 lg:w-24 justify-start" title="GTU-ITR Home">
             <img
               src="/site/gtu_header_logo.png"
               alt="Gujarat Technological University Logo"
               className="h-20 w-20 lg:h-24 lg:w-24 object-contain transition-transform hover:scale-105"
             />
           </Link>
-          <div className="min-w-0 flex-1">
+
+          {/* Centered Typography */}
+          <div className="min-w-0 flex-1 text-center px-2">
             <p className="font-heading text-lg lg:text-2xl font-bold uppercase tracking-wide text-brand-navy leading-none">
               Gujarat Technological University-
             </p>
@@ -145,7 +147,7 @@ export function SiteHeader() {
           </div>
 
           {/* Right-Aligned NAAC A+ Accreditation Logo */}
-          <div className="shrink-0 flex items-center pl-2">
+          <div className="shrink-0 flex items-center w-20 lg:w-24 justify-end">
             <img
               src="/site/naac_a_plus_logo.png"
               alt="Accredited with Grade A+ by NAAC"
