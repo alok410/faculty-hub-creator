@@ -119,7 +119,15 @@ export function SiteHeader() {
 
   return (
     <header>
-      <img src="/site/Header.png" alt="Gujarat Technological University - Institute of Technology & Research" className="hidden w-full md:block" />
+      <div className="hidden bg-white md:block border-b border-border/30">
+        <div className="mx-auto flex items-center justify-center px-4 py-1.5">
+          <img
+            src="/site/Header.png"
+            alt="Gujarat Technological University - Institute of Technology & Research"
+            className="max-h-[120px] lg:max-h-[135px] w-auto max-w-full object-contain"
+          />
+        </div>
+      </div>
       <div className="flex items-center gap-3 border-b border-border bg-card px-4 py-3 md:hidden">
         <img src="/site/gtulogo.jpg" alt="GTU logo" className="h-11 w-11 rounded-full object-cover" />
         <div className="min-w-0 flex-1">
