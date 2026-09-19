@@ -133,7 +133,7 @@ export function SiteHeader() {
           {/* Centered Typography */}
           <div className="min-w-0 flex-1 text-center px-2">
             <p className="font-heading text-lg lg:text-2xl font-bold uppercase tracking-wide text-brand-navy leading-none">
-              Gujarat Technological University-
+              Gujarat Technological University
             </p>
             <h1 className="font-heading text-lg lg:text-2xl font-bold uppercase tracking-wide text-brand-navy mt-1 leading-tight">
               Institute of Technology &amp; Research (ITR)
