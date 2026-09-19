@@ -11,7 +11,7 @@ type EventsSearch = { category?: EventCategoryKey | string | undefined };
 
 export const Route = createFileRoute("/events")({
   validateSearch: (search: Record<string, unknown>): EventsSearch => {
-    const raw = typeof search.category === "string" ? search.category.toLowerCase() : "all";
+    const raw = typeof search["category"] === "string" ? search["category"].toLowerCase() : "all";
     const valid: EventCategoryKey[] = ["all", "technical", "cultural", "sports"];
     return {
       category: valid.includes(raw as EventCategoryKey) ? (raw as EventCategoryKey) : "all",
