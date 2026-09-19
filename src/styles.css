@@ -148,6 +148,32 @@
   }
 }
 
+/*
+ * Custom Ampersand (&) font override:
+ * Alegreya Sans SC renders '&' as a stylized cursive 'et' ligature that looks like 'e/'.
+ * By defining PoppinsAmpersand with unicode-range: U+0026, every '&' in headings across
+ * the entire website renders using the clean, modern standard ampersand symbol from Poppins.
+ */
+@font-face {
+  font-family: "PoppinsAmpersand";
+  font-style: normal;
+  font-weight: 400 600;
+  src: local("Poppins SemiBold"), local("Poppins-SemiBold"), local("Poppins"),
+       url("https://fonts.gstatic.com/l/font?kit=pxiByp8kv8JHgFVrLGT9V1t3EdE&skey=d4526a9b64c21b87&v=v24") format("truetype");
+  unicode-range: U+0026;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PoppinsAmpersand";
+  font-style: normal;
+  font-weight: 700 900;
+  src: local("Poppins Bold"), local("Poppins-Bold"), local("Poppins SemiBold"), local("Poppins"),
+       url("https://fonts.gstatic.com/l/font?kit=pxiByp8kv8JHgFVrLCz7V1t3EdE&skey=cea76fe63715a67a&v=v24") format("truetype");
+  unicode-range: U+0026;
+  font-display: swap;
+}
+
 @theme inline {
   --color-brand-navy: var(--brand-navy);
   --color-brand-navy-dark: var(--brand-navy-dark);
@@ -155,8 +181,8 @@
   --color-brand-gold: var(--brand-gold);
   --color-brand-surface: var(--brand-surface);
   --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Bebas Neue", "Poppins", sans-serif;
-  --font-heading: "Alegreya Sans SC", "Poppins", sans-serif;
+  --font-display: "PoppinsAmpersand", "Bebas Neue", "Poppins", sans-serif;
+  --font-heading: "PoppinsAmpersand", "Alegreya Sans SC", "Poppins", sans-serif;
 }
 
 @layer base {

@@ -90,9 +90,9 @@ function DesktopItem({ item }: { item: NavLink }) {
             <a
               key={child.label}
               href={child.href}
-              target={child.download ? undefined : "_blank"}
+              target={child.download || child.href.startsWith("/") ? undefined : "_blank"}
               download={child.download ? true : undefined}
-              rel="noreferrer"
+              rel={child.href.startsWith("/") ? undefined : "noreferrer"}
               className="block border-b border-white/20 px-4 py-2.5 text-[13px] text-white transition-all duration-150 hover:bg-[#e69500] hover:translate-x-1"
             >
               {child.label}
@@ -208,9 +208,10 @@ export function SiteHeader() {
                             <a
                               key={child.label}
                               href={child.href}
-                              target={child.download ? undefined : "_blank"}
+                              onClick={() => setOpen(false)}
+                              target={child.download || child.href.startsWith("/") ? undefined : "_blank"}
                               download={child.download ? true : undefined}
-                              rel="noreferrer"
+                              rel={child.href.startsWith("/") ? undefined : "noreferrer"}
                               className="block px-6 py-2 text-[13px] text-primary-foreground/80"
                             >
                               {child.label}

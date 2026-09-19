@@ -5,6 +5,7 @@ import { getHomeContent } from "@/lib/site-content.functions";
 
 import { CountUp, FadeIn, Stagger, StaggerItem } from "@/components/motion/motion-primitives";
 import { HomeSlider } from "@/components/site/HomeSlider";
+import { UpdatesBar } from "@/components/site/UpdatesBar";
 
 const homeQuery = queryOptions({ queryKey: ["home-content"], queryFn: () => getHomeContent() });
 
@@ -58,24 +59,7 @@ function Home() {
 
   return (
     <>
-      {data.updates.length > 0 && (
-        <div className="flex items-stretch overflow-hidden bg-brand-red text-primary-foreground">
-          <div className="flex shrink-0 items-center bg-brand-navy px-4 font-heading text-sm font-bold uppercase tracking-wider">Updates</div>
-          <div className="relative flex-1 overflow-hidden py-2">
-            <div className="flex w-max animate-marquee gap-10 whitespace-nowrap px-6 text-sm">
-              {[...data.updates, ...data.updates].map((u, idx) =>
-                u.link_url ? (
-                  <a key={`${u.id}-${idx}`} href={u.link_url} target="_blank" rel="noreferrer" className="underline-offset-4 hover:underline">
-                    {u.text}
-                  </a>
-                ) : (
-                  <span key={`${u.id}-${idx}`}>{u.text}</span>
-                ),
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+      <UpdatesBar updates={data.updates} />
 
       <section className="mx-auto grid max-w-[1200px] gap-8 px-5 py-10 md:grid-cols-[1fr_380px]">
         <FadeIn>

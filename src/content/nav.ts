@@ -51,7 +51,16 @@ export const NAV: NavLink[] = [
     ],
   },
   { label: "Placement", to: "/placement" },
-  { label: "Events", to: "/events" },
+  {
+    label: "Events",
+    to: "/events",
+    children: [
+      { label: "All Events", to: "/events" },
+      { label: "Technical", href: "/events?category=technical" },
+      { label: "Cultural", href: "/events?category=cultural" },
+      { label: "Sports", href: "/events?category=sports" },
+    ],
+  },
   {
     label: "Student Corner",
     children: [

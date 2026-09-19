@@ -10,6 +10,8 @@ export type EventContact = {
   email?: string;
 };
 
+export type EventCategory = "Technical" | "Cultural" | "Sports";
+
 export type SiteEvent = {
   id: string;
   image: string;
@@ -18,6 +20,7 @@ export type SiteEvent = {
   year?: string;
   title: string;
   tag: string;
+  category: EventCategory;
   description: string;
   time?: string;
   venue?: string;
@@ -38,6 +41,7 @@ export const EVENTS: SiteEvent[] = [
     year: "2026",
     title: "Engineer's Day Celebration & Technical Quiz",
     tag: "Technical",
+    category: "Technical",
     description:
       "Celebrating the legacy of Sir M. Visvesvaraya with an inter-department technical quiz, project exhibition and expert talk for all engineering students.",
     time: "09:30 AM – 04:30 PM IST",
@@ -72,6 +76,7 @@ export const EVENTS: SiteEvent[] = [
     year: "2026",
     title: "SIEMENS CoE Industrial Automation Workshop",
     tag: "Workshop",
+    category: "Technical",
     description:
       "Hands-on training at the SIEMENS Centre of Excellence covering PLC programming, SCADA and industrial robotics with industry-certified trainers.",
     time: "10:00 AM – 05:00 PM IST",
@@ -107,6 +112,7 @@ export const EVENTS: SiteEvent[] = [
     year: "2026",
     title: "Kaushalya - Annual Cultural Fest",
     tag: "Cultural",
+    category: "Cultural",
     description:
       "The flagship cultural festival of GTU-ITR featuring music, dance, drama, fine arts and literary events celebrating the diversity of our campus community.",
     time: "09:00 AM – 08:30 PM IST",
@@ -141,6 +147,7 @@ export const EVENTS: SiteEvent[] = [
     year: "2026",
     title: "Shaurya Sports Meet 2026",
     tag: "Sports",
+    category: "Sports",
     description:
       "Annual inter-college sports festival with athletics, cricket, volleyball, kabaddi and indoor games. Open to all degree and diploma students.",
     time: "08:00 AM – 06:00 PM IST (Oct 9 to Oct 11)",
@@ -174,6 +181,7 @@ export const EVENTS: SiteEvent[] = [
     year: "2026",
     title: "Campus Placement Drive - MNC Recruiters",
     tag: "Placement",
+    category: "Technical",
     description:
       "The Training & Placement Cell hosts leading MNC recruiters on campus for final-year students. Pre-placement talks begin a week prior.",
     time: "09:00 AM – 06:00 PM IST",
@@ -208,6 +216,7 @@ export const EVENTS: SiteEvent[] = [
     year: "2026",
     title: "National Seminar on Emerging Technologies",
     tag: "Seminar",
+    category: "Technical",
     description:
       "A national-level seminar on AI, renewable energy and Industry 4.0 with keynote sessions from academia and industry experts.",
     time: "09:30 AM – 05:00 PM IST",
@@ -233,6 +242,60 @@ export const EVENTS: SiteEvent[] = [
       role: "R&D Cell Convener",
       email: "rd@gtu-itr.ac.in",
       phone: "+91 94080 33445",
+    },
+  },
+  {
+    id: "navratri-ras-garba-mahotsav",
+    image: "/site/x4.jpg",
+    day: "15",
+    month: "Oct",
+    year: "2026",
+    title: "GTU-ITR Navratri Raas-Garba Mahotsav",
+    tag: "Cultural",
+    category: "Cultural",
+    description:
+      "A grand traditional Gujarati Garba evening celebrating Navratri with live dhol music, traditional attire competitions, and awards.",
+    time: "06:30 PM – 11:00 PM IST",
+    venue: "Central Open Grounds, GTU-ITR Campus, Mehsana",
+    organizer: "Cultural Club & Student Senate",
+    targetAudience: "Open to all GTU-ITR students, faculties, staff and alumni",
+    fullDescription: [
+      "The Cultural Committee of GTU-ITR cordially invites the entire university fraternity to the vibrant Navratri Raas-Garba Mahotsav 2026.",
+      "Immerse yourself in traditional Gujarati folk rhythm, energetic Garba swirls, and authentic festive attire. Best dancer, best attire, and best traditional group awards will be presented.",
+      "Refreshments and festive delicacies will be served throughout the evening.",
+    ],
+    contactPerson: {
+      name: "Prof. S. N. Joshi",
+      role: "Convener, Cultural Committee",
+      email: "cultural@gtu-itr.ac.in",
+      phone: "+91 94260 54321",
+    },
+  },
+  {
+    id: "inter-college-cricket-championship",
+    image: "/site/x5.jpg",
+    day: "14",
+    month: "Nov",
+    year: "2026",
+    title: "GTU Inter-College Cricket Championship",
+    tag: "Sports",
+    category: "Sports",
+    description:
+      "20-over leather ball cricket tournament hosting engineering colleges across the zone on the campus cricket ground.",
+    time: "08:30 AM – 05:30 PM IST",
+    venue: "Main Sports Arena & Cricket Oval, GTU-ITR Mehsana",
+    organizer: "Department of Physical Education & Sports Committee",
+    targetAudience: "Degree and Diploma college teams from North Gujarat Zone",
+    fullDescription: [
+      "The Department of Physical Education at GTU-ITR Mehsana is proud to host the Zonal Inter-College Cricket Championship 2026.",
+      "Matches will be played with professional leather ball under standard BCCI playing conditions with qualified umpires.",
+      "The winning and runner-up teams will be awarded championship trophies and individual medals along with zonal ranking points.",
+    ],
+    contactPerson: {
+      name: "Mr. V. B. Chaudhari",
+      role: "Sports Officer",
+      email: "sports@gtu-itr.ac.in",
+      phone: "+91 97120 98765",
     },
   },
 ];
