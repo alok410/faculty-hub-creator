@@ -119,22 +119,59 @@ export function SiteHeader() {
 
   return (
     <header>
-      <div className="hidden bg-white md:block border-b border-border/30">
-        <div className="mx-auto flex items-center justify-center px-4 py-1.5">
-          <img
-            src="/site/Header.png"
-            alt="Gujarat Technological University - Institute of Technology & Research"
-            className="max-h-[120px] lg:max-h-[135px] w-auto max-w-full object-contain"
-          />
+      {/* Desktop Header: Left-Aligned Logo, Center-Left Typography & Right-Aligned NAAC Logo */}
+      <div className="hidden bg-white md:block border-b border-border/40 py-2.5">
+        <div className="mx-auto flex max-w-[1400px] items-center gap-4 px-6">
+          <Link to="/" className="shrink-0 flex items-center" title="GTU-ITR Home">
+            <img
+              src="/site/gtu_header_logo.png"
+              alt="Gujarat Technological University Logo"
+              className="h-20 w-20 lg:h-24 lg:w-24 object-contain transition-transform hover:scale-105"
+            />
+          </Link>
+          <div className="min-w-0 flex-1">
+            <p className="font-heading text-lg lg:text-2xl font-bold uppercase tracking-wide text-brand-navy leading-none">
+              Gujarat Technological University-
+            </p>
+            <h1 className="font-heading text-lg lg:text-2xl font-bold uppercase tracking-wide text-brand-navy mt-1 leading-tight">
+              Institute of Technology &amp; Research (ITR)
+            </h1>
+            <p className="font-heading text-xs lg:text-sm font-bold tracking-wide text-brand-red mt-1">
+              A constituent college of Gujarat Technological University
+            </p>
+            <p className="mt-1 text-xs lg:text-sm font-semibold text-brand-red">
+              (formerly known as GPERI)
+            </p>
+          </div>
+
+          {/* Right-Aligned NAAC A+ Accreditation Logo */}
+          <div className="shrink-0 flex items-center pl-2">
+            <img
+              src="/site/naac_a_plus_logo.png"
+              alt="Accredited with Grade A+ by NAAC"
+              className="h-16 w-auto lg:h-20 object-contain transition-transform hover:scale-105"
+              title="Accredited with Grade A+ by NAAC"
+            />
+          </div>
         </div>
       </div>
-      <div className="flex items-center gap-3 border-b border-border bg-card px-4 py-3 md:hidden">
-        <img src="/site/gtulogo.jpg" alt="GTU logo" className="h-11 w-11 rounded-full object-cover" />
+
+      {/* Mobile Header */}
+      <div className="flex items-center gap-2 border-b border-border bg-card px-3 py-2 md:hidden">
+        <Link to="/" className="shrink-0" title="GTU-ITR Home">
+          <img src="/site/gtu_header_logo.png" alt="GTU logo" className="h-11 w-11 object-contain" />
+        </Link>
         <div className="min-w-0 flex-1">
           <p className="truncate font-heading text-sm font-bold text-brand-navy">GTU - ITR</p>
-          <p className="truncate text-[11px] text-muted-foreground">Institute of Technology & Research</p>
+          <p className="truncate text-[10px] font-semibold text-brand-red">A constituent college of GTU</p>
+          <p className="truncate text-[10px] text-muted-foreground">Institute of Technology &amp; Research</p>
         </div>
-        <button aria-label="Toggle menu" onClick={() => setOpen((v) => !v)} className="rounded-md bg-brand-navy p-2 text-primary-foreground transition-colors duration-300 hover:bg-brand-red">
+        <img
+          src="/site/naac_a_plus_logo.png"
+          alt="NAAC A+"
+          className="h-9 w-auto object-contain shrink-0"
+        />
+        <button aria-label="Toggle menu" onClick={() => setOpen((v) => !v)} className="rounded-md bg-brand-navy p-2 text-primary-foreground transition-colors duration-300 hover:bg-brand-red shrink-0">
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
