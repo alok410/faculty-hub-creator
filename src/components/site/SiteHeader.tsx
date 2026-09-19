@@ -13,15 +13,15 @@ function DesktopItem({ item }: { item: NavLink }) {
         target={item.download ? undefined : "_blank"}
         download={item.download ? true : undefined}
         rel="noreferrer"
-        className="block px-3 py-2.5 text-[13px] font-medium uppercase tracking-wide text-primary-foreground/90 transition-colors hover:bg-brand-red hover:text-primary-foreground"
+        className="flex items-center border-r border-white/10 px-2.5 py-2.5 text-[11.5px] font-semibold uppercase tracking-wider text-white/90 transition-colors last:border-r-0 hover:bg-brand-red hover:text-white whitespace-nowrap xl:px-3 xl:text-[12.5px] 2xl:px-3.5 2xl:text-[13px]"
       >
         {item.label}
       </a>
     ) : (
       <Link
         to={item.to!}
-        className="block px-3 py-2.5 text-[13px] font-medium uppercase tracking-wide text-primary-foreground/90 transition-colors hover:bg-brand-red hover:text-primary-foreground"
-        activeProps={{ className: "bg-brand-red text-primary-foreground" }}
+        className="flex items-center border-r border-white/10 px-2.5 py-2.5 text-[11.5px] font-semibold uppercase tracking-wider text-white/90 transition-colors last:border-r-0 hover:bg-brand-red hover:text-white whitespace-nowrap xl:px-3 xl:text-[12.5px] 2xl:px-3.5 2xl:text-[13px]"
+        activeProps={{ className: "bg-brand-red text-white" }}
       >
         {item.label}
       </Link>
@@ -29,20 +29,20 @@ function DesktopItem({ item }: { item: NavLink }) {
   }
 
   return (
-    <div className="group relative">
+    <div className="group relative border-r border-white/10 last:border-r-0">
       {item.to ? (
         <Link
           to={item.to}
-          className="flex items-center gap-1 px-3 py-2.5 text-[13px] font-medium uppercase tracking-wide text-primary-foreground/90 transition-colors group-hover:bg-brand-red group-hover:text-primary-foreground"
-          activeProps={{ className: "bg-brand-red text-primary-foreground" }}
+          className="flex items-center gap-1 px-2.5 py-2.5 text-[11.5px] font-semibold uppercase tracking-wider text-white/90 transition-colors group-hover:bg-brand-red group-hover:text-white whitespace-nowrap xl:px-3 xl:text-[12.5px] 2xl:px-3.5 2xl:text-[13px]"
+          activeProps={{ className: "bg-brand-red text-white" }}
         >
           {item.label}
-          <ChevronDown className="h-3.5 w-3.5" />
+          <ChevronDown className="h-3 w-3 shrink-0 opacity-75 group-hover:opacity-100" />
         </Link>
       ) : (
-        <button className="flex items-center gap-1 px-3 py-2.5 text-[13px] font-medium uppercase tracking-wide text-primary-foreground/90 transition-colors group-hover:bg-brand-red group-hover:text-primary-foreground">
+        <button className="flex items-center gap-1 px-2.5 py-2.5 text-[11.5px] font-semibold uppercase tracking-wider text-white/90 transition-colors group-hover:bg-brand-red group-hover:text-white whitespace-nowrap xl:px-3 xl:text-[12.5px] 2xl:px-3.5 2xl:text-[13px]">
           {item.label}
-          <ChevronDown className="h-3.5 w-3.5" />
+          <ChevronDown className="h-3 w-3 shrink-0 opacity-75 group-hover:opacity-100" />
         </button>
       )}
 
@@ -178,8 +178,8 @@ export function SiteHeader() {
         </button>
       </div>
 
-      <nav className="sticky top-0 z-50 bg-brand-navy">
-        <div className="mx-auto hidden max-w-[1400px] flex-wrap items-center justify-center md:flex">
+      <nav className="sticky top-0 z-50 border-t border-white/10 border-b-2 border-brand-red bg-[#121e48] shadow-lg shadow-black/25">
+        <div className="mx-auto hidden max-w-[1440px] flex-wrap items-center justify-center md:flex">
           {NAV.map((item) => (
             <DesktopItem key={item.label} item={item} />
           ))}
