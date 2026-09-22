@@ -62,7 +62,7 @@ function EventDetailPage() {
           text: event.description,
           url: window.location.href,
         })
-        .catch(() => {});
+        .catch(() => { });
     } else if (typeof navigator !== "undefined" && navigator.clipboard) {
       navigator.clipboard.writeText(window.location.href);
       toast.success("Event link copied to clipboard!");
