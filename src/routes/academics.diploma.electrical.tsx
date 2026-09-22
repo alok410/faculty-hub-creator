@@ -40,7 +40,7 @@ export const Route = createFileRoute("/academics/diploma/electrical")({
 });
 
 const STATS = [
-  { label: "Duration", value: "3 Yrs (6 Sems)", icon: Layers, desc: "Technical Diploma after 10th (SSC)" },
+  { label: "Duration", value: "3 Yrs", icon: Layers, desc: "Technical Diploma after 10th (SSC)" },
   { label: "Seat Quota", value: "50% ACPDC + 50% MQ", icon: Users, desc: "Merit counselling & direct admission" },
   { label: "Practical Training", value: "Hands-on Benches", icon: Zap, desc: "Motors, transformers & wiring" },
   { label: "Next Step", value: "Direct D2D B.E.", icon: GraduationCap, desc: "Direct entry to 2nd year B.E. without 12th" },
@@ -71,7 +71,7 @@ const LABS = [
 
 const SEMESTERS = [
   {
-    sem: "Semester 1 & 2 (Foundational)",
+    sem: "Year 1 (Foundational)",
     courses: [
       "Mathematics I & II",
       "Applied Physics",
@@ -82,7 +82,7 @@ const SEMESTERS = [
     ],
   },
   {
-    sem: "Semester 3 & 4 (Core Electrical)",
+    sem: "Year 2 (Core Electrical)",
     courses: [
       "DC Machines & Transformers",
       "Electrical Circuit Analysis",
@@ -93,7 +93,7 @@ const SEMESTERS = [
     ],
   },
   {
-    sem: "Semester 5 & 6 (Applications & Project)",
+    sem: "Year 3 (Applications & Project)",
     courses: [
       "Power Electronics & Microcontrollers",
       "Switchgear & Protection",
@@ -136,7 +136,7 @@ function ElectricalDiplomaPage() {
           <TabsTrigger value="overview" className="py-2.5 font-medium">Program Overview</TabsTrigger>
           <TabsTrigger value="faculty" className="py-2.5 font-medium">Staff Members ({getDepartmentStaffCount("diploma-electrical")})</TabsTrigger>
           <TabsTrigger value="labs" className="py-2.5 font-medium">Practical Workshops &amp; Labs</TabsTrigger>
-          <TabsTrigger value="curriculum" className="py-2.5 font-medium">6-Semester Syllabus</TabsTrigger>
+          <TabsTrigger value="curriculum" className="py-2.5 font-medium">3-Year Syllabus</TabsTrigger>
         </TabsList>
 
         {/* 1. OVERVIEW */}
@@ -232,7 +232,7 @@ function ElectricalDiplomaPage() {
           <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
               <div>
-                <h2 className="text-2xl font-bold tracking-tight text-brand-navy">6-Semester Diploma Curriculum</h2>
+                <h2 className="text-2xl font-bold tracking-tight text-brand-navy">3-Year Diploma Curriculum</h2>
                 <p className="text-sm text-muted-foreground mt-1">Conforming to the latest Gujarat Technological University (GTU) Diploma Teaching Scheme.</p>
               </div>
               <Badge variant="outline" className="border-brand-navy/30 text-brand-navy self-start md:self-auto px-3 py-1">

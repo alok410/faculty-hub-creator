@@ -41,7 +41,7 @@ export const Route = createFileRoute("/academics/diploma/civil")({
 });
 
 const STATS = [
-  { label: "Duration", value: "3 Yrs (6 Sems)", icon: Layers, desc: "Technical Diploma after 10th (SSC)" },
+  { label: "Duration", value: "3 Yrs", icon: Layers, desc: "Technical Diploma after 10th (SSC)" },
   { label: "Seat Quota", value: "50% ACPDC + 50% MQ", icon: Users, desc: "Merit counselling & direct admission" },
   { label: "Field Practice", value: "Hands-on", icon: HardHat, desc: "Surveying, soil & material testing" },
   { label: "Next Step", value: "Direct D2D B.E.", icon: GraduationCap, desc: "Direct entry to 2nd year B.E. without 12th" },
@@ -72,7 +72,7 @@ const LABS = [
 
 const SEMESTERS = [
   {
-    sem: "Semester 1 & 2 (Foundational)",
+    sem: "Year 1 (Foundational)",
     courses: [
       "Mathematics I & II",
       "Applied Physics",
@@ -83,7 +83,7 @@ const SEMESTERS = [
     ],
   },
   {
-    sem: "Semester 3 & 4 (Core Civil)",
+    sem: "Year 2 (Core Civil)",
     courses: [
       "Mechanics of Structures",
       "Advanced Surveying",
@@ -94,7 +94,7 @@ const SEMESTERS = [
     ],
   },
   {
-    sem: "Semester 5 & 6 (Applications & Project)",
+    sem: "Year 3 (Applications & Project)",
     courses: [
       "Design of Steel & RCC Structures",
       "Highway Engineering",
@@ -137,7 +137,7 @@ function CivilDiplomaPage() {
           <TabsTrigger value="overview" className="py-2.5 font-medium">Program Overview</TabsTrigger>
           <TabsTrigger value="faculty" className="py-2.5 font-medium">Staff Members ({getDepartmentStaffCount("diploma-civil")})</TabsTrigger>
           <TabsTrigger value="labs" className="py-2.5 font-medium">Practical Labs &amp; Fields</TabsTrigger>
-          <TabsTrigger value="curriculum" className="py-2.5 font-medium">6-Semester Syllabus</TabsTrigger>
+          <TabsTrigger value="curriculum" className="py-2.5 font-medium">3-Year Syllabus</TabsTrigger>
         </TabsList>
 
         {/* 1. OVERVIEW */}
@@ -233,7 +233,7 @@ function CivilDiplomaPage() {
           <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
               <div>
-                <h2 className="text-2xl font-bold tracking-tight text-brand-navy">6-Semester Diploma Curriculum</h2>
+                <h2 className="text-2xl font-bold tracking-tight text-brand-navy">3-Year Diploma Curriculum</h2>
                 <p className="text-sm text-muted-foreground mt-1">Conforming to the latest Gujarat Technological University (GTU) Diploma Teaching Scheme.</p>
               </div>
               <Badge variant="outline" className="border-brand-navy/30 text-brand-navy self-start md:self-auto px-3 py-1">

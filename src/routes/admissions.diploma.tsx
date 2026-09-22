@@ -45,22 +45,22 @@ const STATS = [
 const BRANCHES = [
   {
     name: "Diploma in Computer Engineering",
-    duration: "3 Years (6 Semesters)",
+    duration: "3 Years",
     desc: "Computer fundamentals, C/C++ programming, database administration, web development, and hardware maintenance.",
   },
   {
     name: "Diploma in Mechanical Engineering",
-    duration: "3 Years (6 Semesters)",
+    duration: "3 Years",
     desc: "Workshop technology, manufacturing processes, machine drafting, thermal engineering, and CNC machine basics.",
   },
   {
     name: "Diploma in Civil Engineering",
-    duration: "3 Years (6 Semesters)",
+    duration: "3 Years",
     desc: "Surveying, building construction materials, concrete technology, hydraulics, and civil computer-aided drafting.",
   },
   {
     name: "Diploma in Electrical Engineering",
-    duration: "3 Years (6 Semesters)",
+    duration: "3 Years",
     desc: "Electrical machines, basic electronics, power generation, transmission systems, and industrial electrical wiring.",
   },
 ];

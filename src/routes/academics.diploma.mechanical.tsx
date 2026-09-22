@@ -36,7 +36,7 @@ export const Route = createFileRoute("/academics/diploma/mechanical")({
 });
 
 const STATS = [
-  { label: "Duration", value: "3 Yrs (6 Sems)", icon: Layers, desc: "Technical Diploma after 10th" },
+  { label: "Duration", value: "3 Yrs", icon: Layers, desc: "Technical Diploma after 10th" },
   { label: "Seat Quota", value: "50% ACPDC + 50% MQ", icon: Users, desc: "Merit counselling & direct admission" },
   { label: "Workshop Bays", value: "Hands-on", icon: Wrench, desc: "Welding, machining & fitting shops" },
   { label: "Next Step", value: "Direct D2D B.E.", icon: GraduationCap, desc: "Enter degree 2nd year without JEE" },
@@ -50,9 +50,9 @@ const LABS = [
 ];
 
 const SEMESTERS = [
-  { sem: "Semester 1 & 2", courses: ["Mathematics I & II", "Applied Physics", "Workshop Practice I & II", "Engineering Graphics", "Basic Electrical & Electronics"] },
-  { sem: "Semester 3 & 4", courses: ["Strength of Materials", "Manufacturing Technology", "Thermal Engineering", "Mechanical Drafting", "Fluid Mechanics & Machinery"] },
-  { sem: "Semester 5 & 6", courses: ["Design of Machine Elements", "Industrial Engineering & Quality", "Refrigeration & Air Conditioning", "CNC Machining & Automation", "Diploma Major Project"] },
+  { sem: "Year 1", courses: ["Mathematics I & II", "Applied Physics", "Workshop Practice I & II", "Engineering Graphics", "Basic Electrical & Electronics"] },
+  { sem: "Year 2", courses: ["Strength of Materials", "Manufacturing Technology", "Thermal Engineering", "Mechanical Drafting", "Fluid Mechanics & Machinery"] },
+  { sem: "Year 3", courses: ["Design of Machine Elements", "Industrial Engineering & Quality", "Refrigeration & Air Conditioning", "CNC Machining & Automation", "Diploma Major Project"] },
 ];
 
 function MechanicalDiplomaPage() {
@@ -86,7 +86,7 @@ function MechanicalDiplomaPage() {
           <TabsTrigger value="overview" className="py-2.5 font-medium">Program Overview</TabsTrigger>
           <TabsTrigger value="faculty" className="py-2.5 font-medium">Staff Members ({getDepartmentStaffCount("diploma-mechanical")})</TabsTrigger>
           <TabsTrigger value="labs" className="py-2.5 font-medium">Workshop &amp; Labs</TabsTrigger>
-          <TabsTrigger value="curriculum" className="py-2.5 font-medium">6-Semester Syllabus</TabsTrigger>
+          <TabsTrigger value="curriculum" className="py-2.5 font-medium">3-Year Syllabus</TabsTrigger>
         </TabsList>
 
         {/* Tab 1: Overview */}
@@ -153,7 +153,7 @@ function MechanicalDiplomaPage() {
         {/* Tab 3: Curriculum */}
         <TabsContent value="curriculum" className="space-y-8 focus-visible:outline-none">
           <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
-            <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">6-Semester Curriculum Structure</h2>
+            <h2 className="font-heading text-2xl font-bold uppercase text-brand-navy">3-Year Curriculum Structure</h2>
             <div className="mb-6 mt-2 h-1 w-16 bg-brand-red" />
             <div className="grid gap-6 md:grid-cols-3">
               {SEMESTERS.map((s, i) => (
