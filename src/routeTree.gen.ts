@@ -32,8 +32,8 @@ import { Route as PlacementRouteImport } from './routes/placement'
 import { Route as PrincipalMessageRouteImport } from './routes/principal-message'
 import { Route as RegistrarMessageRouteImport } from './routes/registrar-message'
 import { Route as RegulationsRouteImport } from './routes/regulations'
-import { Route as SiemensRouteImport } from './routes/siemens'
 import { Route as ScholarshipRouteImport } from './routes/scholarship'
+import { Route as SiemensRouteImport } from './routes/siemens'
 import { Route as SolarEnergyRouteImport } from './routes/solar-energy'
 import { Route as StudentsRouteImport } from './routes/students'
 import { Route as StudentsClubsRouteImport } from './routes/students-clubs'
@@ -175,14 +175,14 @@ const RegulationsRoute = RegulationsRouteImport.update({
   path: '/regulations',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SiemensRoute = SiemensRouteImport.update({
-  id: '/siemens',
-  path: '/siemens',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ScholarshipRoute = ScholarshipRouteImport.update({
   id: '/scholarship',
   path: '/scholarship',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiemensRoute = SiemensRouteImport.update({
+  id: '/siemens',
+  path: '/siemens',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SolarEnergyRoute = SolarEnergyRouteImport.update({
@@ -346,8 +346,8 @@ export interface FileRoutesByFullPath {
   '/principal-message': typeof PrincipalMessageRoute
   '/registrar-message': typeof RegistrarMessageRoute
   '/regulations': typeof RegulationsRoute
-  '/siemens': typeof SiemensRoute
   '/scholarship': typeof ScholarshipRoute
+  '/siemens': typeof SiemensRoute
   '/solar-energy': typeof SolarEnergyRoute
   '/students': typeof StudentsRoute
   '/students-clubs': typeof StudentsClubsRoute
@@ -398,8 +398,8 @@ export interface FileRoutesByTo {
   '/principal-message': typeof PrincipalMessageRoute
   '/registrar-message': typeof RegistrarMessageRoute
   '/regulations': typeof RegulationsRoute
-  '/siemens': typeof SiemensRoute
   '/scholarship': typeof ScholarshipRoute
+  '/siemens': typeof SiemensRoute
   '/solar-energy': typeof SolarEnergyRoute
   '/students': typeof StudentsRoute
   '/students-clubs': typeof StudentsClubsRoute
@@ -452,8 +452,8 @@ export interface FileRoutesById {
   '/principal-message': typeof PrincipalMessageRoute
   '/registrar-message': typeof RegistrarMessageRoute
   '/regulations': typeof RegulationsRoute
-  '/siemens': typeof SiemensRoute
   '/scholarship': typeof ScholarshipRoute
+  '/siemens': typeof SiemensRoute
   '/solar-energy': typeof SolarEnergyRoute
   '/students': typeof StudentsRoute
   '/students-clubs': typeof StudentsClubsRoute
@@ -506,8 +506,8 @@ export interface FileRouteTypes {
     | '/principal-message'
     | '/registrar-message'
     | '/regulations'
-    | '/siemens'
     | '/scholarship'
+    | '/siemens'
     | '/solar-energy'
     | '/students'
     | '/students-clubs'
@@ -558,8 +558,8 @@ export interface FileRouteTypes {
     | '/principal-message'
     | '/registrar-message'
     | '/regulations'
-    | '/siemens'
     | '/scholarship'
+    | '/siemens'
     | '/solar-energy'
     | '/students'
     | '/students-clubs'
@@ -611,8 +611,8 @@ export interface FileRouteTypes {
     | '/principal-message'
     | '/registrar-message'
     | '/regulations'
-    | '/siemens'
     | '/scholarship'
+    | '/siemens'
     | '/solar-energy'
     | '/students'
     | '/students-clubs'
@@ -665,8 +665,8 @@ export interface RootRouteChildren {
   PrincipalMessageRoute: typeof PrincipalMessageRoute
   RegistrarMessageRoute: typeof RegistrarMessageRoute
   RegulationsRoute: typeof RegulationsRoute
-  SiemensRoute: typeof SiemensRoute
   ScholarshipRoute: typeof ScholarshipRoute
+  SiemensRoute: typeof SiemensRoute
   SolarEnergyRoute: typeof SolarEnergyRoute
   StudentsRoute: typeof StudentsRoute
   StudentsClubsRoute: typeof StudentsClubsRoute
@@ -857,18 +857,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegulationsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/siemens': {
-      id: '/siemens'
-      path: '/siemens'
-      fullPath: '/siemens'
-      preLoaderRoute: typeof SiemensRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/scholarship': {
       id: '/scholarship'
       path: '/scholarship'
       fullPath: '/scholarship'
       preLoaderRoute: typeof ScholarshipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/siemens': {
+      id: '/siemens'
+      path: '/siemens'
+      fullPath: '/siemens'
+      preLoaderRoute: typeof SiemensRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/solar-energy': {
@@ -1091,8 +1091,8 @@ const rootRouteChildren: RootRouteChildren = {
   PrincipalMessageRoute: PrincipalMessageRoute,
   RegistrarMessageRoute: RegistrarMessageRoute,
   RegulationsRoute: RegulationsRoute,
-  SiemensRoute: SiemensRoute,
   ScholarshipRoute: ScholarshipRoute,
+  SiemensRoute: SiemensRoute,
   SolarEnergyRoute: SolarEnergyRoute,
   StudentsRoute: StudentsRoute,
   StudentsClubsRoute: StudentsClubsRoute,
