@@ -104,7 +104,6 @@ export const NAV: NavLink[] = [
       { label: "Gallery", to: "/gallery" },
       { label: "Newsletter", href: "https://heyzine.com/flip-book/226dcd1dbe.html" },
       { label: "Media Coverage", to: "/media-coverage" },
-      { label: "Online Coverage", href: "https://maroawaj.com/?s=%E0%AA%9C%E0%AB%80%E0%AA%AA%E0%AB%87%E0%AA%B0%E0%AB%80" },
     ],
   },
   { label: "Enquiry Form", to: "/enquiry" },
