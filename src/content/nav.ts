@@ -50,7 +50,7 @@ export const NAV: NavLink[] = [
       { label: "PG Diploma in Cyber Security (PGDCS)", to: "/admissions/pgdcs" },
     ],
   },
-  { label: "Placement", to: "/placement" },
+  { label: "Training and Placement cell", to: "/placement" },
   {
     label: "Events",
     to: "/events",
@@ -69,12 +69,13 @@ export const NAV: NavLink[] = [
       { label: "Achievements", to: "/achievements" },
       { label: "Regulations And Discipline", to: "/regulations" },
       { label: "Alumni", to: "/alumni" },
+      { label: "Scholarship", to: "/scholarship" },
     ],
   },
   {
     label: "Institutional Initiatives",
     children: [
-      { label: "Institute Committee", to: "/institute-committee" },
+      { label: "Committee", href: "/docs/gtu-itr-committee-list.pdf", download: true },
       { label: "Women Empowerment Cell", to: "/women-cell" },
       { label: "Anti-Ragging", to: "/anti-ragging" },
       { label: "Grievance Redressal Committee", to: "/grievance" },
@@ -107,5 +108,4 @@ export const NAV: NavLink[] = [
     ],
   },
   { label: "Enquiry Form", to: "/enquiry" },
-  { label: "Online Payments", href: "https://gtu.ac.in/page.aspx?p=Payment" },
 ];

@@ -1,34 +1,28 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
-import { Badge } from "@/components/ui/badge";
 import {
   GraduationCap,
-  Users,
-  HeartHandshake,
-  FileCheck,
   Mail,
-  Phone,
-  Search,
-  BookOpen,
-  Award,
-  CheckCircle2,
-  ArrowRight,
   Globe,
+  Calendar,
+  Clock,
+  FileText,
+  Download,
 } from "lucide-react";
 
 export const Route = createFileRoute("/alumni")({
   head: () => ({
     meta: [
-      { title: "Alumni Connect & Services | GTU-ITR" },
+      { title: "Alumni Connect, Events & Testimonials | GTU-ITR" },
       {
         name: "description",
         content:
-          "GTU-ITR Alumni Association. Professional networking, transcript verification, 'Trace a Friend' reunion service, and Star Alumni mentorship.",
+          "GTU-ITR Alumni Association. Professional networking, upcoming alumni events, reunions, and inspiring graduate testimonials.",
       },
-      { property: "og:title", content: "Alumni Connect & Services | GTU-ITR" },
+      { property: "og:title", content: "Alumni Connect, Events & Testimonials | GTU-ITR" },
       {
         property: "og:description",
-        content: "Re-connect, network, and give back with the GTU-ITR Alumni community.",
+        content: "Re-connect, network, and celebrate alumni events and testimonials at GTU-ITR.",
       },
       { property: "og:url", content: "/alumni" },
     ],
@@ -40,55 +34,61 @@ export const Route = createFileRoute("/alumni")({
 const STATS = [
   { label: "Graduated Alumni", value: "3,000+", icon: GraduationCap, desc: "Working across India & globally" },
   { label: "Corporate Footprint", value: "150+ Cos", icon: Globe, desc: "In top MNCs, tech & PSUs" },
-  { label: "Services Offered", value: "Transcripts", icon: FileCheck, desc: "Degree verification & friend-tracing" },
+  { label: "Alumni Meets", value: "Annual Meets", icon: Calendar, desc: "Reunions, workshops & expert talks" },
   { label: "Alumni Desk", value: "Dedicated", icon: Mail, desc: "alumni@gperi.ac.in" },
 ];
 
-const SERVICES = [
+const ALUMNI_EVENTS = [
   {
-    title: "Degree Verification & Official Transcripts",
-    desc: "Fast-track academic qualification verification and official university transcript issuance for higher studies abroad, WES evaluation, or employer background checks.",
-    icon: FileCheck,
-    action: "Contact Student Records Office",
+    photo: "/site/x4.jpg",
+    title: "Annual Alumni Homecoming & Grand Reunion 2025",
+    description:
+      "A grand annual gathering bringing together past batches of GTU-ITR engineering alumni from across India and abroad to reconnect with faculty, tour modernized laboratories, and mentor current students.",
+    date: "18 October 2025",
+    time: "10:00 AM – 04:30 PM",
   },
   {
-    title: "'Trace a Friend' & Reunion Assistance",
-    desc: "Lost touch with your college batchmates? The Alumni Office acts as a trusted bridge to reconnect registered alumni and coordinate unforgettable batch reunions.",
-    icon: Search,
-    action: "Email alumni@gperi.ac.in",
+    photo: "/site/x6.jpeg",
+    title: "Star Alumni Masterclass: AI & Industry 4.0 in Global MNCs",
+    description:
+      "Interactive technical masterclass and keynote delivered by distinguished alumni working at multinational tech leaders, focusing on cloud architecture, AI workflows, and campus placement prep.",
+    date: "22 November 2025",
+    time: "02:00 PM – 05:00 PM",
   },
   {
-    title: "Star Alumni Career Mentorship",
-    desc: "Alumni return as guest lecturers, startup mentors, and mock interviewers to inspire current engineering students and share evolving industry best practices.",
-    icon: Award,
-    action: "Join Mentorship Panel",
-  },
-  {
-    title: "Giving Back to GTU-ITR",
-    desc: "Contribute time, expertise, educational books, software licenses, or laboratory equipment to support undergraduate research and student welfare.",
-    icon: HeartHandshake,
-    action: "Partner with Alma Mater",
+    photo: "/site/achievements/mou.jpg",
+    title: "Alumni Entrepreneurship Summit & Angel Mentorship",
+    description:
+      "Alumni startup founders and industry leaders evaluate student innovation prototypes, provide seed guidance, and offer direct internship opportunities to budding engineers.",
+    date: "15 January 2026",
+    time: "11:00 AM – 03:30 PM",
   },
 ];
 
 const TESTIMONIALS = [
   {
-    quote:
+    photo: "/placed-students/jay-gupta.png",
+    title: "Gupta Jay • Software Engineer",
+    description:
       "Best college in Mehsana district. I got placed in my final year with an MNC, and I owe it all to the training and support provided by the college. The tie-ups with Odoo, Bitscape and other leaders give students a real career launchpad.",
-    name: "Gupta Jay",
-    role: "Software Engineer • Mechanical Alumnus",
+    date: "12 May 2024",
+    time: "11:30 AM",
   },
   {
-    quote:
-      "The Kaushalya cultural fest and Shaurya sports meet created memories of a lifetime. The faculty members never hesitated to guide us, whether for university exams or project hackathons.",
-    name: "Yusuf Abdirahman",
-    role: "International Alumnus • Batch of 2023",
+    photo: "/placed-students/sankalp-chhunchha.png",
+    title: "Sankalp Chhunchha • Software Developer at Odoo",
+    description:
+      "The Siemens Centre of Excellence and practical coding hackathons gave me a strong edge during technical interviews. The faculty guidance at GTU-ITR prepared me to step confidently into a global software career.",
+    date: "20 June 2024",
+    time: "03:15 PM",
   },
   {
-    quote:
-      "The Minor Degree curriculum and Siemens Centre of Excellence gave me a distinct edge during technical interviews. I am proud to be a GTU-ITR alumnus.",
-    name: "Daniel Rakotoarisoa",
-    role: "Design Engineer • Mechanical Alumnus",
+    photo: "/placed-students/kashyap-patel.png",
+    title: "Kashyap Patel • Associate Engineer at Odoo",
+    description:
+      "The Kaushalya cultural fest, technical symposiums, and supportive campus atmosphere created memories of a lifetime. Highly grateful to GTU-ITR professors who mentored us beyond standard textbooks.",
+    date: "14 August 2024",
+    time: "02:00 PM",
   },
 ];
 
@@ -96,7 +96,7 @@ function AlumniPage() {
   return (
     <PageShell
       title="GTU-ITR Alumni Connect"
-      subtitle="Re-connecting graduates, expanding global professional networks, and cultivating a lasting culture of giving back to our alma mater."
+      subtitle="Re-connecting graduates, celebrating reunions, and cultivating a lasting culture of mentorship and shared success."
     >
       {/* Top Banner Stats */}
       <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -105,8 +105,8 @@ function AlumniPage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-white shadow-sm">
-              <s.icon className="h-6 w-6 text-white" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+              <s.icon className="h-6 w-6 text-yellow-400" />
             </div>
             <div>
               <p className="font-display text-2xl font-bold text-brand-navy">{s.value}</p>
@@ -117,114 +117,138 @@ function AlumniPage() {
         ))}
       </div>
 
-      {/* Intro Overview Card */}
-      <div className="mb-10 rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div>
-            <Badge className="bg-brand-red uppercase tracking-wider text-white">Global Network</Badge>
-            <h2 className="mt-2 font-heading text-2xl font-bold uppercase text-brand-navy">
-              Welcome to the GTU-ITR Alumni Association
-            </h2>
-            <div className="mb-4 mt-2 h-1 w-16 bg-brand-red" />
-          </div>
-          <Link
-            to="/enquiry"
-            className="inline-flex items-center gap-2 rounded-lg bg-brand-navy px-5 py-2.5 font-heading text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-red"
-          >
-            Register on Alumni Portal <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-        <p className="text-sm leading-relaxed text-foreground/85">
-          GTU-ITR Alumni Connect allows you to both re-connect with old classmates as well as leverage the trusted
-          GTU-ITR environment to expand your professional horizons. Our alumni community spans leading multinational
-          corporations, innovative tech startups, civil services, and top graduate research institutions across the world.
-        </p>
-      </div>
-
-      {/* Services for Alumni */}
+      {/* Alumni Events Section */}
       <div className="mb-12 space-y-6">
         <div>
-          <h3 className="font-heading text-xl font-bold uppercase text-brand-navy">Dedicated Alumni Services</h3>
-          <p className="mt-1 text-xs text-muted-foreground">Support tailored for our graduate community.</p>
+          <h3 className="font-heading text-xl font-bold uppercase text-brand-navy">Alumni Events &amp; Reunions</h3>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Upcoming and flagship gatherings connecting alumni with campus and peers.
+          </p>
           <div className="mt-2 mb-4 h-1 w-12 bg-brand-red" />
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {SERVICES.map((srv, idx) => (
+        <div className="grid gap-6 md:grid-cols-3">
+          {ALUMNI_EVENTS.map((evt, idx) => (
             <div
               key={idx}
-              className="flex flex-col justify-between rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-navy/30 hover:shadow-md"
+              className="flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-navy/30 hover:shadow-md"
             >
               <div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-white">
-                    <srv.icon className="h-5 w-5 text-brand-red" />
-                  </div>
-                  <h4 className="font-heading text-base font-bold text-brand-navy">{srv.title}</h4>
+                {/* Photo */}
+                <div className="relative h-48 w-full overflow-hidden bg-muted">
+                  <img
+                    src={evt.photo}
+                    alt={evt.title}
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
                 </div>
-                <p className="mt-3 text-xs leading-relaxed text-foreground/80">{srv.desc}</p>
+
+                <div className="p-5">
+                  {/* Title */}
+                  <h4 className="font-heading text-base font-bold leading-snug text-brand-navy">
+                    {evt.title}
+                  </h4>
+
+                  {/* Description */}
+                  <p className="mt-2 text-xs leading-relaxed text-foreground/80">
+                    {evt.description}
+                  </p>
+                </div>
               </div>
 
-              <div className="mt-5 border-t border-border/70 pt-3 flex items-center justify-between text-xs">
-                <span className="font-bold text-brand-navy">{srv.action}</span>
-                <span className="text-brand-red font-medium">alumni@gperi.ac.in</span>
+              {/* Date & Time */}
+              <div className="border-t border-border/70 px-5 py-3 bg-muted/20 flex items-center gap-4 text-xs text-muted-foreground">
+                <span className="flex items-center gap-1.5 font-medium">
+                  <Calendar className="h-3.5 w-3.5 text-brand-red" /> {evt.date}
+                </span>
+                <span className="flex items-center gap-1.5 font-medium">
+                  <Clock className="h-3.5 w-3.5 text-brand-red" /> {evt.time}
+                </span>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Alumni Testimonials & Memories */}
+      {/* Testimonials Section */}
       <div className="mb-12 space-y-6">
-        <h3 className="font-heading text-xl font-bold uppercase text-brand-navy">Voices of Our Alumni</h3>
+        <div>
+          <h3 className="font-heading text-xl font-bold uppercase text-brand-navy">Voices of Our Alumni</h3>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Inspiring journeys and testimonials shared by GTU-ITR graduates worldwide.
+          </p>
+          <div className="mt-2 mb-4 h-1 w-12 bg-brand-red" />
+        </div>
 
         <div className="grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t, idx) => (
-            <div key={idx} className="flex flex-col justify-between rounded-xl border border-border bg-card p-6 shadow-sm">
-              <blockquote className="text-xs italic leading-relaxed text-foreground/85">
-                &quot;{t.quote}&quot;
-              </blockquote>
-              <div className="mt-4 border-t border-border pt-3">
-                <p className="font-heading text-sm font-bold text-brand-navy">{t.name}</p>
-                <p className="text-[11px] text-muted-foreground">{t.role}</p>
+            <div
+              key={idx}
+              className="flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-navy/30 hover:shadow-md"
+            >
+              <div>
+                {/* Photo */}
+                <div className="relative h-52 w-full overflow-hidden bg-muted/40">
+                  <img
+                    src={t.photo}
+                    alt={t.title}
+                    className="h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div className="p-5">
+                  {/* Title */}
+                  <h4 className="font-heading text-base font-bold leading-snug text-brand-navy">
+                    {t.title}
+                  </h4>
+
+                  {/* Description */}
+                  <p className="mt-2 text-xs leading-relaxed text-foreground/80 italic">
+                    &quot;{t.description}&quot;
+                  </p>
+                </div>
+              </div>
+
+              {/* Date & Time */}
+              <div className="border-t border-border/70 px-5 py-3 bg-muted/20 flex items-center gap-4 text-xs text-muted-foreground">
+                <span className="flex items-center gap-1.5 font-medium">
+                  <Calendar className="h-3.5 w-3.5 text-brand-red" /> {t.date}
+                </span>
+                <span className="flex items-center gap-1.5 font-medium">
+                  <Clock className="h-3.5 w-3.5 text-brand-red" /> {t.time}
+                </span>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Contact Alumni Desk */}
-      <div className="rounded-xl border border-brand-navy bg-brand-navy p-6 text-white shadow-sm md:p-8">
-        <div className="grid gap-6 md:grid-cols-3">
+      {/* Download LOR Template Section */}
+      <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex items-start gap-4">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+            <FileText className="h-6 w-6 text-yellow-400" />
+          </div>
           <div>
-            <span className="rounded bg-brand-red px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-              Connect With Us
-            </span>
-            <h4 className="mt-2 font-heading text-lg font-bold uppercase text-white">Alumni Relations Cell</h4>
-            <p className="mt-1 text-xs text-white/80">
-              Reach out for reunions, transcript assistance, or star alumni speaker registrations.
+            <h4 className="font-heading text-lg font-bold uppercase text-brand-navy">
+              Letter of Recommendation (LOR) Template
+            </h4>
+            <p className="mt-1 text-xs text-muted-foreground leading-relaxed max-w-xl">
+              Alumni applying for international master&apos;s programs, higher studies, or corporate endorsements can download the official GTU-ITR recommendation letter template format.
             </p>
-          </div>
-          <div className="space-y-1.5 text-xs text-white/90">
-            <p className="flex items-center gap-2">
-              <Mail className="h-4 w-4 text-brand-red" /> alumni@gperi.ac.in
-            </p>
-            <p className="flex items-center gap-2">
-              <Mail className="h-4 w-4 text-brand-red" /> admission_gperi@gtu.edu.in
-            </p>
-            <p className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-brand-red" /> +91-9909039233
-            </p>
-          </div>
-          <div className="flex flex-col justify-center">
-            <Link
-              to="/enquiry"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-red py-3 font-heading text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-white hover:text-brand-navy"
-            >
-              Update Alumni Profile <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
         </div>
+
+        <a
+          href="/docs/gtu-itr-lor-template.pdf"
+          download="GTU_ITR_LOR_Template.pdf"
+          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-brand-navy px-6 py-3 font-heading text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-brand-red"
+        >
+          <Download className="h-4 w-4 text-yellow-400" />
+          Download LOR Template
+        </a>
       </div>
     </PageShell>
   );

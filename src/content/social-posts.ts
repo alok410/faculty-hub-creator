@@ -1,4 +1,4 @@
-export type Platform = "youtube" | "linkedin" | "facebook" | "instagram";
+export type Platform = "youtube" | "linkedin" | "facebook" | "instagram" | "twitter";
 
 export interface SocialPost {
   id: string;
@@ -175,5 +175,39 @@ export const SOCIAL_POSTS: SocialPost[] = [
     title: "Diploma students win Smart India Hackathon 2026 🏆",
     thumbnail: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=600&fit=crop",
     postUrl: "https://www.instagram.com/gtu_itr/",
+  },
+
+  // ─── Twitter / X ──────────────────────────────────────────
+  {
+    id: "tw-1",
+    platform: "twitter",
+    date: "2026-08-20",
+    title: "Proud to announce our NAAC A+ accreditation milestone! Congratulations to all faculty & students at GTU-ITR.",
+    thumbnail: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=340&fit=crop",
+    postUrl: "https://twitter.com/gtu_official",
+  },
+  {
+    id: "tw-2",
+    platform: "twitter",
+    date: "2026-07-28",
+    title: "Admissions open for Degree and Diploma Engineering 2026-27 at GTU-ITR Mehsana campus. Apply through ACPC.",
+    thumbnail: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=340&fit=crop",
+    postUrl: "https://twitter.com/gtu_official",
+  },
+  {
+    id: "tw-3",
+    platform: "twitter",
+    date: "2026-06-15",
+    title: "SSIP Innovation Grant awarded to our Mechanical Engineering innovators for solar e-kart project!",
+    thumbnail: "/site/achievements/ekart.jpg",
+    postUrl: "https://twitter.com/gtu_official",
+  },
+  {
+    id: "tw-4",
+    platform: "twitter",
+    date: "2026-05-10",
+    title: "Glimpses from Kaushalya Cultural Fest 2026. Celebrating youth, energy, and engineering creativity.",
+    thumbnail: "/site/x4.jpg",
+    postUrl: "https://twitter.com/gtu_official",
   },
 ];

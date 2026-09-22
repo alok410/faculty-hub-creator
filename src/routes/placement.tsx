@@ -104,8 +104,8 @@ function PlacementPage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-white shadow-sm">
-              <s.icon className="h-6 w-6 text-white" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+              <s.icon className="h-6 w-6 text-yellow-400" />
             </div>
             <div>
               <p className="font-display text-2xl font-bold text-brand-navy">{s.value}</p>
@@ -140,6 +140,12 @@ function PlacementPage() {
               className="inline-flex items-center gap-2 rounded-lg bg-brand-navy px-4 py-2 font-heading text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-red"
             >
               <Briefcase className="h-4 w-4" /> Recruit From GTU-ITR
+            </Link>
+            <Link
+              to="/enquiry"
+              className="inline-flex items-center gap-2 rounded-lg bg-brand-red px-4 py-2 font-heading text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-navy"
+            >
+              <GraduationCap className="h-4 w-4" /> Student Form
             </Link>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+wimport { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -68,8 +68,8 @@ function MechanicalDiplomaPage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-navy/10 text-brand-navy">
-              <s.icon className="h-6 w-6" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-navy text-yellow-400 shadow-sm">
+              <s.icon className="h-6 w-6 text-yellow-400" />
             </div>
             <div>
               <div className="text-xl font-bold tracking-tight text-foreground">{s.value}</div>

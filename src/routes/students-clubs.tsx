@@ -128,8 +128,8 @@ function StudentClubsPage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-white shadow-sm">
-              <s.icon className="h-6 w-6 text-white" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+              <s.icon className="h-6 w-6 text-yellow-400" />
             </div>
             <div>
               <p className="font-display text-xl font-bold text-brand-navy">{s.value}</p>
@@ -150,14 +150,22 @@ function StudentClubsPage() {
             </h2>
             <div className="mb-4 mt-2 h-1 w-16 bg-brand-red" />
           </div>
-          <a
-            href="https://gtuitr.gtu.ac.in/%5CgperiDoc%5CSAC.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-brand-navy px-4 py-2 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-red"
-          >
-            <Download className="h-4 w-4" /> Download SAC Council List (PDF)
-          </a>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="https://gtuitr.gtu.ac.in/%5CgperiDoc%5CSAC.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-brand-navy/30 bg-brand-surface px-4 py-2 font-heading text-xs font-bold uppercase tracking-wider text-brand-navy transition-colors hover:bg-brand-navy hover:text-white"
+            >
+              <Download className="h-4 w-4" /> Download SAC Council List (PDF)
+            </a>
+            <Link
+              to="/enquiry"
+              className="inline-flex items-center gap-2 rounded-lg bg-brand-red px-4 py-2 font-heading text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-brand-navy"
+            >
+              <Sparkles className="h-4 w-4" /> Registration for Club
+            </Link>
+          </div>
         </div>
         <p className="text-sm leading-relaxed text-foreground/85">
           At GTU-ITR, extracurricular life is structured through dynamic student chapters under the aegis of the{" "}
@@ -183,8 +191,8 @@ function StudentClubsPage() {
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-navy text-white">
-                    <club.icon className="h-5 w-5 text-brand-red" />
+                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+                    <club.icon className="h-5 w-5 text-yellow-400" />
                   </span>
                   <span className="rounded bg-brand-surface px-2.5 py-0.5 text-[10px] font-bold uppercase text-brand-navy border border-border/80">
                     {club.tag}
@@ -227,8 +235,8 @@ function StudentClubsPage() {
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-navy text-white">
-                    <club.icon className="h-5 w-5 text-brand-red" />
+                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+                    <club.icon className="h-5 w-5 text-yellow-400" />
                   </span>
                   <span className="rounded bg-brand-surface px-2.5 py-0.5 text-[10px] font-bold uppercase text-brand-navy border border-border/80">
                     {club.tag}
@@ -252,30 +260,6 @@ function StudentClubsPage() {
               </div>
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* How to Join CTA */}
-      <div className="mt-12 rounded-xl border border-brand-navy bg-brand-navy p-6 text-white shadow-sm md:p-8">
-        <div className="flex flex-wrap items-center justify-between gap-6">
-          <div>
-            <span className="rounded bg-brand-red px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-              Get Involved
-            </span>
-            <h4 className="mt-2 font-heading text-xl font-bold uppercase text-white">
-              How to Register for Student Clubs
-            </h4>
-            <p className="mt-1 text-xs text-white/80 max-w-xl">
-              Club registrations open at the beginning of each semester during orientation. Any GTU-ITR student across
-              degree and diploma programs can join up to two active clubs.
-            </p>
-          </div>
-          <Link
-            to="/enquiry"
-            className="inline-flex items-center gap-2 rounded-lg bg-brand-red px-6 py-3 font-heading text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-white hover:text-brand-navy"
-          >
-            Enquire for Club Membership <ArrowRight className="h-4 w-4" />
-          </Link>
         </div>
       </div>
     </PageShell>

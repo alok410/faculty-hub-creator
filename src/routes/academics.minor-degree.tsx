@@ -161,8 +161,8 @@ function MinorDegreePage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-navy/10 text-brand-navy">
-              <s.icon className="h-6 w-6" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-navy text-yellow-400 shadow-sm">
+              <s.icon className="h-6 w-6 text-yellow-400" />
             </div>
             <div>
               <div className="text-xl font-bold tracking-tight text-foreground">{s.value}</div>
@@ -195,8 +195,8 @@ function MinorDegreePage() {
               {MINOR_TRACKS.map((track, idx) => (
                 <div key={idx} className="flex flex-col rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30">
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-navy/10 text-brand-navy">
-                      <track.icon className="h-5 w-5 text-brand-red" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+                      <track.icon className="h-5 w-5 text-yellow-400" />
                     </div>
                     <Badge variant="secondary" className="text-[10px] font-semibold">
                       {track.badge}

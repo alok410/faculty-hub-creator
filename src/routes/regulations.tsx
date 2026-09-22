@@ -89,8 +89,8 @@ function RegulationsPage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-primary-foreground">
-              <h.icon className="h-6 w-6 text-brand-red" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+              <h.icon className="h-6 w-6 text-yellow-400" />
             </div>
             <div>
               <p className="font-heading text-sm font-bold text-brand-navy">{h.label}</p>
@@ -110,12 +110,11 @@ function RegulationsPage() {
             >
               Regulation 2: Campus Discipline
             </TabsTrigger>
-            <TabsTrigger
-              value="reg3"
-              className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"
+            <div
+              className="flex items-center justify-center py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 select-none cursor-default pointer-events-none"
             >
               Regulation 3: Hostel Norms
-            </TabsTrigger>
+            </div>
             <TabsTrigger
               value="reg1"
               className="py-2.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-all hover:text-white data-[state=active]:bg-white data-[state=active]:text-brand-navy data-[state=active]:shadow"

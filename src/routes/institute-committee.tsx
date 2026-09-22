@@ -141,8 +141,8 @@ function InstituteCommitteePage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-white shadow-sm">
-              <s.icon className="h-6 w-6 text-white" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+              <s.icon className="h-6 w-6 text-yellow-400" />
             </div>
             <div>
               <p className="font-display text-xl font-bold text-brand-navy">{s.value}</p>
@@ -164,9 +164,8 @@ function InstituteCommitteePage() {
             <div className="mb-4 mt-2 h-1 w-16 bg-brand-red" />
           </div>
           <a
-            href="https://gtuitr.gtu.ac.in/pdf/Institute%20Committee_%20R1.pdf"
-            target="_blank"
-            rel="noreferrer"
+            href="/docs/gtu-itr-committee-list.pdf"
+            download="GTU_ITR_Committee_List.pdf"
             className="inline-flex items-center gap-2 rounded-lg bg-brand-navy px-4 py-2.5 font-heading text-xs font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:bg-brand-red"
           >
             <Download className="h-4 w-4" /> Download Official Notification (PDF)
@@ -191,8 +190,8 @@ function InstituteCommitteePage() {
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-navy text-white">
-                    <comm.icon className="h-5 w-5 text-brand-red" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+                    <comm.icon className="h-5 w-5 text-yellow-400" />
                   </div>
                   <span className="rounded bg-brand-surface px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-navy border border-border/80">
                     {comm.category}

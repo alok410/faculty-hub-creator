@@ -5,7 +5,7 @@ import { Stagger, StaggerItem } from "@/components/motion/motion-primitives";
 const QUICK = [
   { label: "About Us", to: "/about" },
   { label: "Admissions", to: "/admissions/degree" },
-  { label: "Placement", to: "/placement" },
+  { label: "Training and Placement cell", to: "/placement" },
   { label: "Gallery", to: "/gallery" },
   { label: "Enquiry Form", to: "/enquiry" },
   { label: "Anti Ragging", to: "/anti-ragging" },

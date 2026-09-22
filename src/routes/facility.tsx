@@ -152,8 +152,8 @@ function FacilityPage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-white shadow-sm">
-              <s.icon className="h-6 w-6 text-white" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+              <s.icon className="h-6 w-6 text-yellow-400" />
             </div>
             <div>
               <p className="font-display text-2xl font-bold text-brand-navy">{s.value}</p>
@@ -198,8 +198,8 @@ function FacilityPage() {
           >
             <div>
               <div className="flex items-center justify-between">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-navy text-white">
-                  <facility.icon className="h-5 w-5 text-brand-red" />
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+                  <facility.icon className="h-5 w-5 text-yellow-400" />
                 </div>
                 <span className="rounded bg-brand-surface px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-brand-navy border border-border/80">
                   {facility.tag}

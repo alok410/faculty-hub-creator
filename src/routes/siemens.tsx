@@ -162,8 +162,8 @@ function SiemensPage() {
             key={idx}
             className="flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-brand-navy/30 hover:shadow-md"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-white shadow-sm">
-              <s.icon className="h-6 w-6 text-white" />
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+              <s.icon className="h-6 w-6 text-yellow-400" />
             </div>
             <div>
               <p className="font-display text-2xl font-bold text-brand-navy">{s.value}</p>
@@ -301,8 +301,8 @@ function SiemensPage() {
                 >
                   <div>
                     <div className="flex items-center justify-between">
-                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-navy text-primary-foreground">
-                        <lab.icon className="h-5 w-5 text-brand-red" />
+                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm">
+                        <lab.icon className="h-5 w-5 text-yellow-400" />
                       </span>
                       <span className="rounded bg-brand-navy/10 px-2 py-0.5 text-[10px] font-bold uppercase text-brand-navy">
                         Lab 0{i + 1}

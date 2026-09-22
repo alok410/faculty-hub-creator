@@ -112,8 +112,10 @@ function Home() {
           </p>
           <Stagger className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
-              <StaggerItem key={f.title} className="group h-full border border-border border-l-4 border-l-brand-red bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <f.icon className="h-7 w-7 text-brand-red transition-transform duration-300 group-hover:scale-110" />
+              <StaggerItem key={f.title} className="group h-full border border-border border-l-4 border-l-brand-navy bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy shadow-sm transition-transform duration-300 group-hover:scale-110">
+                  <f.icon className="h-6 w-6 text-yellow-400" />
+                </div>
                 <h3 className="mt-3 font-heading text-base font-bold uppercase text-brand-navy">{f.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
               </StaggerItem>

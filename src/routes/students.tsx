@@ -129,8 +129,8 @@ function StudentCornerPage() {
               className="group flex flex-col justify-between rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-navy/40 hover:shadow-md"
             >
               <div>
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-navy text-white transition-colors group-hover:bg-brand-red">
-                  <link.icon className="h-5 w-5" />
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-navy text-yellow-400 shadow-sm transition-colors">
+                  <link.icon className="h-5 w-5 text-yellow-400" />
                 </div>
                 <h4 className="mt-4 font-heading text-base font-bold text-brand-navy transition-colors group-hover:text-brand-red">
                   {link.title}

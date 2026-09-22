@@ -78,8 +78,8 @@ function VisionMissionPage() {
         <div className="flex flex-col justify-between rounded-xl border-2 border-brand-navy/20 bg-card p-8 shadow-sm transition-all hover:border-brand-navy/40 hover:shadow-md">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy text-white shadow-sm">
-                <Eye className="h-6 w-6 text-white" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy text-yellow-400 shadow-sm">
+                <Eye className="h-6 w-6 text-yellow-400" />
               </div>
               <div>
                 <Badge className="bg-brand-red uppercase text-white tracking-wider text-[10px]">Our Aspiration</Badge>
@@ -104,8 +104,8 @@ function VisionMissionPage() {
         <div className="flex flex-col justify-between rounded-xl border-2 border-brand-red/20 bg-card p-8 shadow-sm transition-all hover:border-brand-red/40 hover:shadow-md">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red text-white">
-                <Target className="h-6 w-6 text-white" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy text-yellow-400 shadow-sm">
+                <Target className="h-6 w-6 text-yellow-400" />
               </div>
               <div>
                 <Badge className="bg-brand-navy uppercase text-white tracking-wider text-[10px]">Our Purpose</Badge>
@@ -163,8 +163,8 @@ function VisionMissionPage() {
               key={idx}
               className="flex flex-col items-center text-center rounded-xl border border-border/70 bg-brand-surface/30 p-5 transition-all hover:border-brand-navy/30 hover:shadow-xs"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy text-white shadow-sm">
-                <val.icon className="h-6 w-6 text-white" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy text-yellow-400 shadow-sm">
+                <val.icon className="h-6 w-6 text-yellow-400" />
               </div>
               <h4 className="mt-4 font-heading text-sm font-bold uppercase text-brand-navy">{val.title}</h4>
               <p className="mt-2 text-xs leading-relaxed text-foreground/80">{val.desc}</p>
