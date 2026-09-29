@@ -46,10 +46,10 @@ const STATS = [
 ];
 
 const TESTIMONIALS = [
-  { name: "Yusuf Abdirahman", text: "GTU-ITR that has impressed me is the Kaushalya cultural event. This annual event celebrates and showcases the diversity of cultures on campus, creating a vibrant and inclusive community. Another key highlight of my college experience has been the Shaurya sports festival." },
-  { name: "Gupta Jay", text: "Best college in Mehsana district to be a part of. Our college has provided excellent placement opportunities. I got placed in my last year with an MNC, and I owe it all to the excellent training and support provided by the college." },
-  { name: "Daniel Rakotoarisoa", text: "A very good college that prepares its students for a better future as well as to be a good engineer. This college has its best way of teaching related to the field that makes it different from other colleges, especially in terms of the Minor Degree." },
-  { name: "Varia Dhruvkumar", text: "GTU-ITR is a fantastic engineering college that has truly helped me grow both academically and personally. They focus not only on academic growth but also on developing soft skills such as communication, leadership and responsibility." },
+  { name: "Yusuf Abdirahman", text: "GTU-ITR that has impressed me is the Kaushalya cultural event. This annual event celebrates and showcases the diversity of cultures on campus, creating a vibrant and inclusive community. Another key highlight of my college experience has been the Shaurya sports festival.", color: "#1e3a5f" },
+  { name: "Gupta Jay", text: "Best college in Mehsana district to be a part of. Our college has provided excellent placement opportunities. I got placed in my last year with an MNC, and I owe it all to the excellent training and support provided by the college.", color: "#b91c1c" },
+  { name: "Daniel Rakotoarisoa", text: "A very good college that prepares its students for a better future as well as to be a good engineer. This college has its best way of teaching related to the field that makes it different from other colleges, especially in terms of the Minor Degree.", color: "#0d7377" },
+  { name: "Varia Dhruvkumar", text: "GTU-ITR is a fantastic engineering college that has truly helped me grow both academically and personally. They focus not only on academic growth but also on developing soft skills such as communication, leadership and responsibility.", color: "#7c3aed" },
 ];
 import { EVENTS } from "@/content/events";
 
@@ -95,9 +95,6 @@ function Home() {
               ))}
             </div>
           </div>
-          <Link to="/admissions/degree" className="mt-4 block bg-brand-navy py-3 text-center font-heading text-sm font-bold uppercase tracking-wide text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-red hover:shadow-lg">
-            Admission Open 2026
-          </Link>
         </FadeIn>
       </section>
 
@@ -177,7 +174,15 @@ function Home() {
           {TESTIMONIALS.map((t) => (
             <StaggerItem key={t.name} className="h-full border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <p className="text-sm leading-relaxed text-muted-foreground">"{t.text}"</p>
-              <p className="mt-3 font-heading text-sm font-bold uppercase text-brand-navy">- {t.name}</p>
+              <div className="mt-4 flex items-center gap-3">
+                <div
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white shadow-sm"
+                  style={{ backgroundColor: t.color }}
+                >
+                  {t.name.split(" ").map((w) => w[0]).join("")}
+                </div>
+                <p className="font-heading text-sm font-bold uppercase text-brand-navy">{t.name}</p>
+              </div>
             </StaggerItem>
           ))}
         </Stagger>
