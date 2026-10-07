@@ -73,7 +73,7 @@ function VisionMissionPage() {
       subtitle="The foundational philosophy, guiding principles, and enduring commitment driving academic and research excellence at GTU-ITR."
     >
       {/* Vision & Mission Cards Grid */}
-      <div className="mb-12 grid gap-8 md:grid-cols-2">
+      <div className="mb-12 flex flex-col gap-8">
         {/* Vision Card */}
         <div className="flex flex-col justify-between rounded-xl border-2 border-brand-navy/20 bg-card p-8 shadow-sm transition-all hover:border-brand-navy/40 hover:shadow-md">
           <div>
@@ -124,52 +124,6 @@ function VisionMissionPage() {
               Committed to Creating Engineers for Tomorrow
             </span>
           </div>
-        </div>
-      </div>
-
-      {/* Core Values */}
-      <div className="mb-12 space-y-6">
-        <div>
-          <h3 className="font-heading text-xl font-bold uppercase text-brand-navy">Core Values</h3>
-          <p className="mt-1 text-xs text-muted-foreground">The core values and strategic tenets translating our mission into daily academic practice.</p>
-          <div className="mt-2 mb-4 h-1 w-12 bg-brand-red" />
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {MISSION_PILLARS.map((pillar, idx) => (
-            <div
-              key={idx}
-              className="rounded-xl border border-border bg-brand-surface/40 p-6 shadow-2xs transition-colors hover:border-brand-navy/30"
-            >
-              <div className="flex items-center gap-2.5">
-                <CheckCircle2 className="h-5 w-5 text-brand-red shrink-0" />
-                <h4 className="font-heading text-sm font-bold uppercase text-brand-navy">{pillar.title}</h4>
-              </div>
-              <p className="mt-3 text-xs leading-relaxed text-foreground/80">{pillar.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Core Institutional Values */}
-      <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
-        <h3 className="font-heading text-xl font-bold uppercase text-brand-navy">Our Foundational Values</h3>
-        <p className="mt-1 text-xs text-muted-foreground">Principles that guide every faculty, student, and administrative action.</p>
-        <div className="mb-6 mt-2 h-1 w-16 bg-brand-red" />
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {CORE_VALUES.map((val, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center text-center rounded-xl border border-border/70 bg-brand-surface/30 p-5 transition-all hover:border-brand-navy/30 hover:shadow-xs"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy text-yellow-400 shadow-sm">
-                <val.icon className="h-6 w-6 text-yellow-400" />
-              </div>
-              <h4 className="mt-4 font-heading text-sm font-bold uppercase text-brand-navy">{val.title}</h4>
-              <p className="mt-2 text-xs leading-relaxed text-foreground/80">{val.desc}</p>
-            </div>
-          ))}
         </div>
       </div>
     </PageShell>
