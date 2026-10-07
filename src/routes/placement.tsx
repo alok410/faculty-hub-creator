@@ -252,9 +252,12 @@ function PlacementPage() {
               owe it all to the training and support provided by the college. The professors helped us in every aspect from
               mock interviews to company technical tests.&quot;
             </blockquote>
-            <div className="mt-4 border-t border-border pt-3">
-              <p className="font-heading text-sm font-bold text-brand-navy">Gupta Jay</p>
-              <p className="text-[11px] text-muted-foreground">Placed with MNC Partner • Mechanical Alumnus</p>
+            <div className="mt-4 border-t border-border pt-3 flex items-center gap-3">
+              <img src="https://i.pravatar.cc/150?u=jay" alt="Gupta Jay" className="h-10 w-10 shrink-0 rounded-full object-cover shadow-sm" />
+              <div>
+                <p className="font-heading text-sm font-bold text-brand-navy">Gupta Jay</p>
+                <p className="text-[11px] text-muted-foreground">Placed with MNC Partner • Mechanical Alumnus</p>
+              </div>
             </div>
           </div>
 
