@@ -46,10 +46,10 @@ const STATS = [
 ];
 
 const TESTIMONIALS = [
-  { name: "Yusuf Abdirahman", text: "GTU-ITR that has impressed me is the Kaushalya cultural event. This annual event celebrates and showcases the diversity of cultures on campus, creating a vibrant and inclusive community. Another key highlight of my college experience has been the Shaurya sports festival.", color: "#1e3a5f" },
-  { name: "Gupta Jay", text: "Best college in Mehsana district to be a part of. Our college has provided excellent placement opportunities. I got placed in my last year with an MNC, and I owe it all to the excellent training and support provided by the college.", color: "#b91c1c" },
-  { name: "Daniel Rakotoarisoa", text: "A very good college that prepares its students for a better future as well as to be a good engineer. This college has its best way of teaching related to the field that makes it different from other colleges, especially in terms of the Minor Degree.", color: "#0d7377" },
-  { name: "Varia Dhruvkumar", text: "GTU-ITR is a fantastic engineering college that has truly helped me grow both academically and personally. They focus not only on academic growth but also on developing soft skills such as communication, leadership and responsibility.", color: "#7c3aed" },
+  { name: "Yusuf Abdirahman", photo: "https://i.pravatar.cc/150?u=yusuf", text: "GTU-ITR that has impressed me is the Kaushalya cultural event. This annual event celebrates and showcases the diversity of cultures on campus, creating a vibrant and inclusive community. Another key highlight of my college experience has been the Shaurya sports festival.", color: "#1e3a5f" },
+  { name: "Gupta Jay", photo: "https://i.pravatar.cc/150?u=jay", text: "Best college in Mehsana district to be a part of. Our college has provided excellent placement opportunities. I got placed in my last year with an MNC, and I owe it all to the excellent training and support provided by the college.", color: "#b91c1c" },
+  { name: "Daniel Rakotoarisoa", photo: "https://i.pravatar.cc/150?u=daniel", text: "A very good college that prepares its students for a better future as well as to be a good engineer. This college has its best way of teaching related to the field that makes it different from other colleges, especially in terms of the Minor Degree.", color: "#0d7377" },
+  { name: "Varia Dhruvkumar", photo: "https://i.pravatar.cc/150?u=varia", text: "GTU-ITR is a fantastic engineering college that has truly helped me grow both academically and personally. They focus not only on academic growth but also on developing soft skills such as communication, leadership and responsibility.", color: "#7c3aed" },
 ];
 import { EVENTS } from "@/content/events";
 
@@ -175,12 +175,16 @@ function Home() {
             <StaggerItem key={t.name} className="h-full border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <p className="text-sm leading-relaxed text-muted-foreground">"{t.text}"</p>
               <div className="mt-4 flex items-center gap-3">
-                <div
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white shadow-sm"
-                  style={{ backgroundColor: t.color }}
-                >
-                  {t.name.split(" ").map((w) => w[0]).join("")}
-                </div>
+                {t.photo ? (
+                  <img src={t.photo} alt={t.name} className="h-10 w-10 shrink-0 rounded-full object-cover shadow-sm" />
+                ) : (
+                  <div
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white shadow-sm"
+                    style={{ backgroundColor: t.color }}
+                  >
+                    {t.name.split(" ").map((w) => w[0]).join("")}
+                  </div>
+                )}
                 <p className="font-heading text-sm font-bold uppercase text-brand-navy">{t.name}</p>
               </div>
             </StaggerItem>
