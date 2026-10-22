@@ -44,10 +44,10 @@ export const NAV: NavLink[] = [
   {
     label: "Admissions",
     children: [
-      { label: "Degree Engineering (BE)", to: "/admissions/degree" },
-      { label: "Diploma Engineering", to: "/admissions/diploma" },
-      { label: "M.Sc. in Information Technology", to: "/admissions/msc-it" },
-      { label: "PG Diploma in Cyber Security (PGDCS)", to: "/admissions/pgdcs" },
+      { label: "UG Programs", to: "/admissions/degree" },
+      { label: "Diploma", to: "/admissions/diploma" },
+      { label: "Integrated M.Sc. in Information Technology", to: "/admissions/msc-it" },
+      { label: "Post Graduate Diploma in Cyber Security (PGDCS)", to: "/admissions/pgdcs" },
     ],
   },
   { label: "Training and Placement cell", to: "/placement" },
