@@ -65,7 +65,7 @@ function Home() {
         <FadeIn>
           <h2 className="section-title">Welcome to GTU-ITR</h2>
           <div className="mt-2 h-1 w-16 bg-brand-red" />
-          <p className="mt-4 text-[15px] leading-relaxed text-foreground/85">
+          <p className="mt-4 text-[15px] leading-relaxed text-foreground/85 text-justify">
             GTU Institute of Technology &amp; Research, Mehsana — a constituent institute of Gujarat
             Technological University — offers degree and diploma engineering programmes with a
             SIEMENS Centre of Excellence, well-established laboratories, and a dedicated Training
@@ -102,7 +102,7 @@ function Home() {
         <FadeIn>
           <h2 className="section-title">What We Have</h2>
           <div className="mt-2 h-1 w-16 bg-brand-red" />
-          <p className="mt-4 text-[15px] leading-relaxed text-foreground/85">
+          <p className="mt-4 text-[15px] leading-relaxed text-foreground/85 text-justify">
             Experienced Faculty Members, SIEMENS Center of Excellence, Elegant Architecture, Industrial Linkage,
             Well Established Laboratories, MOOCs Courses, Wi-Fi Campus, Transportation, Training and Placement Cell,
             Hygienic Cafeteria.
@@ -114,7 +114,7 @@ function Home() {
                   <f.icon className="h-6 w-6 text-yellow-400" />
                 </div>
                 <h3 className="mt-3 font-heading text-base font-bold uppercase text-brand-navy">{f.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground text-justify">{f.text}</p>
               </StaggerItem>
             ))}
           </Stagger>
@@ -173,7 +173,7 @@ function Home() {
         <Stagger className="mt-6 grid gap-5 md:grid-cols-2">
           {TESTIMONIALS.map((t) => (
             <StaggerItem key={t.name} className="h-full border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <p className="text-sm leading-relaxed text-muted-foreground">"{t.text}"</p>
+              <p className="text-sm leading-relaxed text-muted-foreground text-justify">"{t.text}"</p>
               <div className="mt-4 flex items-center gap-3">
                 {t.photo ? (
                   <img src={t.photo} alt={t.name} className="h-10 w-10 shrink-0 rounded-full object-cover shadow-sm" />
