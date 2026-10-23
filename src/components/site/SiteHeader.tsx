@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { NAV, type NavLink } from "@/content/nav";
 import { DRAWER_SPRING } from "@/components/motion/motion-primitives";
 
-function DesktopItem({ item }: { item: NavLink }) {
+function DesktopItem({ item, alignRight }: { item: NavLink; alignRight?: boolean }) {
   if (!item.children) {
     return item.href ? (
       <a
@@ -46,19 +46,19 @@ function DesktopItem({ item }: { item: NavLink }) {
         </button>
       )}
 
-      {/* 1st Level Dropdown */}
-      <div className="invisible absolute left-0 top-full z-50 min-w-[280px] -translate-y-1 border-t-2 border-brand-red bg-[#1c2e74] opacity-0 shadow-2xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+      {/* 1st Level Dropdown — align right when near the edge */}
+      <div className={`invisible absolute top-full z-50 min-w-[280px] -translate-y-1 border-t-2 border-brand-red bg-[#1c2e74] opacity-0 shadow-2xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ${alignRight ? "right-0" : "left-0"}`}>
         {item.children.map((child) => {
           if (child.children) {
             return (
               <div key={child.label} className="group/sub relative">
-                <div className="flex items-center justify-between border-b border-white/20 px-4 py-2.5 text-[13px] font-medium text-white transition-all duration-150 group-hover/sub:bg-[#e69500] group-hover/sub:text-white hover:bg-[#e69500] cursor-pointer select-none">
+                <div className={`flex items-center justify-between border-b border-white/20 px-4 py-2.5 text-[13px] font-medium text-white transition-all duration-150 group-hover/sub:bg-[#e69500] group-hover/sub:text-white hover:bg-[#e69500] cursor-pointer select-none ${alignRight ? "flex-row-reverse" : ""}`}>
                   <span>{child.label}</span>
-                  <span className="text-xs font-bold leading-none ml-2">▸</span>
+                  <span className={`text-xs font-bold leading-none ${alignRight ? "mr-2" : "ml-2"}`}>{alignRight ? "◂" : "▸"}</span>
                 </div>
 
-                {/* 2nd Level Flyout Submenu to the right */}
-                <div className="invisible absolute left-full top-0 z-50 min-w-[250px] border-l border-white/20 border-t-2 border-brand-red bg-[#1c2e74] opacity-0 shadow-2xl transition-all duration-150 group-hover/sub:visible group-hover/sub:opacity-100">
+                {/* 2nd Level Flyout Submenu — flip direction when aligned right */}
+                <div className={`invisible absolute top-0 z-50 min-w-[250px] border-white/20 border-t-2 border-brand-red bg-[#1c2e74] opacity-0 shadow-2xl transition-all duration-150 group-hover/sub:visible group-hover/sub:opacity-100 ${alignRight ? "right-full border-r" : "left-full border-l"}`}>
                   {child.children.map((subChild) =>
                     subChild.href ? (
                       <a
@@ -67,7 +67,7 @@ function DesktopItem({ item }: { item: NavLink }) {
                         target={subChild.download ? undefined : "_blank"}
                         download={subChild.download ? true : undefined}
                         rel="noreferrer"
-                        className="block border-b border-white/20 px-4 py-2.5 text-[13px] text-white transition-all duration-150 hover:bg-[#e69500] hover:translate-x-1"
+                        className={`block border-b border-white/20 px-4 py-2.5 text-[13px] text-white transition-all duration-150 hover:bg-[#e69500] ${alignRight ? "hover:-translate-x-1" : "hover:translate-x-1"}`}
                       >
                         {subChild.label}
                       </a>
@@ -75,7 +75,7 @@ function DesktopItem({ item }: { item: NavLink }) {
                       <Link
                         key={subChild.label}
                         to={subChild.to!}
-                        className="block border-b border-white/20 px-4 py-2.5 text-[13px] text-white transition-all duration-150 hover:bg-[#e69500] hover:translate-x-1"
+                        className={`block border-b border-white/20 px-4 py-2.5 text-[13px] text-white transition-all duration-150 hover:bg-[#e69500] ${alignRight ? "hover:-translate-x-1" : "hover:translate-x-1"}`}
                       >
                         {subChild.label}
                       </Link>
@@ -93,7 +93,7 @@ function DesktopItem({ item }: { item: NavLink }) {
               target={child.download || child.href.startsWith("/") ? undefined : "_blank"}
               download={child.download ? true : undefined}
               rel={child.href.startsWith("/") ? undefined : "noreferrer"}
-              className="block border-b border-white/20 px-4 py-2.5 text-[13px] text-white transition-all duration-150 hover:bg-[#e69500] hover:translate-x-1"
+              className={`block border-b border-white/20 px-4 py-2.5 text-[13px] text-white transition-all duration-150 hover:bg-[#e69500] ${alignRight ? "hover:-translate-x-1" : "hover:translate-x-1"}`}
             >
               {child.label}
             </a>
@@ -101,7 +101,7 @@ function DesktopItem({ item }: { item: NavLink }) {
             <Link
               key={child.label}
               to={child.to!}
-              className="block border-b border-white/20 px-4 py-2.5 text-[13px] text-white transition-all duration-150 hover:bg-[#e69500] hover:translate-x-1"
+              className={`block border-b border-white/20 px-4 py-2.5 text-[13px] text-white transition-all duration-150 hover:bg-[#e69500] ${alignRight ? "hover:-translate-x-1" : "hover:translate-x-1"}`}
             >
               {child.label}
             </Link>
@@ -180,8 +180,8 @@ export function SiteHeader() {
 
       <nav className="sticky top-0 z-50 border-t border-white/10 border-b-2 border-brand-red bg-[#121e48] shadow-lg shadow-black/25">
         <div className="mx-auto hidden max-w-[1440px] flex-wrap items-center justify-center md:flex">
-          {NAV.map((item) => (
-            <DesktopItem key={item.label} item={item} />
+          {NAV.map((item, idx) => (
+            <DesktopItem key={item.label} item={item} alignRight={idx >= NAV.length - 4} />
           ))}
         </div>
 
