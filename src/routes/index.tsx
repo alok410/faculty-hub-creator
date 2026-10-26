@@ -75,7 +75,6 @@ function Home() {
             <HomeSlider banners={data.banners} heightClass="h-[300px] md:h-[360px]" />
           </div>
         </FadeIn>
-
         <FadeIn as="aside" delay={0.15}>
           <h2 className="section-title">News &amp; Updates</h2>
           <div className="mt-2 h-1 w-16 bg-brand-red" />
